@@ -83,6 +83,11 @@ const WorkSections = () => {
         <img src="/dragon.png" alt="Dragon decoration" />
       </div>
 
+      {/* Plant Decoration */}
+      <div className="plant-decoration">
+        <img src="/plant.png" alt="Plant decoration" />
+      </div>
+
       {/* Navigation Buttons */}
       <NavigationButtons
         activeCategory={activeCategory}
