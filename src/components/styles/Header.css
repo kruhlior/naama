@@ -2,12 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
+  position: relative;
+  background-color: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
   transition: all 0.3s ease;
@@ -125,7 +121,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #000000;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     transform: translateY(-100%);
     opacity: 0;
