@@ -1,0 +1,23 @@
+/* Home Component Styles */
+.home {
+  width: 100%;
+}
+
+/* Gap Spacing */
+.gap-spacing {
+  height: 0;
+  background-color: #000000;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .gap-spacing {
+    height: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .gap-spacing {
+    height: 0;
+  }
+}

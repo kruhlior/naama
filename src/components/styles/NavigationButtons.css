@@ -1,0 +1,66 @@
+/* NavigationButtons Component Styles */
+.navigation-buttons {
+  background-color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+/* Work Menu Buttons */
+.work-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.work-menu-btn {
+  background: #ffffff;
+  border: none;
+  color: #35C3B5;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.work-menu-btn:hover {
+  background-color: #35C3B5;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.work-menu-btn.active {
+  background-color: #35C3B5;
+  color: #ffffff;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .work-menu {
+    padding: 1.5rem 0;
+    gap: 0.5rem;
+  }
+  
+  .work-menu-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-menu {
+    padding: 1rem 0;
+    gap: 0.3rem;
+  }
+  
+  .work-menu-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: 80px;
+  }
+}
