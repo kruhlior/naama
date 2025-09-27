@@ -5,11 +5,11 @@ const NavigationButtons = ({ activeCategory, onCategoryChange }) => {
   const [isFixed, setIsFixed] = useState(false);
 
   const categories = [
-    { id: 'recent', label: 'Recent Works' },
+    { id: 'recent', label: 'Recent Work' },
     { id: 'ai', label: 'AI' },
     { id: 'b2b', label: 'B2B' },
-    { id: 'web', label: 'WEB Apps' },
-    { id: 'mobile', label: 'Mobile Apps' },
+    { id: 'web', label: 'Web' },
+    { id: 'mobile', label: 'Mobile' },
   ];
 
   useEffect(() => {
@@ -31,18 +31,22 @@ const NavigationButtons = ({ activeCategory, onCategoryChange }) => {
 
   return (
     <div className={`navigation-buttons ${isFixed ? 'fixed' : ''}`}>
-      <div className="container">
-        <div className="work-menu">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className={`work-menu-btn ${activeCategory === category.id ? 'active' : ''}`}
-              onClick={() => onCategoryChange(category.id)}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
+      <div className="nav-background">
+        <img src="/nav.png" alt="Navigation background" />
+      </div>
+      <div className="nav-links">
+        {categories.map((category) => (
+          <button
+            key={category.id}
+            className={`nav-link ${activeCategory === category.id ? 'active' : ''}`}
+            onClick={() => {
+              console.log('Clicked category:', category.id);
+              onCategoryChange(category.id);
+            }}
+          >
+            {category.label}
+          </button>
+        ))}
       </div>
     </div>
   );

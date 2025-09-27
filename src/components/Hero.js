@@ -26,7 +26,7 @@ const Hero = () => {
         </div>
       </div>
       {/* Gradient Separator */}
-      <div className="gradient-separator" />
+      {/* <div className="gradient-separator" /> */}
     </section>
   );
 };

@@ -44,7 +44,7 @@
   gap: 2rem;
 }
 
-.nav-link {
+.header .nav-link {
   text-decoration: none;
   color: #ffffff;
   font-family: 'Genos', sans-serif;
@@ -58,17 +58,17 @@
   position: relative;
 }
 
-.nav-link:hover {
+.header .nav-link:hover {
   color: #007bff;
   background-color: rgba(0, 123, 255, 0.1);
 }
 
-.nav-link.active {
+.header .nav-link.active {
   color: #ffffff;
   background-color: transparent;
 }
 
-.nav-link.active::after {
+.header .nav-link.active::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -148,8 +148,8 @@
     border-radius: 8px;
   }
   
-  .nav-link:hover,
-  .nav-link.active {
+  .header .nav-link:hover,
+  .header .nav-link.active {
     background-color: rgba(0, 123, 255, 0.1);
   }
 }
