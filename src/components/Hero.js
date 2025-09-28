@@ -9,11 +9,10 @@ const Hero = () => {
             <h1 className="hero-title">
               Hi, <br /> I&apos;m <span className="highlight">Naama</span>
             </h1>
-            <h2 className="hero-subtitle">UX Developer</h2>
             <p className="hero-description">
               I combine <span className="highlight">Cognitive Science </span> and  <span className="highlight"> Creativity </span>
               <br />
-              to build AI first <br />experiences
+              to build AI first experiences
             </p>
           </div>
           <div className="hero-animation">
