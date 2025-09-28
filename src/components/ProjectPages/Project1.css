@@ -1,7 +1,7 @@
 /* Project1 Component Styles */
 .project1 {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: var(--project-bg-color);
   padding: 2rem 0;
 }
 

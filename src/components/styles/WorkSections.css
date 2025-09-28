@@ -10,7 +10,7 @@
 .coffee-decoration {
   position: absolute;
   top: 400px;
-  left: 22%;
+  left: 20%;
   transform: translateX(-50%);
   width: 300px;
   height: 300px;
