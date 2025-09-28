@@ -72,6 +72,16 @@
   padding-left: 0px;
 }
 
+.cursor {
+  animation: blink 1s infinite;
+  color: #34DDA5;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 .hero-animation {
   display: flex;
   flex-direction: column;
@@ -93,9 +103,25 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 20;
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
 @keyframes slideInLeft {
   from {

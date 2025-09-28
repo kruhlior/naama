@@ -1,6 +1,54 @@
+import { useState, useEffect } from 'react';
 import './styles/Hero.css';
 
 const Hero = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const fullText = 'I combine Cognitive Science and Creativity to build AI first experiences';
+  const highlightWords = ['Cognitive Science', 'Creativity'];
+
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 50);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const renderTextWithHighlights = (text) => {
+    let result = text;
+
+    // Find positions of highlight words in the original text
+    const wordPositions = [];
+    highlightWords.forEach(word => {
+      let index = fullText.indexOf(word);
+      while (index !== -1) {
+        wordPositions.push({ word, start: index, end: index + word.length });
+        index = fullText.indexOf(word, index + 1);
+      }
+    });
+
+    // Sort by start position
+    wordPositions.sort((a, b) => a.start - b.start);
+
+    // Apply highlights based on current text length
+    wordPositions.forEach(({ start, end }) => {
+      if (start < text.length) {
+        const highlightEnd = Math.min(end, text.length);
+        const wordToHighlight = text.slice(start, highlightEnd);
+        if (wordToHighlight.length > 0) {
+          result = result.replace(wordToHighlight, `<span class="highlight">${wordToHighlight}</span>`);
+        }
+      }
+    });
+
+    return result;
+  };
   return (
     <section className="hero-section">
       <div className="container">
@@ -9,11 +57,12 @@ const Hero = () => {
             <h1 className="hero-title">
               Hi, <br /> I&apos;m <span className="highlight">Naama</span>
             </h1>
-            <p className="hero-description">
-              I combine <span className="highlight">Cognitive Science </span> and  <span className="highlight"> Creativity </span>
-              <br />
-              to build AI first experiences
-            </p>
+            <p
+              className="hero-description"
+              dangerouslySetInnerHTML={{
+                __html: renderTextWithHighlights(displayedText) + '<span class="cursor">|</span>',
+              }}
+            />
           </div>
           <div className="hero-animation">
             <img
