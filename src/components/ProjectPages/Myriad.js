@@ -42,6 +42,7 @@ const Myriad = () => {
           tools="Figma, Adobe Creative Suite, WordPress, HTML/CSS, UserTesting, Analytics"
           collaboration="Marketing Team, Healthcare Providers, Web Developers, Content Team"
           timeline="5 months (Research: 1 month, Design: 2 months, Development: 2 months)"
+          challenges="Balancing patient and provider needs in a single platform, ensuring HIPAA compliance throughout the redesign, and creating intuitive navigation for users with varying technical skills."
         />
 
         {/* Project Stats */}

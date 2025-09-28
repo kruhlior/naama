@@ -42,6 +42,7 @@ const Qrkiez = () => {
           tools="Figma, Adobe Creative Suite, Miro, UserTesting, Analytics"
           collaboration="Product Manager, Engineering Team, Marketing Team, Community Managers"
           timeline="6 months (Research: 1 month, Design: 3 months, Testing: 2 months)"
+          challenges="Balancing AI personalization with user privacy, ensuring accessibility across diverse user groups, and creating intuitive interfaces for complex AI features while maintaining trust and transparency in algorithmic decision-making."
         />
 
         {/* Project Stats */}

@@ -42,6 +42,7 @@ const Amdocs = () => {
           tools="Figma, Sketch, InVision, Jira, Confluence, UserTesting, Analytics"
           collaboration="Product Managers, Telecom Experts, Engineering Teams, QA Teams, Stakeholders"
           timeline="12 months (Research: 3 months, Design: 6 months, Testing: 3 months)"
+          challenges="Simplifying complex enterprise telecom workflows, ensuring scalability for large-scale operations, and creating intuitive interfaces for users with varying technical expertise while maintaining system reliability."
         />
 
         {/* Project Stats */}

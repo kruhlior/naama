@@ -42,6 +42,7 @@ const Cleaner = () => {
           tools="Figma, React, AI APIs, Natural Language Processing, UserTesting, Analytics"
           collaboration="AI Engineers, Content Writers, Beta Users, Community Feedback"
           timeline="4 months (Research: 1 month, Design: 1.5 months, Development: 1.5 months)"
+          challenges="Creating an AI system that understands context and nuance in text, ensuring the tool maintains the original meaning while improving clarity, and building user trust in AI-powered text processing."
         />
 
         {/* Project Stats */}

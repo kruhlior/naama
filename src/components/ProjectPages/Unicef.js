@@ -42,6 +42,7 @@ const Unicef = () => {
           tools="Figma, Miro, Azure AI, Power BI, SharePoint, UserTesting"
           collaboration="UNICEF IT Team, Knowledge Management Team, AI Engineers, Content Specialists"
           timeline="10 months (Research: 3 months, Design: 4 months, Development: 3 months)"
+          challenges="Building trust in AI systems within a humanitarian organization, ensuring data security and privacy for sensitive information, and creating user-friendly interfaces for staff with varying technical backgrounds."
         />
 
         {/* Project Stats */}

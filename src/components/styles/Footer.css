@@ -1,8 +1,13 @@
 /* Footer Component Styles */
 .footer {
-  background-color: var(--project-bg-color);
+  background-color: #CDCBCC;
   padding: 0;
   margin: 0;
+}
+
+/* Footer on project pages */
+.project-page .footer {
+  background-color: #ffffff !important;
 }
 
 .footer-image {

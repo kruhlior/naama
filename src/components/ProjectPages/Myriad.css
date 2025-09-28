@@ -59,8 +59,8 @@
 
 .hero-image img {
   width: 100%;
-  max-width: 600px;
-  height: 300px;
+  max-width: 800px;
+  height: 400px;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -294,7 +294,7 @@
   }
   
   .hero-image img {
-    height: 250px;
+    height: 300px;
   }
 }
 
@@ -308,6 +308,6 @@
   }
   
   .hero-image img {
-    height: 200px;
+    height: 250px;
   }
 }

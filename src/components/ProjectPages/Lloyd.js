@@ -42,6 +42,7 @@ const Lloyd = () => {
           tools="Figma, Principle, After Effects, React Native, AI APIs, UserTesting"
           collaboration="Product Manager, AI Engineers, Mobile Developers, Video Specialists"
           timeline="7 months (Research: 2 months, Design: 3 months, Development: 2 months)"
+          challenges="Making complex AI technology accessible to everyday users, ensuring real-time video processing works smoothly across different devices, and building user trust in AI-powered video analysis."
         />
 
         {/* Project Stats */}
