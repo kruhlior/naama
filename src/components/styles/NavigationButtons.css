@@ -73,7 +73,7 @@
 }
 
 .nav-link.active {
-  background: linear-gradient(135deg, #4ecdc4, #ff6b9d);
+  background: linear-gradient(135deg, #34DDA5, #35AEC8, #994E96, #E8468F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
