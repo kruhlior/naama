@@ -109,6 +109,69 @@
   margin: 80px auto 0 auto;
 }
 
+/* Template 1: Image on right, aligned to bottom, 80% height */
+.project-card.template1 {
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.project-card.template1 .project-content-left {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.project-card.template1 .project-image-right {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 1.5rem 1.5rem 0;
+}
+
+.project-card.template1 .project-image-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Template 2: Image on bottom, full card width */
+.project-card.template2 {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.project-card.template2 .project-content-top {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.project-card.template2 .project-image-bottom {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px 80px 20px;
+}
+
+.project-card.template2 .project-image-bottom img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+}
+
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -121,12 +184,20 @@
   padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
-.project-title {
+.project-card .project-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
+  color: #2BB6CB !important;
   margin: 0;
   text-align: left;
+}
+
+.project-card .project-subtitle {
+  font-size: 0.9rem;
+  color: #807A7A;
+  margin: 0.5rem 0 0 0;
+  text-align: left;
+  line-height: 1.4;
 }
 
 /* Project Image */
@@ -186,6 +257,34 @@
   
   .project-image img {
     height: 220px;
+  }
+  
+  /* Template 1 Mobile Styles */
+  .project-card.template1 {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .project-card.template1 .project-content-left {
+    padding: 1rem;
+    height: auto;
+  }
+  
+  .project-card.template1 .project-image-right {
+    width: 100%;
+    height: 60%;
+    padding: 0 1rem 1rem 1rem;
+    align-items: center;
+  }
+  
+  /* Template 2 Mobile Styles */
+  .project-card.template2 .project-content-top {
+    padding: 1rem;
+  }
+  
+  .project-card.template2 .project-image-bottom {
+    height: 50%;
+    padding: 0 0 5px 0;
   }
 }
 

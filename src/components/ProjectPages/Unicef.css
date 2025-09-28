@@ -1,0 +1,313 @@
+/* UNICEF Project Component Styles */
+.unicef {
+  min-height: 100vh;
+  background-color: var(--project-bg-color);
+  padding: 2rem 0;
+}
+
+.back-button {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  color: #2BB6CB;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 2px solid #2BB6CB;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.back-link:hover {
+  background-color: #2BB6CB;
+  color: white;
+}
+
+/* Project Hero */
+.project-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hero-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.project-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #2BB6CB;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-subtitle {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-image {
+  margin-top: 2rem;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Stats */
+.project-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat {
+  text-align: center;
+  background: white;
+  padding: 2rem 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #2BB6CB;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2BB6CB;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Project Content */
+.project-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content-section {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  border-left: 4px solid #2BB6CB;
+}
+
+.content-section h2 {
+  color: #2BB6CB;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.content-section p {
+  color: #333;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.feature-item h3 {
+  color: #2BB6CB;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feature-item p {
+  color: #333;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Implementation Grid */
+.implementation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.impl-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.impl-item h3 {
+  color: #2BB6CB;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.impl-item p {
+  color: #333;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Tech Grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.tech-category h3 {
+  color: #2BB6CB;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: #2BB6CB;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-link {
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex: 1;
+}
+
+.project-link.primary {
+  background: #2BB6CB;
+  color: white;
+}
+
+.project-link.primary:hover {
+  background: #1a9bb8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(43, 182, 203, 0.3);
+}
+
+.project-link.secondary {
+  background: transparent;
+  color: #2BB6CB;
+  border: 2px solid #2BB6CB;
+}
+
+.project-link.secondary:hover {
+  background: #2BB6CB;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .unicef {
+    padding: 1rem 0;
+  }
+  
+  .project-title {
+    font-size: 3rem;
+  }
+  
+  .project-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .project-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .content-section {
+    padding: 1.5rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .implementation-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-links {
+    flex-direction: column;
+  }
+  
+  .hero-image img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-title {
+    font-size: 2.5rem;
+  }
+  
+  .content-section {
+    padding: 1rem;
+  }
+  
+  .hero-image img {
+    height: 200px;
+  }
+}

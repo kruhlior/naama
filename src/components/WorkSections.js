@@ -10,13 +10,13 @@ const WorkSections = () => {
 
   const projects = {
     recent: [
-      { id: 1, title: 'E-Commerce Platform', image: '/project1.jpg', category: 'recent' },
-      { id: 2, title: 'Task Management App', image: '/project2.jpg', category: 'recent' },
-      { id: 3, title: 'Weather Dashboard', image: '/project3.jpg', category: 'recent' },
-      { id: 16, title: 'Digital Marketing Suite', image: '/project16.jpg', category: 'recent' },
-      { id: 17, title: 'Content Management System', image: '/project17.jpg', category: 'recent' },
-      { id: 18, title: 'Analytics Dashboard', image: '/project18.jpg', category: 'recent' },
-      { id: 19, title: 'User Authentication System', image: '/project19.jpg', category: 'recent' },
+      { id: 'qrkiez', title: 'Inclusive AI powered Marketplace & Social Platform', subtitle: 'Full-stack UX leadership: strategy, design system, and product experience for an inclusive platform.', image: '/Qrkiez.png', category: 'recent', template: 'template1', tags: ['recent', 'ai', 'mobile'] },
+      { id: 'portal', title: 'Healthcare provider portal', subtitle: 'Transforming complex medical workflows into a simple, scalable solution.', image: '/Portal.png', category: 'recent', template: 'template1', tags: ['recent', 'web', 'b2b'] },
+      { id: 'unicef', title: 'UNICEF internal AI bot', subtitle: 'Building a Trusted, Multi-Layered AI for Knowledge Management', image: '/UNicef.png', category: 'recent', template: 'template1', tags: ['recent', 'web'] },
+      { id: 'lloyd', title: 'Real world Video AI Assistant App', subtitle: 'From abstract AI to real adoption: guiding users into a new product experience', image: '/Lloyd.gif', category: 'recent', template: 'template1', tags: ['recent', 'mobile', 'ai'] },
+      { id: 'myriad', title: 'Company website full redesign', subtitle: 'A seamless journey for patients and healthcare providers', image: '/Myriad.gif', category: 'recent', template: 'template1', tags: ['b2b', 'web', 'recent'] },
+      { id: 'amdocs', title: 'Telecom Enterprise Solution', subtitle: 'A Fierce Innovation Award–winning enterprise solution, shaping designs that streamlined complex workflows.', image: '/Amdocs.png', category: 'recent', template: 'template1', tags: ['recent', 'b2b'] },
+      { id: 'cleaner', title: 'Bullshit Cleaner - Solo AI Project', subtitle: 'A self-initiated project turning messy, exaggerated text into clear communication through UX and AI innovation.', image: '/Cleaning.gif', category: 'recent', template: 'template2', tags: ['recent', 'web', 'ai'] },
     ],
     ai: [
       { id: 4, title: 'AI Chatbot', image: '/project4.jpg', category: 'ai' },
@@ -64,7 +64,11 @@ const WorkSections = () => {
     navigate(`/project/${projectId}`);
   };
 
-  const currentProjects = projects[activeCategory] || [];
+  // Get all projects and filter by tags
+  const allProjects = Object.values(projects).flat();
+  const currentProjects = allProjects.filter(project =>
+    project.tags && project.tags.includes(activeCategory),
+  );
 
   return (
     <section className="work-sections">
@@ -101,24 +105,64 @@ const WorkSections = () => {
           {currentProjects.map((project, index) => (
             <div
               key={project.id}
-              className={`project-card ${index % 2 === 0 ? 'left' : 'right'}`}
+              className={`project-card ${project.template || 'default'} ${index % 2 === 0 ? 'left' : 'right'}`}
               onClick={() => handleProjectClick(project.id)}
               onKeyDown={(e) => e.key === 'Enter' && handleProjectClick(project.id)}
               role="button"
               tabIndex={0}
             >
-              <div className="project-header">
-                <h3 className="project-title">{project.title}</h3>
-              </div>
-              <div className="project-image">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  onError={(e) => {
-                    e.target.src = '/placeholder.jpg';
-                  }}
-                />
-              </div>
+              {project.template === 'template1' ? (
+                <>
+                  <div className="project-content-left">
+                    <div className="project-header">
+                      <h3 className="project-title">{project.title}</h3>
+                      {project.subtitle && <p className="project-subtitle">{project.subtitle}</p>}
+                    </div>
+                  </div>
+                  <div className="project-image-right">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      onError={(e) => {
+                        e.target.src = '/placeholder.jpg';
+                      }}
+                    />
+                  </div>
+                </>
+              ) : project.template === 'template2' ? (
+                <>
+                  <div className="project-content-top">
+                    <div className="project-header">
+                      <h3 className="project-title">{project.title}</h3>
+                      {project.subtitle && <p className="project-subtitle">{project.subtitle}</p>}
+                    </div>
+                  </div>
+                  <div className="project-image-bottom">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      onError={(e) => {
+                        e.target.src = '/placeholder.jpg';
+                      }}
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="project-header">
+                    <h3 className="project-title">{project.title}</h3>
+                  </div>
+                  <div className="project-image">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      onError={(e) => {
+                        e.target.src = '/placeholder.jpg';
+                      }}
+                    />
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>
