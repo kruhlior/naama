@@ -8,7 +8,7 @@
   align-items: center;
   position: relative;
   overflow: visible;
-  margin: 0;
+  margin: -50px 0 0 0;
   padding: 0;
   padding-bottom: 50px;
 }
@@ -37,10 +37,11 @@
 
 .hero-text {
   animation: slideInLeft 1s ease-out;
+  margin-top: 40px;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 1rem;
@@ -55,18 +56,20 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #cccccc;
   margin-bottom: 1.5rem;
   font-weight: 400;
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   line-height: 1.7;
-  color: #cccccc;
+  color: #ffffff;
+  font-weight: 600;
   margin-bottom: 2.5rem;
   max-width: 500px;
+  padding-left: 20px;
 }
 
 .hero-animation {
@@ -81,8 +84,8 @@
 }
 
 .hero-image {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 400px;
+  max-height: 400px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -116,6 +119,17 @@
   }
 }
 
+/* Large Screen Height Styles */
+@media (min-height: 1000px) {
+  .hero-section {
+    min-height: 50vh;
+  }
+  
+  .hero-text {
+    margin-top: 5px;
+  }
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .hero-content {
@@ -124,16 +138,20 @@
     text-align: center;
   }
 
+  .hero-text {
+    margin-top: 20px;
+  }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 
   .hero-description {
-    font-size: 1rem;
+    font-size: 1.3rem;
     max-width: none;
   }
 
@@ -144,8 +162,8 @@
   }
 
   .hero-image {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 320px;
+    max-height: 320px;
   }
 
   .gradient-separator {
@@ -154,17 +172,21 @@
 }
 
 @media (max-width: 480px) {
+  .hero-text {
+    margin-top: 20px;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 
   .hero-image {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 280px;
+    max-height: 280px;
   }
 
   .gradient-separator {
