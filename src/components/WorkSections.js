@@ -6,6 +6,7 @@ import './styles/WorkSections.css';
 const WorkSections = () => {
   const [activeCategory, setActiveCategory] = useState('recent');
   const [visibleCards, setVisibleCards] = useState(new Set());
+  const [scrollY, setScrollY] = useState(0);
   const navigate = useNavigate();
 
   const projects = {
@@ -85,6 +86,15 @@ const WorkSections = () => {
     };
   }, [currentProjects]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
   };
@@ -96,22 +106,42 @@ const WorkSections = () => {
   return (
     <section className="work-sections">
       {/* Coffee Decoration */}
-      <div className="coffee-decoration">
+      <div
+        className="coffee-decoration"
+        style={{
+          transform: `rotate(30deg) translateY(${scrollY * 0.1}px)`,
+        }}
+      >
         <img src="/coffee.png" alt="Coffee decoration" />
       </div>
 
       {/* Pen Decoration */}
-      <div className="pen-decoration">
+      <div
+        className="pen-decoration"
+        style={{
+          transform: `rotate(-20deg) translateY(${scrollY * 0.1}px)`,
+        }}
+      >
         <img src="/pen.png" alt="Pen decoration" />
       </div>
 
       {/* Dragon Decoration */}
-      <div className="dragon-decoration">
+      <div
+        className="dragon-decoration"
+        style={{
+          transform: `translateY(${scrollY * 0.2}px)`,
+        }}
+      >
         <img src="/dragon.png" alt="Dragon decoration" />
       </div>
 
       {/* Plant Decoration */}
-      <div className="plant-decoration">
+      <div
+        className="plant-decoration"
+        style={{
+          transform: `translateY(${scrollY * 0.15}px)`,
+        }}
+      >
         <img src="/plant.png" alt="Plant decoration" />
       </div>
 
@@ -133,6 +163,9 @@ const WorkSections = () => {
               role="button"
               tabIndex={0}
               data-card-id={project.id}
+              style={{
+                transform: `translateY(${scrollY * 0.03}px)`,
+              }}
             >
               {project.template === 'template1' ? (
                 <>
