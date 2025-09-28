@@ -161,11 +161,12 @@
   .hero-content {
     grid-template-columns: 1fr;
     gap: 3rem;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-text {
-    margin-top: 20px;
+    margin-top: 40px;
+    text-align: left;
   }
 
   .hero-title {
@@ -184,7 +185,7 @@
   .hero-animation {
     justify-content: center;
     align-items: center;
-    top: 25%;
+    top: -20%;
   }
 
   .hero-image {
@@ -199,7 +200,8 @@
 
 @media (max-width: 480px) {
   .hero-text {
-    margin-top: 20px;
+    margin-top: 80px;
+    text-align: left;
   }
 
   .hero-title {
@@ -208,6 +210,10 @@
 
   .hero-subtitle {
     font-size: 1.5rem;
+  }
+
+  .hero-animation {
+    top: -10%;
   }
 
   .hero-image {

@@ -228,8 +228,44 @@
   border-radius: 8px;
 }
 
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .work-sections {
+    padding: 2rem 0;
+  }
+
+  .projects-grid {
+    gap: 1.5rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 680/370;
+    margin: 1rem auto;
+  }
+
+  .coffee-decoration,
+  .pen-decoration,
+  .dragon-decoration,
+  .plant-decoration {
+    display: none;
+  }
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
+  /* Hide decoration images on mobile */
+  .coffee-decoration,
+  .pen-decoration,
+  .dragon-decoration,
+  .plant-decoration {
+    display: none;
+  }
+
   .work-sections {
     padding: 3rem 0;
   }
@@ -246,7 +282,7 @@
   }
   
   .projects-grid {
-    gap: 0;
+    gap: 1rem;
   }
   
   .project-card {
@@ -254,7 +290,7 @@
     max-width: 680px;
     height: auto;
     aspect-ratio: 680/370;
-    margin: 0;
+    margin: 0.1rem auto;
   }
   
   /* Removed zigzag layout for mobile */
