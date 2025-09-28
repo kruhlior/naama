@@ -104,12 +104,12 @@
   height: 270px;
   margin: 80px auto 0 auto;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(30px) translateY(var(--parallax-y, 0px));
 }
 
 .project-card.fade-in {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateY(var(--parallax-y, 0px));
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .project-card:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-10px) scale(1.02) translateY(var(--parallax-y, 0px));
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 

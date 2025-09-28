@@ -97,6 +97,15 @@ const WorkSections = () => {
 
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
+
+    // Scroll to the top of the project section
+    const projectSection = document.querySelector('.work-sections');
+    if (projectSection) {
+      projectSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   };
 
   const handleProjectClick = (projectId) => {
@@ -164,7 +173,7 @@ const WorkSections = () => {
               tabIndex={0}
               data-card-id={project.id}
               style={{
-                transform: `translateY(${scrollY * 0.03}px)`,
+                '--parallax-y': `${scrollY * 0.03}px`,
               }}
             >
               {project.template === 'template1' ? (
