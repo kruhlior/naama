@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import ProjectTemplate from '../ProjectTemplate';
 import './Meirad.css';
 
 const Meirad = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="project-page meirad">
       <div className="container">
@@ -28,6 +34,15 @@ const Meirad = () => {
             </div>
           </div>
         </div>
+
+        {/* Project Template */}
+        <ProjectTemplate
+          goal="Transform complex medical workflows into a simple, scalable solution that improves healthcare provider efficiency and patient care quality."
+          userRole="Lead UX Designer & Product Strategist"
+          tools="Figma, Adobe XD, Sketch, InVision, UserTesting, Analytics"
+          collaboration="Product Manager, Medical Professionals, Engineering Team, QA Team"
+          timeline="8 months (Research: 2 months, Design: 4 months, Testing: 2 months)"
+        />
 
         {/* Project Stats */}
         <div className="project-stats">

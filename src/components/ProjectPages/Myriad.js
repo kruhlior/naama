@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import ProjectTemplate from '../ProjectTemplate';
 import './Myriad.css';
 
 const Myriad = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="project-page myriad">
       <div className="container">
@@ -28,6 +34,15 @@ const Myriad = () => {
             </div>
           </div>
         </div>
+
+        {/* Project Template */}
+        <ProjectTemplate
+          goal="Create a seamless journey for patients and healthcare providers through a complete website redesign that improves user experience and streamlines healthcare interactions."
+          userRole="Lead UX Designer & Web Strategist"
+          tools="Figma, Adobe Creative Suite, WordPress, HTML/CSS, UserTesting, Analytics"
+          collaboration="Marketing Team, Healthcare Providers, Web Developers, Content Team"
+          timeline="5 months (Research: 1 month, Design: 2 months, Development: 2 months)"
+        />
 
         {/* Project Stats */}
         <div className="project-stats">

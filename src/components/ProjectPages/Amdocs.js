@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import ProjectTemplate from '../ProjectTemplate';
 import './Amdocs.css';
 
 const Amdocs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="project-page amdocs">
       <div className="container">
@@ -28,6 +34,15 @@ const Amdocs = () => {
             </div>
           </div>
         </div>
+
+        {/* Project Template */}
+        <ProjectTemplate
+          goal="Design a Fierce Innovation Award-winning enterprise solution that streamlines complex telecom workflows and improves operational efficiency for large-scale telecommunications companies."
+          userRole="Senior UX Designer & Enterprise Solution Architect"
+          tools="Figma, Sketch, InVision, Jira, Confluence, UserTesting, Analytics"
+          collaboration="Product Managers, Telecom Experts, Engineering Teams, QA Teams, Stakeholders"
+          timeline="12 months (Research: 3 months, Design: 6 months, Testing: 3 months)"
+        />
 
         {/* Project Stats */}
         <div className="project-stats">

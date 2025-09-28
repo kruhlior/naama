@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import ProjectTemplate from '../ProjectTemplate';
 import './Cleaner.css';
 
 const Cleaner = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="project-page cleaner">
       <div className="container">
@@ -28,6 +34,15 @@ const Cleaner = () => {
             </div>
           </div>
         </div>
+
+        {/* Project Template */}
+        <ProjectTemplate
+          goal="Turn messy, exaggerated text into clear communication through UX and AI innovation, creating a tool that helps users express themselves more effectively and authentically."
+          userRole="Solo UX Designer & AI Product Creator"
+          tools="Figma, React, AI APIs, Natural Language Processing, UserTesting, Analytics"
+          collaboration="AI Engineers, Content Writers, Beta Users, Community Feedback"
+          timeline="4 months (Research: 1 month, Design: 1.5 months, Development: 1.5 months)"
+        />
 
         {/* Project Stats */}
         <div className="project-stats">

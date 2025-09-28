@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import ProjectTemplate from '../ProjectTemplate';
 import './Qrkiez.css';
 
 const Qrkiez = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="project-page qrkiez">
       <div className="container">
@@ -28,6 +34,15 @@ const Qrkiez = () => {
             </div>
           </div>
         </div>
+
+        {/* Project Template */}
+        <ProjectTemplate
+          goal="Create an inclusive AI-powered marketplace and social platform that connects diverse communities while ensuring accessibility and user-friendly experiences for all users."
+          userRole="Lead UX Designer & Product Strategist"
+          tools="Figma, Adobe Creative Suite, Miro, UserTesting, Analytics"
+          collaboration="Product Manager, Engineering Team, Marketing Team, Community Managers"
+          timeline="6 months (Research: 1 month, Design: 3 months, Testing: 2 months)"
+        />
 
         {/* Project Stats */}
         <div className="project-stats">

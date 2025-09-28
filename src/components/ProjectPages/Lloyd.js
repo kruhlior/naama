@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import ProjectTemplate from '../ProjectTemplate';
 import './Lloyd.css';
 
 const Lloyd = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="project-page lloyd">
       <div className="container">
@@ -28,6 +34,15 @@ const Lloyd = () => {
             </div>
           </div>
         </div>
+
+        {/* Project Template */}
+        <ProjectTemplate
+          goal="Guide users from abstract AI concepts to real adoption by creating an intuitive video AI assistant app that makes complex technology accessible and useful in everyday scenarios."
+          userRole="UX Designer & AI Product Designer"
+          tools="Figma, Principle, After Effects, React Native, AI APIs, UserTesting"
+          collaboration="Product Manager, AI Engineers, Mobile Developers, Video Specialists"
+          timeline="7 months (Research: 2 months, Design: 3 months, Development: 2 months)"
+        />
 
         {/* Project Stats */}
         <div className="project-stats">

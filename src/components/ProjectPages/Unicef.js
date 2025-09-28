@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import ProjectTemplate from '../ProjectTemplate';
 import './Unicef.css';
 
 const Unicef = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="project-page unicef">
       <div className="container">
@@ -28,6 +34,15 @@ const Unicef = () => {
             </div>
           </div>
         </div>
+
+        {/* Project Template */}
+        <ProjectTemplate
+          goal="Build a trusted, multi-layered AI system for knowledge management that helps UNICEF staff access and share critical information efficiently and securely."
+          userRole="UX Designer & AI Interaction Specialist"
+          tools="Figma, Miro, Azure AI, Power BI, SharePoint, UserTesting"
+          collaboration="UNICEF IT Team, Knowledge Management Team, AI Engineers, Content Specialists"
+          timeline="10 months (Research: 3 months, Design: 4 months, Development: 3 months)"
+        />
 
         {/* Project Stats */}
         <div className="project-stats">
