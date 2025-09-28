@@ -107,6 +107,14 @@
   width: 680px;
   height: 270px;
   margin: 80px auto 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.project-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 /* Template 1: Image on right, aligned to bottom, 80% height */

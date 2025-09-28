@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavigationButtons from './NavigationButtons';
 import './styles/WorkSections.css';
 
 const WorkSections = () => {
   const [activeCategory, setActiveCategory] = useState('recent');
+  const [visibleCards, setVisibleCards] = useState(new Set());
   const navigate = useNavigate();
-
 
   const projects = {
     recent: [
@@ -32,29 +32,58 @@ const WorkSections = () => {
       { id: 8, title: 'Inventory Management', image: '/project8.jpg', category: 'b2b' },
       { id: 9, title: 'Business Analytics', image: '/project9.jpg', category: 'b2b' },
       { id: 24, title: 'Enterprise Resource Planning', image: '/project24.jpg', category: 'b2b' },
-      { id: 25, title: 'Supply Chain Management', image: '/project25.jpg', category: 'b2b' },
-      { id: 26, title: 'Financial Reporting System', image: '/project26.jpg', category: 'b2b' },
-      { id: 27, title: 'Project Management Platform', image: '/project27.jpg', category: 'b2b' },
+      { id: 25, title: 'Supply Chain Optimization', image: '/project25.jpg', category: 'b2b' },
+      { id: 26, title: 'Customer Service Portal', image: '/project26.jpg', category: 'b2b' },
+      { id: 27, title: 'Sales Automation Tool', image: '/project27.jpg', category: 'b2b' },
     ],
     web: [
-      { id: 10, title: 'Portfolio Website', image: '/project10.jpg', category: 'web' },
-      { id: 11, title: 'Blog Platform', image: '/project11.jpg', category: 'web' },
-      { id: 12, title: 'Social Media App', image: '/project12.jpg', category: 'web' },
-      { id: 28, title: 'E-Learning Platform', image: '/project28.jpg', category: 'web' },
-      { id: 29, title: 'Online Marketplace', image: '/project29.jpg', category: 'web' },
-      { id: 30, title: 'Real Estate Portal', image: '/project30.jpg', category: 'web' },
-      { id: 31, title: 'Healthcare Management System', image: '/project31.jpg', category: 'web' },
+      { id: 10, title: 'Responsive Blog', image: '/project10.jpg', category: 'web' },
+      { id: 11, title: 'Portfolio Site', image: '/project11.jpg', category: 'web' },
+      { id: 12, title: 'E-commerce Frontend', image: '/project12.jpg', category: 'web' },
+      { id: 28, title: 'Interactive Landing Page', image: '/project28.jpg', category: 'web' },
+      { id: 29, title: 'Web Application Dashboard', image: '/project29.jpg', category: 'web' },
+      { id: 30, title: 'Online Learning Platform', image: '/project30.jpg', category: 'web' },
+      { id: 31, title: 'Event Booking System', image: '/project31.jpg', category: 'web' },
     ],
     mobile: [
-      { id: 13, title: 'Fitness Tracker', image: '/project13.jpg', category: 'mobile' },
-      { id: 14, title: 'Food Delivery App', image: '/project14.jpg', category: 'mobile' },
-      { id: 15, title: 'Travel Guide', image: '/project15.jpg', category: 'mobile' },
-      { id: 32, title: 'Banking Mobile App', image: '/project32.jpg', category: 'mobile' },
-      { id: 33, title: 'Gaming Platform', image: '/project33.jpg', category: 'mobile' },
-      { id: 34, title: 'Event Management App', image: '/project34.jpg', category: 'mobile' },
-      { id: 35, title: 'Language Learning App', image: '/project35.jpg', category: 'mobile' },
+      { id: 13, title: 'Fitness Tracker App', image: '/project13.jpg', category: 'mobile' },
+      { id: 14, title: 'Recipe Finder App', image: '/project14.jpg', category: 'mobile' },
+      { id: 15, title: 'Travel Planner App', image: '/project15.jpg', category: 'mobile' },
+      { id: 32, title: 'Social Media App', image: '/project32.jpg', category: 'mobile' },
+      { id: 33, title: 'Banking App UI', image: '/project33.jpg', category: 'mobile' },
+      { id: 34, title: 'Smart Home Control', image: '/project34.jpg', category: 'mobile' },
+      { id: 35, title: 'Health Monitoring App', image: '/project35.jpg', category: 'mobile' },
     ],
   };
+
+  // Get all projects and filter by tags
+  const allProjects = Object.values(projects).flat();
+  const currentProjects = allProjects.filter(project =>
+    project.tags && project.tags.includes(activeCategory),
+  );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => new Set([...prev, entry.target.dataset.cardId]));
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      },
+    );
+
+    const cardElements = document.querySelectorAll('.project-card');
+    cardElements.forEach((card) => observer.observe(card));
+
+    return () => {
+      cardElements.forEach((card) => observer.unobserve(card));
+    };
+  }, [currentProjects]);
 
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
@@ -63,12 +92,6 @@ const WorkSections = () => {
   const handleProjectClick = (projectId) => {
     navigate(`/project/${projectId}`);
   };
-
-  // Get all projects and filter by tags
-  const allProjects = Object.values(projects).flat();
-  const currentProjects = allProjects.filter(project =>
-    project.tags && project.tags.includes(activeCategory),
-  );
 
   return (
     <section className="work-sections">
@@ -99,17 +122,17 @@ const WorkSections = () => {
       />
 
       <div className="container">
-
         {/* Project Cards Grid */}
         <div className="projects-grid">
           {currentProjects.map((project, index) => (
             <div
               key={project.id}
-              className={`project-card ${project.template || 'default'} ${index % 2 === 0 ? 'left' : 'right'}`}
+              className={`project-card ${project.template || 'default'} ${index % 2 === 0 ? 'left' : 'right'} ${visibleCards.has(project.id) ? 'fade-in' : ''}`}
               onClick={() => handleProjectClick(project.id)}
               onKeyDown={(e) => e.key === 'Enter' && handleProjectClick(project.id)}
               role="button"
               tabIndex={0}
+              data-card-id={project.id}
             >
               {project.template === 'template1' ? (
                 <>
