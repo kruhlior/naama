@@ -37,7 +37,9 @@ const ProjectTemplate = ({
               </div>
               <h4 className="box-title">My Role</h4>
             </div>
-            <p className="box-text">{userRole}</p>
+            <div className="box-text-wrapper">
+              <p className="box-text" dangerouslySetInnerHTML={{ __html: userRole }} />
+            </div>
           </div>
 
           {/* Tools Box */}
@@ -48,7 +50,9 @@ const ProjectTemplate = ({
               </div>
               <h4 className="box-title">Tools</h4>
             </div>
-            <p className="box-text">{tools}</p>
+            <div className="box-text-wrapper">
+              <p className="box-text" dangerouslySetInnerHTML={{ __html: tools }} />
+            </div>
           </div>
 
           {/* Collaboration Box */}
@@ -59,7 +63,9 @@ const ProjectTemplate = ({
               </div>
               <h4 className="box-title">Collaboration</h4>
             </div>
-            <p className="box-text">{collaboration}</p>
+            <div className="box-text-wrapper">
+              <p className="box-text">{collaboration}</p>
+            </div>
           </div>
 
           {/* Timeline Box */}
@@ -70,7 +76,9 @@ const ProjectTemplate = ({
               </div>
               <h4 className="box-title">Timeline</h4>
             </div>
-            <p className="box-text">{timeline}</p>
+            <div className="box-text-wrapper">
+              <p className="box-text">{timeline}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -100,10 +108,12 @@ const ProjectTemplate = ({
       )}
 
       {/* Challenges Section */}
-      <div className="challenges-section">
-        <h3 className="challenges-title">Challenges and solutions</h3>
-        <p className="challenges-text">{challenges}</p>
-      </div>
+      {challenges && (
+        <div className="challenges-section">
+          <h3 className="challenges-title">Challenges and solutions</h3>
+          <p className="challenges-text">{challenges}</p>
+        </div>
+      )}
     </div>
   );
 };

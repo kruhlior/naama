@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import ProjectTemplate from '../ProjectTemplate';
+import ProblemBox from '../ProblemBox';
+import SolutionBox from '../SolutionBox';
 import './Portal.css';
 
 const Portal = () => {
@@ -45,11 +47,10 @@ const Portal = () => {
             </div>
           }
           goal="Transform complex medical workflows into a simple, scalable solution that improves healthcare provider efficiency and patient care quality."
-          userRole="Lead UX Designer & Product Strategist"
-          tools="Figma, Adobe XD, Sketch, InVision, UserTesting, Analytics"
-          collaboration="Product Manager, Medical Professionals, Engineering Team, QA Team"
-          timeline="8 months (Research: 2 months, Design: 4 months, Testing: 2 months)"
-          challenges="Simplifying complex medical workflows while maintaining accuracy, ensuring HIPAA compliance in design decisions, and creating intuitive interfaces for healthcare professionals with varying technical expertise."
+          userRole="UX Team Manager<br/>• UX Strategy<br/>• Hands-on Design<br/>• UX Research<br/>• Team Leadership"
+          tools="• Figma<br/>• Usertesting.com<br/>• Jira<br/>• Miro"
+          collaboration="Worked with cross-functional teams, including product managers, engineers, and content writers."
+          timeline="14 months (2022–2023)"
           samples={[
             {
               src: '/projects/portal-samples.png',
@@ -59,144 +60,140 @@ const Portal = () => {
           ]}
         />
 
+        {/* Challenges Section */}
+        <div className="challenges-section">
+          <h3 className="challenges-title">Challenges and solutions</h3>
+          <p className="challenges-text" />
+        </div>
 
-        {/* Project Stats */}
-        <div className="project-stats">
-          <div className="stat">
-            <span className="stat-number">500+</span>
-            <span className="stat-label">Healthcare Providers</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">50K+</span>
-            <span className="stat-label">Patient Records</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">99.9%</span>
-            <span className="stat-label">Uptime</span>
+        {/* Challenges Image */}
+        <div className="challenges-image-section">
+          <img
+            src="/projects/portal-chalang1.png"
+            alt="Portal Challenges"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
+        {/* Problem and Solution Boxes */}
+        <div className="problem-solution-section">
+          <div className="problem-solution-grid">
+            <ProblemBox
+              problem="Unsubmitted orders due to long and frustrating process"
+              problemMore="The previous ordering system was marked by a cumbersome and lengthy process, discouraging users and resulting in a significant number of abandoned submissions. "
+            />
+            <SolutionBox
+              solution="Improving the ordering process"
+              solutionMore="Through user interviews and usability testing, I mapped out all the issues that contributed to the frustrations of the ordering process. The new form was designed to address these pain points by simplifying data collection, ensuring only essential information was required, and integrating automated tools like auto-populate and autosuggestion to minimize manual input."
+            />
           </div>
         </div>
 
-        {/* Project Content */}
-        <div className="project-content">
-          <div className="content-section">
-            <h2>About Portal</h2>
-            <p>
-              Portal is a comprehensive healthcare provider portal designed to transform complex
-              medical workflows into simple, scalable solutions. The platform streamlines patient
-              management, appointment scheduling, and medical record access for healthcare providers,
-              improving efficiency and patient care quality.
-            </p>
-          </div>
+        {/* Additional Challenge Images */}
+        <div className="challenges-image-section">
+          <img
+            src="/projects/portal-chalange2.png"
+            alt="Portal Challenge 2"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
 
-          <div className="content-section">
-            <h2>Key Features</h2>
-            <div className="features-grid">
-              <div className="feature-item">
-                <h3>Patient Management</h3>
-                <p>Comprehensive patient profiles with medical history, appointments, and treatment plans.</p>
-              </div>
-              <div className="feature-item">
-                <h3>Appointment Scheduling</h3>
-                <p>Intelligent scheduling system with automated reminders and conflict resolution.</p>
-              </div>
-              <div className="feature-item">
-                <h3>Medical Records</h3>
-                <p>Secure, HIPAA-compliant access to patient records with advanced search capabilities.</p>
-              </div>
-              <div className="feature-item">
-                <h3>Analytics Dashboard</h3>
-                <p>Real-time insights into patient flow, appointment patterns, and provider performance.</p>
-              </div>
-            </div>
-          </div>
+        <div className="challenges-image-section">
+          <img
+            src="/projects/portal-chalange3.png"
+            alt="Portal Challenge 3"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
 
-          <div className="content-section">
-            <h2>Technical Implementation</h2>
-            <div className="implementation-grid">
-              <div className="impl-item">
-                <h3>Security & Compliance</h3>
-                <p>HIPAA-compliant architecture with end-to-end encryption and audit trails.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Scalable Architecture</h3>
-                <p>Microservices-based design supporting thousands of concurrent users.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Integration Capabilities</h3>
-                <p>Seamless integration with existing EHR systems and third-party medical devices.</p>
-              </div>
-              <div className="impl-item">
-                <h3>User Experience</h3>
-                <p>Intuitive interface designed for healthcare professionals with minimal training requirements.</p>
-              </div>
-            </div>
-          </div>
+        <div className="challenges-image-section">
+          <img
+            src="/projects/portal-chalange4.png"
+            alt="Portal Challenge 4"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
 
-          <div className="content-section">
-            <h2>Technologies & Tools</h2>
-            <div className="tech-grid">
-              <div className="tech-category">
-                <h3>Frontend</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">React</span>
-                  <span className="tech-tag">TypeScript</span>
-                  <span className="tech-tag">Redux</span>
-                  <span className="tech-tag">Material-UI</span>
-                </div>
-              </div>
-              <div className="tech-category">
-                <h3>Backend</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">Node.js</span>
-                  <span className="tech-tag">Express</span>
-                  <span className="tech-tag">PostgreSQL</span>
-                  <span className="tech-tag">Redis</span>
-                </div>
-              </div>
-              <div className="tech-category">
-                <h3>Security</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">OAuth 2.0</span>
-                  <span className="tech-tag">JWT</span>
-                  <span className="tech-tag">HIPAA</span>
-                  <span className="tech-tag">SSL/TLS</span>
-                </div>
-              </div>
-            </div>
+        {/* Second Problem and Solution Boxes */}
+        <div className="problem-solution-section">
+          <div className="problem-solution-grid">
+            <ProblemBox
+              problem="Misaligned Workflow"
+              problemMore="Existing tools assumed a single user would complete orders in one sitting. In reality, ordering is a collaborative process spread across multiple users and stages"
+            />
+            <SolutionBox
+              solution="Supporting collaboration dashboard with smart filtering"
+              solutionMore="The new portal was redesigned to support true collaboration, aligning with how medical teams work together. Features like saving drafts, sharing tools, and flexible navigation allowed team members to complete orders at different stages, supporting the real, multi-user workflows observed in clinics. These updates made the process more efficient and user-friendly."
+            />
           </div>
+        </div>
 
-          <div className="content-section">
-            <h2>Project Impact</h2>
-            <p>
-              Portal has successfully transformed healthcare workflows for over 500 healthcare providers,
-              managing more than 50,000 patient records with 99.9% uptime. The platform has reduced
-              appointment scheduling time by 60% and improved patient satisfaction scores by 40%.
-              Key achievements include achieving full HIPAA compliance and seamless integration with
-              existing healthcare systems.
-            </p>
-          </div>
+        {/* Fifth Challenge Image */}
+        <div className="challenges-image-section">
+          <img
+            src="/projects/portal-chalange5.png"
+            alt="Portal Challenge 5"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
 
-          <div className="content-section">
-            <h2>Project Links</h2>
-            <div className="project-links">
-              <a
-                href="https://github.com/yourusername/portal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link primary"
-              >
-                View Source Code
-              </a>
-              <a
-                href="https://portal-demo.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link secondary"
-              >
-                Live Demo
-              </a>
-            </div>
+        {/* Third Problem and Solution Boxes */}
+        <div className="problem-solution-section">
+          <div className="problem-solution-grid">
+            <ProblemBox
+              problem="Wrong Personas"
+              problemMore="The tools were built for doctors, but most ordering was actually handled by medical teams: nurses, assistants, and genetic counselors."
+            />
+            <SolutionBox
+              solution="Addressing the actual primary users"
+              solutionMore="Redesign focused on medical teams -the real users. Unnecessary medical details were removed, workflows streamlined, and key questions addressed (e.g., what to include in the package, cost). The result: faster, more accurate, and informed order submissions."
+            />
           </div>
+        </div>
+
+        {/* Sixth Challenge Image */}
+        <div className="challenges-image-section">
+          <img
+            src="/projects/portal-chalange6.png"
+            alt="Portal Challenge 6"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
+        {/* Project Outcome Section */}
+        <div className="challenges-section">
+          <h3 className="challenges-title">Project outcome</h3>
+          <p className="challenges-text" />
+        </div>
+
+        {/* Results Table Image */}
+        <div className="challenges-image-section">
+          <img
+            src="/projects/portal-resultstable.png"
+            alt="Portal Results Table"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
         </div>
       </div>
     </div>

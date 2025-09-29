@@ -28,6 +28,11 @@ body {
   background-color: #CDCBCC;
 }
 
+/* Project page body background override */
+body.project-page-body {
+  background-color: #ffffff !important;
+}
+
 /* Container */
 .container {
   max-width: 1200px;

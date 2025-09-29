@@ -2,15 +2,28 @@
 .portal {
   min-height: 100vh;
   background-color: var(--project-bg-color);
-  padding: 2rem 0;
+  padding: 0;
+}
+
+.portal .project-template {
+  padding: 0;
+}
+
+.portal .container {
+  padding: 0;
 }
 
 /* Portal Header Gradient */
 .portal .project-custom-header {
   background: linear-gradient(180deg, #C6C6DB, #E0E0F7);
   padding: 3rem 2rem;
-  border-radius: 20px;
+  border-radius: 0;
   margin-bottom: 3rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Portal Image Styling */
@@ -36,21 +49,142 @@
   font-family: 'Poppins', sans-serif !important;
 }
 
+/* Hide Summary Title */
+.portal .summary-section .section-title {
+  display: none;
+}
+
+/* Center Text Wrapper in Summary Boxes */
+.portal .summary-box .box-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* Left Align Text in Summary Boxes */
+.portal .summary-box .box-text {
+  text-align: left !important;
+  margin: 0;
+}
+
+/* Box Titles Color */
+.portal .summary-box .box-title {
+  color: #626263 !important;
+}
+
+/* Remove Sample Image Background and Border */
+.portal .sample-image {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  object-fit: contain !important;
+}
+
+/* Remove Sample Container Border */
+.portal .sample-item {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Problem and Solution Section */
+.portal .problem-solution-section {
+  margin: 3rem 0;
+}
+
+.portal .problem-solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Challenges Image Section */
+.portal .challenges-image-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.portal .challenges-image {
+  width: 100%;
+  max-width: var(--max-width);
+  height: auto;
+  object-fit: contain;
+}
+
+
 /* Portal TLDR Image */
 .portal .project-tldr-image {
   position: absolute;
   bottom: -200px;
-  right: 10px;
+  left: 50%;
+  transform: translateX(calc(-50% + 350px));
   width: 300px;
   height: auto;
   z-index: 10;
   background: transparent;
 }
 
+/* Mobile TLDR Image Positioning */
+@media (max-width: 768px) {
+  .portal .project-tldr-image {
+    position: static;
+    transform: none;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto;
+    display: block;
+  }
+  
+  .portal .project-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .portal .goal-section {
+    text-align: left !important;
+    padding-left: 20px;
+  }
+  
+  .portal .goal-section h3 {
+    text-align: left !important;
+  }
+  
+  .portal .goal-text {
+    text-align: left !important;
+  }
+  
+  .portal .summary-section .summary-box {
+    padding: 20px !important;
+    width: 340px !important;
+    max-width: 340px !important;
+    min-height: 240px !important;
+    margin: 0 auto;
+  }
+  
+  .portal .samples-section .section-title {
+    text-align: left !important;
+    padding-left: 20px;
+  }
+  
+  .portal .problem-solution-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 
 .back-button {
-  margin-top: 20px;
-  margin-bottom: 2rem;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(calc(-50% - 520px));
+  z-index: 10001;
+  margin: 0;
 }
 
 .back-link {

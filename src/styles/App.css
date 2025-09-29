@@ -9,6 +9,16 @@
   flex: 1;
 }
 
+/* Project Page Styles */
+.project-page {
+  background-color: #ffffff !important;
+  min-height: 100vh;
+}
+
+.project-page .main-content {
+  background-color: #ffffff !important;
+}
+
 /* Smooth transitions for route changes */
 .main-content > * {
   animation: fadeIn 0.5s ease-in-out;
