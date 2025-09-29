@@ -1,9 +1,7 @@
 import './styles/ProjectTemplate.css';
 
 const ProjectTemplate = ({
-  title,
-  subtitle,
-  image,
+  customHeader,
   goal,
   userRole,
   tools,
@@ -14,25 +12,10 @@ const ProjectTemplate = ({
 }) => {
   return (
     <div className="project-template">
-      {/* Project Title Section */}
-      {(title || subtitle) && (
-        <div className="project-title-section">
-          {title && <h1 className="project-title">{title}</h1>}
-          {subtitle && <h2 className="project-subtitle">{subtitle}</h2>}
-        </div>
-      )}
-
-      {/* Project Image Section */}
-      {image && (
-        <div className="project-image-section">
-          <img
-            src={image.src}
-            alt={image.alt}
-            className="project-image"
-            onError={(e) => {
-              e.target.src = '/placeholder-large.jpg';
-            }}
-          />
+      {/* Custom Header Section */}
+      {customHeader && (
+        <div className="project-custom-header">
+          {customHeader}
         </div>
       )}
 

@@ -20,12 +20,30 @@ const Portal = () => {
 
         {/* Project Template */}
         <ProjectTemplate
-          title="Healthcare provider portal"
-          subtitle="Leading UX strategy to transform the provider experience at scale."
-          image={{
-            src: '/Portal.png',
-            alt: 'Portal Healthcare Portal',
-          }}
+          customHeader={
+            <div className="project-title-section">
+              <h1 className="project-title">Healthcare provider portal</h1>
+              <h2 className="project-subtitle">Leading UX strategy to transform the provider experience at scale.</h2>
+              <div className="project-image-section">
+                <img
+                  src="/Portal.png"
+                  alt="Portal Healthcare Portal"
+                  className="project-image"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+                <img
+                  src="/projects/TLDRportal.png"
+                  alt="Portal TLDR"
+                  className="project-tldr-image"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+              </div>
+            </div>
+          }
           goal="Transform complex medical workflows into a simple, scalable solution that improves healthcare provider efficiency and patient care quality."
           userRole="Lead UX Designer & Product Strategist"
           tools="Figma, Adobe XD, Sketch, InVision, UserTesting, Analytics"

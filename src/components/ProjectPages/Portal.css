@@ -5,6 +5,48 @@
   padding: 2rem 0;
 }
 
+/* Portal Header Gradient */
+.portal .project-custom-header {
+  background: linear-gradient(180deg, #C6C6DB, #E0E0F7);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+}
+
+/* Portal Image Styling */
+.portal .project-image {
+  background-color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: none !important;
+}
+
+.portal .project-image-section {
+  border: none !important;
+  position: relative;
+}
+
+/* Portal Title Color */
+.portal .project-title {
+  color: #000000 !important;
+}
+
+/* Portal Subtitle Size and Font */
+.portal .project-subtitle {
+  font-size: 1rem !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Portal TLDR Image */
+.portal .project-tldr-image {
+  position: absolute;
+  bottom: -200px;
+  right: 10px;
+  width: 300px;
+  height: auto;
+  z-index: 10;
+  background: transparent;
+}
+
 
 .back-button {
   margin-top: 20px;
