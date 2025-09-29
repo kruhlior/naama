@@ -1,0 +1,94 @@
+/* Solution Box Component */
+.solution-box {
+  background: #F5F4F7;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(43, 182, 203, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.solution-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Solution Box Icon */
+.solution-box .box-icon {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.solution-box .box-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Solution Box Title */
+.solution-box .box-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2BB6CB;
+  margin-bottom: 1rem;
+}
+
+/* Solution Text */
+.solution-text {
+  font-family: 'Genos', sans-serif !important;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 0.5rem;
+  line-height: 1.1 !important;
+}
+
+.solution-more-text {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .solution-box {
+    padding: 20px;
+    width: 340px !important;
+    max-width: 340px !important;
+    margin: 0 auto;
+  }
+  
+  .solution-box .box-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .solution-box .box-icon img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .solution-box .box-title {
+    font-size: 1.3rem;
+  }
+  
+  .solution-text {
+    font-size: 1.2rem;
+  }
+  
+  .solution-more-text {
+    font-size: 0.85rem;
+  }
+}
