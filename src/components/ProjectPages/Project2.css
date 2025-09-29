@@ -25,6 +25,11 @@
   color: #ff6b9d;
 }
 
+/* Container Override */
+.project2 .container {
+  padding: 0;
+}
+
 /* Project Hero */
 .project-hero {
   text-align: center;

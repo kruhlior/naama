@@ -151,6 +151,13 @@
   }
 }
 
+/* Low Resolution Screen Height Styles */
+@media (max-height: 800px) {
+  .hero-section {
+    min-height: 85vh;
+  }
+}
+
 /* Large Screen Height Styles */
 @media (min-height: 1000px) {
   .hero-section {

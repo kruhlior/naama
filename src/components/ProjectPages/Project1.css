@@ -5,6 +5,11 @@
   padding: 2rem 0;
 }
 
+/* Container Override */
+.project1 .container {
+  padding: 0;
+}
+
 .back-button {
   margin-bottom: 2rem;
 }
