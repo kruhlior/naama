@@ -37,7 +37,7 @@
 
 .hero-text {
   animation: slideInLeft 1s ease-out;
-  margin-top: 20px;
+  margin-top: 55px;
 }
 
 .hero-title {
@@ -63,10 +63,10 @@
 }
 
 .hero-description {
-  font-size: 1.6rem;
-  line-height: 1.7;
+  font-size: 2.5rem;
+  line-height: 1.2;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 2.5rem;
   max-width: 500px;
   padding-left: 0px;
@@ -165,12 +165,16 @@
   }
 
   .hero-text {
-    margin-top: 60px;
+    margin-top: 180px;
     text-align: left;
   }
 
   .hero-title {
     font-size: 3.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.6rem;
   }
 
   .hero-subtitle {
@@ -200,12 +204,16 @@
 
 @media (max-width: 480px) {
   .hero-text {
-    margin-top: 60px;
+    margin-top: 180px;
     text-align: left;
   }
 
   .hero-title {
     font-size: 2.8rem;
+  }
+
+  .hero-description {
+    font-size: 1.6rem;
   }
 
   .hero-subtitle {
