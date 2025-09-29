@@ -66,7 +66,7 @@ const Hero = () => {
           </div>
           <div className="hero-animation">
             <img
-              src="/naama.png"
+              src="/naama.gif"
               alt="Naama"
               className="hero-image"
             />

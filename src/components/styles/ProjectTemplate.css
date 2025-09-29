@@ -1,0 +1,357 @@
+/* Project Template Component Styles */
+
+.project-template {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: var(--project-bg-color);
+}
+
+/* Project Title Section */
+.project-title-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.project-title-section .project-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #2BB6CB;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-title-section .project-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Project Image Section */
+.project-image-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Titles */
+.section-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2BB6CB;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Goal Section */
+.goal-section {
+  margin-bottom: 3rem;
+}
+
+.goal-text {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+  text-align: left;
+  max-width: 800px;
+}
+
+/* Summary Section */
+.summary-section {
+  margin-bottom: 2rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Summary Boxes */
+.summary-box {
+  background: #F5F4F7;
+  border-radius: 12px;
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(43, 182, 203, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.summary-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgba(43, 182, 203, 0.3);
+}
+
+/* Box Icons */
+.box-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.box-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: none;
+}
+
+/* Make collaboration icon bigger */
+.box-icon img[alt="Collaboration"] {
+  width: 42px;
+  height: 42px;
+}
+
+/* Box Content Container */
+.box-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Box Header (Icon + Title) */
+.box-header {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.box-header .box-icon {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.box-header .box-title {
+  margin-top: 0;
+  line-height: 1;
+}
+
+/* Box Titles */
+.box-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2BB6CB;
+  margin: 0;
+  padding-top: 0;
+}
+
+/* Box Text */
+.box-text {
+  font-family: 'Genos', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666666;
+  text-align: left;
+  margin: 0;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .project-template {
+    padding: 1.5rem 1rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .summary-box {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .project-template {
+    padding: 1rem 0.5rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .summary-box {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .goal-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .box-title {
+    font-size: 1.4rem;
+  }
+
+  .box-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-template {
+    padding: 1rem 0.25rem;
+  }
+
+  .summary-box {
+    padding: 1rem 0.75rem;
+  }
+
+  .box-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+
+  .box-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Make collaboration icon bigger on mobile */
+  .box-icon img[alt="Collaboration"] {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Samples Section */
+.samples-section {
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.samples-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.sample-item {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #ccc;
+  text-align: center;
+}
+
+.sample-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sample-caption {
+  margin-top: 1rem;
+  font-family: 'Genos', sans-serif;
+  font-size: 1rem;
+  color: #666666;
+  font-style: italic;
+}
+
+/* Mobile Styles for Samples */
+@media (max-width: 768px) {
+  .samples-section {
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .sample-item {
+    padding: 1.5rem;
+  }
+}
+
+/* Challenges Section */
+.challenges-section {
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+.challenges-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #34DDA5, #35AEC8, #994E96, #E8468F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  display: inline-block;
+  width: fit-content;
+}
+
+.challenges-text {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666666;
+  text-align: left;
+  margin: 0;
+}
+
+/* Mobile Styles for Challenges */
+@media (max-width: 768px) {
+  .challenges-section {
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .challenges-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .challenges-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
