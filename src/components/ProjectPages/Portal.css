@@ -54,24 +54,7 @@
   display: none;
 }
 
-/* Center Text Wrapper in Summary Boxes */
-.portal .summary-box .box-text-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-}
-
-/* Left Align Text in Summary Boxes */
-.portal .summary-box .box-text {
-  text-align: left !important;
-  margin: 0;
-}
-
-/* Box Titles Color */
-.portal .summary-box .box-title {
-  color: #626263 !important;
-}
+/* Summary box styles now handled by SummaryBox component */
 
 /* Remove Sample Image Background and Border */
 .portal .sample-image {
@@ -158,13 +141,7 @@
     text-align: left !important;
   }
   
-  .portal .summary-section .summary-box {
-    padding: 20px !important;
-    width: 340px !important;
-    max-width: 340px !important;
-    min-height: 240px !important;
-    margin: 0 auto;
-  }
+  /* Summary box styles now handled by SummaryBox component */
   
   .portal .samples-section .section-title {
     text-align: left !important;

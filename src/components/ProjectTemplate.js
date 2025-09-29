@@ -1,4 +1,5 @@
 import './styles/ProjectTemplate.css';
+import SummaryBox from './SummaryBox';
 
 const ProjectTemplate = ({
   customHeader,
@@ -28,57 +29,26 @@ const ProjectTemplate = ({
       <div className="summary-section">
         <h3 className="section-title">Summary</h3>
         <div className="summary-grid">
-          {/* My Role Box */}
-          <div className="summary-box">
-            <div className="box-header">
-              <div className="box-icon">
-                <img src="/icons/role.png" alt="Role" />
-              </div>
-              <h4 className="box-title">My Role</h4>
-            </div>
-            <div className="box-text-wrapper">
-              <p className="box-text" dangerouslySetInnerHTML={{ __html: userRole }} />
-            </div>
-          </div>
-
-          {/* Tools Box */}
-          <div className="summary-box">
-            <div className="box-header">
-              <div className="box-icon">
-                <img src="/icons/tools.png" alt="Tools" />
-              </div>
-              <h4 className="box-title">Tools</h4>
-            </div>
-            <div className="box-text-wrapper">
-              <p className="box-text" dangerouslySetInnerHTML={{ __html: tools }} />
-            </div>
-          </div>
-
-          {/* Collaboration Box */}
-          <div className="summary-box">
-            <div className="box-header">
-              <div className="box-icon">
-                <img src="/icons/collaboration.png" alt="Collaboration" />
-              </div>
-              <h4 className="box-title">Collaboration</h4>
-            </div>
-            <div className="box-text-wrapper">
-              <p className="box-text">{collaboration}</p>
-            </div>
-          </div>
-
-          {/* Timeline Box */}
-          <div className="summary-box">
-            <div className="box-header">
-              <div className="box-icon">
-                <img src="/icons/timeline.png" alt="Timeline" />
-              </div>
-              <h4 className="box-title">Timeline</h4>
-            </div>
-            <div className="box-text-wrapper">
-              <p className="box-text">{timeline}</p>
-            </div>
-          </div>
+          <SummaryBox
+            icon="/icons/role.png"
+            title="My Role"
+            content={userRole}
+          />
+          <SummaryBox
+            icon="/icons/tools.png"
+            title="Tools"
+            content={tools}
+          />
+          <SummaryBox
+            icon="/icons/collaboration.png"
+            title="Collaboration"
+            content={collaboration}
+          />
+          <SummaryBox
+            icon="/icons/timeline.png"
+            title="Timeline"
+            content={timeline}
+          />
         </div>
       </div>
 
