@@ -23,15 +23,6 @@ const Myriad = () => {
           <div className="hero-content">
             <h1 className="project-title">Myriad</h1>
             <p className="project-subtitle">Company website full redesign</p>
-            <div className="hero-image">
-              <img
-                src="/Myriad.gif"
-                alt="Myriad Website Redesign"
-                onError={(e) => {
-                  e.target.src = '/placeholder-large.jpg';
-                }}
-              />
-            </div>
           </div>
         </div>
 

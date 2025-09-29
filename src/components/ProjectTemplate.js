@@ -8,7 +8,6 @@ const ProjectTemplate = ({
   collaboration,
   timeline,
   challenges,
-  samples,
 }) => {
   return (
     <div className="project-template">
@@ -83,29 +82,6 @@ const ProjectTemplate = ({
         </div>
       </div>
 
-      {/* Samples Section */}
-      {samples && (
-        <div className="samples-section">
-          <h3 className="section-title">Samples</h3>
-          <div className="samples-content">
-            {samples.map((sample, index) => (
-              <div key={index} className="sample-item">
-                <img
-                  src={sample.src}
-                  alt={sample.alt}
-                  className="sample-image"
-                  onError={(e) => {
-                    e.target.src = '/placeholder-large.jpg';
-                  }}
-                />
-                {sample.caption && (
-                  <p className="sample-caption">{sample.caption}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Challenges Section */}
       {challenges && (

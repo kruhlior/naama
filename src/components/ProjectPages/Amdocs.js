@@ -23,15 +23,6 @@ const Amdocs = () => {
           <div className="hero-content">
             <h1 className="project-title">Amdocs</h1>
             <p className="project-subtitle">Telecom Enterprise Solution</p>
-            <div className="hero-image">
-              <img
-                src="/Amdocs.png"
-                alt="Amdocs Telecom Solution"
-                onError={(e) => {
-                  e.target.src = '/placeholder-large.jpg';
-                }}
-              />
-            </div>
           </div>
         </div>
 

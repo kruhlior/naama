@@ -51,13 +51,6 @@ const Portal = () => {
           tools="• Figma<br/>• Usertesting.com<br/>• Jira<br/>• Miro"
           collaboration="Worked with cross-functional teams, including product managers, engineers, and content writers."
           timeline="14 months (2022–2023)"
-          samples={[
-            {
-              src: '/projects/portal-samples.png',
-              alt: 'Portal Samples',
-              caption: 'Portal interface samples showing the healthcare provider workflow',
-            },
-          ]}
         />
 
         {/* Challenges Section */}

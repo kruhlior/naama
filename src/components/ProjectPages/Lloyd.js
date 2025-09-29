@@ -23,15 +23,6 @@ const Lloyd = () => {
           <div className="hero-content">
             <h1 className="project-title">Lloyd</h1>
             <p className="project-subtitle">Real world Video AI Assistant App</p>
-            <div className="hero-image">
-              <img
-                src="/Lloyd.gif"
-                alt="Lloyd Video AI Assistant"
-                onError={(e) => {
-                  e.target.src = '/placeholder-large.jpg';
-                }}
-              />
-            </div>
           </div>
         </div>
 

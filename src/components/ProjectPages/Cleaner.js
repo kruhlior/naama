@@ -23,15 +23,6 @@ const Cleaner = () => {
           <div className="hero-content">
             <h1 className="project-title">Bullshit Cleaner</h1>
             <p className="project-subtitle">Solo AI Project</p>
-            <div className="hero-image">
-              <img
-                src="/Cleaning.gif"
-                alt="Bullshit Cleaner AI Tool"
-                onError={(e) => {
-                  e.target.src = '/placeholder-large.jpg';
-                }}
-              />
-            </div>
           </div>
         </div>
 

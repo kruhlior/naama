@@ -17,15 +17,6 @@ const Project2 = () => {
           <div className="hero-content">
             <h1 className="project-title">AI Chatbot</h1>
             <p className="project-subtitle">Intelligent conversational AI with natural language processing</p>
-            <div className="hero-image">
-              <img
-                src="/project2-large.jpg"
-                alt="AI Chatbot"
-                onError={(e) => {
-                  e.target.src = '/placeholder-large.jpg';
-                }}
-              />
-            </div>
           </div>
         </div>
 

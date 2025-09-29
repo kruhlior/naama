@@ -23,15 +23,6 @@ const Unicef = () => {
           <div className="hero-content">
             <h1 className="project-title">UNICEF Internal AI Bot</h1>
             <p className="project-subtitle">Building a Trusted, Multi-Layered AI for Knowledge Management</p>
-            <div className="hero-image">
-              <img
-                src="/UNicef.png"
-                alt="UNICEF AI Bot"
-                onError={(e) => {
-                  e.target.src = '/placeholder-large.jpg';
-                }}
-              />
-            </div>
           </div>
         </div>
 

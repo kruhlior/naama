@@ -112,6 +112,12 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Disable floating animation on project pages */
+.project-page .hero-image {
+  animation: none !important;
+  -webkit-animation: none !important;
+}
+
 
 
 @keyframes float {

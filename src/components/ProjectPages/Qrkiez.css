@@ -2,55 +2,162 @@
 .qrkiez {
   min-height: 100vh;
   background-color: var(--project-bg-color);
-  padding: 2rem 0;
+  padding: 0;
+}
+
+.qrkiez .container {
+  padding: 0;
+}
+
+.qrkiez .project-template {
+  padding: 0;
 }
 
 .back-button {
-  margin-bottom: 2rem;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(calc(-50% - 520px));
+  z-index: 10001;
+  margin: 0;
 }
 
 .back-link {
-  color: #2BB6CB;
+  color: #666666 !important;
+  background-color: #ffffff !important;
+  border: 2px solid #cccccc !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border: 2px solid #2BB6CB;
   border-radius: 25px;
   transition: all 0.3s ease;
   display: inline-block;
 }
 
 .back-link:hover {
-  background-color: #2BB6CB;
-  color: white;
+  background-color: #f8f9fa !important;
+  color: #333333 !important;
+  border-color: #999999 !important;
 }
 
 /* Project Hero */
-.project-hero {
-  text-align: center;
-  margin-bottom: 4rem;
-}
+  .qrkiez .project-hero {
+    text-align: left;
+    margin-bottom: 4rem;
+    background: linear-gradient(180deg, #243680 0%, #7DA2E9 60%);
+    padding: 4rem 2rem 4rem 2rem;
+    padding-top: 20px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+  }
 
-.hero-content {
+.qrkiez .hero-content {
   max-width: var(--max-width);
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  text-align: left !important;
 }
 
-.project-title {
-  font-size: 4rem;
+.qrkiez .hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.qrkiez .hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qrkiez .hero-image {
+  animation: none !important;
+  -webkit-animation: none !important;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.qrkiez .hero-image img {
+  width: 220px;
+  height: auto;
+  background: transparent !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: none !important;
+  animation: none !important;
+  -webkit-animation: none !important;
+  margin-top: 3rem; /* Add top padding for non-mobile */
+}
+
+/* TLDR Image */
+.qrkiez .hero-tldr-image {
+  position: absolute;
+  bottom: -140px;
+  left: 45%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.qrkiez .hero-tldr-image img {
+  width: 250px;
+  height: auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Project Image Section */
+.qrkiez .project-image-section {
+  text-align: center;
+  margin: 4rem 0;
+  padding: 0 2rem;
+}
+
+.qrkiez .project-main-image {
+  max-width: 100%;
+  height: auto;
+  background: transparent;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.qrkiez .project-title {
+  font-family: 'Genos', sans-serif !important;
+  font-size: 3.2rem !important;
   font-weight: 700;
-  color: #2BB6CB;
+  color: #ffffff !important;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: block;
+  width: 100%;
+  text-align: left !important;
 }
 
-.project-subtitle {
-  font-size: 1.3rem;
-  color: #333;
+.qrkiez .project-subtitle {
+  font-size: 1.3rem !important;
+  color: #ffffff !important;
+  margin-top: 1rem;
   margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  display: block !important;
+  text-align: left !important;
+  width: 100% !important;
+  align-self: flex-start !important;
 }
 
 .hero-image {
@@ -258,6 +365,34 @@
 @media (max-width: 768px) {
   .qrkiez {
     padding: 1rem 0;
+  }
+  
+  .qrkiez .hero-content {
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .qrkiez .hero-text {
+    order: 1;
+    margin-top: -2rem;
+    text-align: center;
+  }
+  
+  .qrkiez .hero-image {
+    order: 2;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .qrkiez .hero-tldr-image {
+    order: 3;
+    position: static;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 4rem;
+    text-align: center;
   }
   
   .project-title {
