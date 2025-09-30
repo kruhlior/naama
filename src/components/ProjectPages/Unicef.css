@@ -16,9 +16,9 @@
 /* UNICEF Header Gradient */
 .unicef .project-custom-header {
   background: linear-gradient(180deg, #0069D6, #E9F8FF);
-  padding: 3.5rem 1rem;
+  padding: 4.5rem 1rem;
   border-radius: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-top: 0;
@@ -45,7 +45,7 @@
 .unicef .project-tldr-image {
   position: absolute;
   bottom: -280px;
-  left: 50%;
+  left: 55%;
   transform: translateX(calc(-50% + 350px));
   width: 300px;
   height: auto;
@@ -293,6 +293,28 @@
     padding: 1rem 0;
   }
   
+  /* Mobile layout: titles first, then hero image, then TLDR */
+  .unicef .project-title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .unicef .project-image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .unicef .project-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    order: 1;
+  }
+  
   .unicef .project-tldr-image {
     position: static;
     transform: none;
@@ -300,8 +322,9 @@
     bottom: auto;
     width: 100%;
     max-width: 300px;
-    margin: 2rem auto;
+    margin: 0;
     display: block;
+    order: 2;
   }
   
   .unicef .project-title {
