@@ -21,8 +21,30 @@
   line-height: 1.2;
 }
 
-.project-page p {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+/* Body Section Titles - Genos font with gradient */
+.project-page .section-title,
+.project-page .goal-section h3,
+.project-page .summary-section h3,
+.project-page .challenges-section h3,
+.project-page .samples-section h3 {
+  font-family: 'Genos', sans-serif !important;
+  font-size: 3rem !important;
+  background: linear-gradient(135deg, #2BB6CB, #ff6b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  width: fit-content;
+  line-height: 1.2;
+  text-align: left !important;
+}
+
+/* All text that is not titles - Poppins font */
+.project-page p,
+.project-page li,
+.project-page span,
+.project-page div:not(.section-title):not(.goal-section h3):not(.summary-section h3):not(.challenges-section h3):not(.samples-section h3) {
+  font-family: 'Poppins', sans-serif !important;
   line-height: 1.6;
 }
 
