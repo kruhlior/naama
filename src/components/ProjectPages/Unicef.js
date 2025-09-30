@@ -18,16 +18,32 @@ const Unicef = () => {
           </Link>
         </div>
 
-        {/* Project Hero */}
-        <div className="project-hero">
-          <div className="hero-content">
-            <h1 className="project-title">UNICEF Internal AI Bot</h1>
-            <p className="project-subtitle">Building a Trusted, Multi-Layered AI for Knowledge Management</p>
-          </div>
-        </div>
-
         {/* Project Template */}
         <ProjectTemplate
+          customHeader={
+            <div className="project-title-section">
+              <h1 className="project-title">UNICEF AI-Powered bot</h1>
+              <h2 className="project-subtitle">Building a Trusted, Multi-Layered AI for Knowledge Management</h2>
+              <div className="project-image-section">
+                <img
+                  src="/projects/unicef-hero.png"
+                  alt="UNICEF AI Bot"
+                  className="project-image"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+                <img
+                  src="/projects/unicef-tldr.png"
+                  alt="UNICEF TLDR"
+                  className="project-tldr-image"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+              </div>
+            </div>
+          }
           goal="Build a trusted, multi-layered AI system for knowledge management that helps UNICEF staff access and share critical information efficiently and securely."
           userRole="UX Designer & AI Interaction Specialist"
           tools="Figma, Miro, Azure AI, Power BI, SharePoint, UserTesting"

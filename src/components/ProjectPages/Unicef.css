@@ -2,20 +2,94 @@
 .unicef {
   min-height: 100vh;
   background-color: var(--project-bg-color);
-  padding: 2rem 0;
+  padding: 0;
+}
+
+.unicef .project-template {
+  padding: 0;
+}
+
+.unicef .container {
+  padding: 0;
+}
+
+/* UNICEF Header Gradient */
+.unicef .project-custom-header {
+  background: linear-gradient(180deg, #0069D6, #E9F8FF);
+  padding: 3.5rem 1rem;
+  border-radius: 0;
+  margin-bottom: 3rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* UNICEF Image Styling */
+.unicef .project-image {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 35% !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
+.unicef .project-image-section {
+  border: none !important;
+  position: relative;
+}
+
+/* UNICEF TLDR Image */
+.unicef .project-tldr-image {
+  position: absolute;
+  bottom: -280px;
+  left: 50%;
+  transform: translateX(calc(-50% + 350px));
+  width: 300px;
+  height: auto;
+  z-index: 10;
+  background: transparent;
+}
+
+/* UNICEF Title Color */
+.unicef .project-title {
+  color: #ffffff !important;
+}
+
+/* UNICEF Subtitle Size and Font */
+.unicef .project-subtitle {
+  font-size: 1.1rem !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+}
+
+/* Hide Summary Title */
+.unicef .summary-section .section-title {
+  display: none;
 }
 
 .back-button {
-  margin-bottom: 2rem;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(calc(-50% - 520px));
+  z-index: 10001;
+  margin: 0;
 }
 
 .back-link {
-  color: #2BB6CB;
+  color: #666666 !important;
+  background-color: #ffffff !important;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: 'Genos', sans-serif;
   padding: 0.5rem 1rem;
-  border: 2px solid #2BB6CB;
+  border: 2px solid #cccccc !important;
   border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   display: inline-block;
 }
@@ -23,52 +97,6 @@
 .back-link:hover {
   background-color: #2BB6CB;
   color: white;
-}
-
-/* Container Override */
-.unicef .container {
-  padding: 0;
-}
-
-/* Project Hero */
-.project-hero {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.hero-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.project-title {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #2BB6CB;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.project-subtitle {
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-image {
-  margin-top: 2rem;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 800px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Project Stats */
@@ -265,12 +293,37 @@
     padding: 1rem 0;
   }
   
-  .project-title {
-    font-size: 3rem;
+  .unicef .project-tldr-image {
+    position: static;
+    transform: none;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto;
+    display: block;
   }
   
-  .project-subtitle {
-    font-size: 1.1rem;
+  .unicef .project-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .unicef .goal-section {
+    text-align: left !important;
+    padding-left: 20px;
+  }
+  
+  .unicef .goal-section h3 {
+    text-align: left !important;
+  }
+  
+  .unicef .goal-text {
+    text-align: left !important;
+  }
+  
+  .unicef .samples-section .section-title {
+    text-align: left !important;
+    padding-left: 20px;
   }
   
   .project-stats {
@@ -297,22 +350,14 @@
   .project-links {
     flex-direction: column;
   }
-  
-  .hero-image img {
-    height: 300px;
-  }
 }
 
 @media (max-width: 480px) {
-  .project-title {
-    font-size: 2.5rem;
+  .unicef .project-title {
+    font-size: 2rem !important;
   }
   
   .content-section {
     padding: 1rem;
-  }
-  
-  .hero-image img {
-    height: 250px;
   }
 }
