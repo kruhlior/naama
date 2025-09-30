@@ -53,6 +53,19 @@ const Portal = () => {
           timeline="14 months (2022–2023)"
         />
 
+        {/* Samples Section */}
+        <div className="portal-samples-section">
+          <h3 className="section-title">Samples</h3>
+          <img
+            src="/projects/portal-samples.png"
+            alt="Portal Samples"
+            className="portal-samples-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
         {/* Challenges Section */}
         <div className="challenges-section">
           <h3 className="challenges-title">Challenges and solutions</h3>

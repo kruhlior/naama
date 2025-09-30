@@ -228,12 +228,12 @@
 
 /* Portal Samples Section */
 .portal-samples-section {
-  background: white;
+  background: transparent;
   padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  box-shadow: none;
   margin: 2rem 0;
-  border-left: 4px solid #ccc;
+  border: none;
   text-align: center;
 }
 
@@ -242,8 +242,20 @@
   max-width: 1200px;
   height: auto;
   object-fit: contain;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+/* Samples Section Title */
+.portal .portal-samples-section .section-title {
+  font-family: 'Genos', sans-serif !important;
+  background: linear-gradient(135deg, #2BB6CB, #ff6b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  width: fit-content;
 }
 
 /* Project Stats */

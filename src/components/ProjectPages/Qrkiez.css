@@ -105,8 +105,8 @@
 /* TLDR Image */
 .qrkiez .hero-tldr-image {
   position: absolute;
-  bottom: -140px;
-  left: 45%;
+  bottom: -80px;
+  left: 60%;
   transform: translateX(-50%);
   z-index: 10;
 }
