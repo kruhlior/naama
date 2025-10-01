@@ -10,57 +10,72 @@ const Unicef = () => {
     window.scrollTo(0, 0);
 
     // Carousel functionality
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    let currentSlide = 0;
+    const initCarousel = () => {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.dot');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
 
-    const showSlide = (index) => {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-    };
+      if (slides.length === 0) {
+        // If elements not found, try again after a short delay
+        setTimeout(initCarousel, 100);
+        return;
+      }
 
-    const nextSlide = () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    };
+      let currentSlide = 0;
 
-    const prevSlide = () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    };
+      const showSlide = (index) => {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      };
 
-    // Event listeners
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentSlide = index;
+      const nextSlide = () => {
+        currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
-      });
-    });
+      };
 
-    // Auto-advance carousel every 5 seconds
-    const autoAdvance = setInterval(nextSlide, 5000);
+      const prevSlide = () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      };
 
-    // Cleanup
-    return () => {
-      if (nextBtn) nextBtn.removeEventListener('click', nextSlide);
-      if (prevBtn) prevBtn.removeEventListener('click', prevSlide);
+      // Event listeners
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
       dots.forEach((dot, index) => {
-        dot.removeEventListener('click', () => {
+        dot.addEventListener('click', () => {
           currentSlide = index;
           showSlide(currentSlide);
         });
       });
-      clearInterval(autoAdvance);
+
+      // Auto-advance carousel every 5 seconds
+      const autoAdvance = setInterval(nextSlide, 5000);
+
+      // Cleanup function
+      return () => {
+        if (nextBtn) nextBtn.removeEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.removeEventListener('click', prevSlide);
+        dots.forEach((dot, index) => {
+          dot.removeEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+          });
+        });
+        clearInterval(autoAdvance);
+      };
     };
+
+    // Initialize carousel
+    const cleanup = initCarousel();
+
+    // Return cleanup function
+    return cleanup;
   }, []);
 
   return (
@@ -116,23 +131,27 @@ const Unicef = () => {
                 UNICEF employees operate in a dynamic and high-pressure environment, requiring tools that support a diverse range of workflows, from global humanitarian efforts to localized community programs.
               </p>
               <p>To support their work they need:</p>
-              <ul>
-                <li><strong>Accessible Knowledge:</strong> Easy access to accurate and up-to-date information across global and local contexts.</li>
-                <li><strong>Transparency & Trust:</strong> Tools that prioritize ethical AI use, data privacy, and clear communication.</li>
-                <li><strong>Reliable Information:</strong> Dependable knowledge sources are critical due to UNICEF&apos;s direct impact on children&apos;s lives and its involvement in sensitive political and social matters.</li>
-                <li><strong>User-Friendliness:</strong> Intuitive interfaces catering to varying technical expertise.</li>
-                <li><strong>Global Collaboration:</strong> Support for diverse cultural and linguistic needs across regions.</li>
-                <li><strong>Efficiency Under Pressure:</strong> Reliable systems to streamline workflows in high-stakes environments.</li>
-              </ul>
             </div>
-            <div className="unique-needs-image">
-              <img
-                src="/projects/unicef-kids.png"
-                alt="UNICEF Kids"
-                onError={(e) => {
-                  e.target.src = '/placeholder-large.jpg';
-                }}
-              />
+            <div className="unique-needs-bullets-and-image">
+              <div className="unique-needs-bullets">
+                <ul>
+                  <li><strong>Accessible Knowledge:</strong> Easy access to accurate and up-to-date information across global and local contexts.</li>
+                  <li><strong>Transparency & Trust:</strong> Tools that prioritize ethical AI use, data privacy, and clear communication.</li>
+                  <li><strong>Reliable Information:</strong> Dependable knowledge sources are critical due to UNICEF&apos;s direct impact on children&apos;s lives and its involvement in sensitive political and social matters.</li>
+                  <li><strong>User-Friendliness:</strong> Intuitive interfaces catering to varying technical expertise.</li>
+                  <li><strong>Global Collaboration:</strong> Support for diverse cultural and linguistic needs across regions.</li>
+                  <li><strong>Efficiency Under Pressure:</strong> Reliable systems to streamline workflows in high-stakes environments.</li>
+                </ul>
+              </div>
+              <div className="unique-needs-image">
+                <img
+                  src="/projects/unicef-kids.png"
+                  alt="UNICEF Kids"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -165,11 +184,11 @@ const Unicef = () => {
           <h3 className="challenges-title">Challenges and solutions</h3>
         </div>
 
-        {/* Challenges Image */}
+        {/* First Challenge Image (Build trust in AI) */}
         <div className="challenges-image-section">
           <img
-            src="/projects/unices-challange1.png"
-            alt="UNICEF Challenges"
+            src="/projects/unicef-challange2.png"
+            alt="UNICEF Challenge 1"
             className="challenges-image"
             onError={(e) => {
               e.target.src = '/placeholder-large.jpg';
@@ -177,7 +196,33 @@ const Unicef = () => {
           />
         </div>
 
-        {/* Problem and Solution Boxes */}
+        {/* First Problem and Solution Boxes (Build trust in AI) */}
+        <div className="problem-solution-section">
+          <div className="problem-solution-grid">
+            <ProblemBox
+              problem="Build trust in AI"
+              problemMore="Design UniBot to be a reliable, transparent AI assistant that UNICEF employees can trust for verified information."
+            />
+            <SolutionBox
+              solution="Clear and transparent design"
+              solutionMore="When I started to work on that project, building users' trust in AI was defined as the most important project goal. I knew immediately that I'm going to love that project :) To build trust, a transparent design replaced the old unclear interface, which employees previously avoided due to inefficiency and confusion. Features like clear feedback on AI processes, user-friendly navigation, and intuitive error-handling mechanisms rebuilt trust and encouraged adoption."
+            />
+          </div>
+        </div>
+
+        {/* Second Challenge Image (Promote secure, contextual AI use) */}
+        <div className="challenges-image-section">
+          <img
+            src="/projects/unices-challange1.png"
+            alt="UNICEF Challenge 2"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
+        {/* Second Problem and Solution Boxes (Promote secure, contextual AI use) */}
         <div className="problem-solution-section">
           <div className="problem-solution-grid">
             <ProblemBox
@@ -197,7 +242,7 @@ const Unicef = () => {
             <div className="carousel-track">
               <div className="carousel-slide active">
                 <img
-                  src="/projects/unicef-global.png"
+                  src="/projects/unibot-global.png"
                   alt="UNICEF Global Knowledge Base"
                   className="carousel-image"
                   onError={(e) => {
@@ -207,7 +252,7 @@ const Unicef = () => {
               </div>
               <div className="carousel-slide">
                 <img
-                  src="/projects/unicef-personal.png"
+                  src="/projects/unibot-personal.png"
                   alt="UNICEF Personal Knowledge Base"
                   className="carousel-image"
                   onError={(e) => {
@@ -217,7 +262,7 @@ const Unicef = () => {
               </div>
               <div className="carousel-slide">
                 <img
-                  src="/projects/unicef-groups.png"
+                  src="/projects/unibot-groups.png"
                   alt="UNICEF Groups Knowledge Base"
                   className="carousel-image"
                   onError={(e) => {
@@ -239,6 +284,33 @@ const Unicef = () => {
                 ›
               </button>
             </div>
+          </div>
+          <p className="carousel-description">Layered knowledge chat</p>
+        </div>
+
+        {/* Third Challenge Image */}
+        <div className="challenges-image-section">
+          <img
+            src="/projects/unicef-challange3.png"
+            alt="UNICEF Challenge 3"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
+        {/* Third Problem and Solution Boxes */}
+        <div className="problem-solution-section">
+          <div className="problem-solution-grid">
+            <ProblemBox
+              problem="Enhance knowledge management"
+              problemMore="Create an intuitive system for organizing and retrieving UNICEF's knowledge resources."
+            />
+            <SolutionBox
+              solution="Seamless knowledge upload, search, and retrieval"
+              solutionMore="An interface supporting advanced knowledge management features, including bulk document uploads, metadata tagging, and a user-friendly search function. The system emphasized clarity, with filters and sorting options by knowledge layers, making knowledge discovery straightforward."
+            />
           </div>
         </div>
 

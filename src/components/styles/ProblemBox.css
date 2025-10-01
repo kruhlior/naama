@@ -44,7 +44,7 @@
 }
 
 /* Problem Text */
-.problem-text {
+.problem-box .problem-text {
   font-family: 'Genos', sans-serif !important;
   font-size: 1.3rem;
   font-weight: 600;

@@ -39,12 +39,12 @@
   text-align: left !important;
 }
 
-/* All text that is not titles - Poppins font */
+/* Default text font - Poppins (can be overridden by component-specific styles) */
 .project-page p,
 .project-page li,
 .project-page span,
-.project-page div:not(.section-title):not(.goal-section h3):not(.summary-section h3):not(.challenges-section h3):not(.samples-section h3) {
-  font-family: 'Poppins', sans-serif !important;
+.project-page div {
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
 }
 
