@@ -75,7 +75,7 @@
 
 /* Unique Needs Section */
 .unique-needs-section {
-  margin: 3rem 0;
+  margin: 5rem 0;
   padding: 0 2rem;
 }
 
@@ -174,7 +174,7 @@
 
 /* Key Features Section */
 .key-features-section {
-  margin: 3rem 0;
+  margin: 5rem 0;
   padding: 0 2rem;
 }
 
@@ -230,11 +230,19 @@
   margin: 0;
 }
 
+/* Challenges Section */
+.challenges-section {
+  margin-bottom: 2rem;
+}
+
 /* Challenges Image Section */
 .challenges-image-section {
-  margin: 2rem 0;
+  margin: 6rem 0;
   padding: 0 2rem;
   text-align: center;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .challenges-image {
@@ -242,13 +250,13 @@
   max-width: 1200px;
   height: auto;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* Problem Solution Section */
 .problem-solution-section {
-  margin: 2rem 0;
+  margin: 6rem 0;
   padding: 0 2rem;
 }
 
@@ -262,7 +270,7 @@
 
 /* Image Carousel Section */
 .image-carousel-section {
-  margin: 3rem 0;
+  margin: 5rem 0;
   padding: 0 2rem;
 }
 
@@ -321,17 +329,19 @@
 }
 
 .carousel-controls {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  bottom: auto;
+  left: auto;
+  transform: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  backdrop-filter: blur(10px);
+  background: transparent;
+  padding: 1rem 0;
+  border-radius: 0;
+  backdrop-filter: none;
+  margin-top: 1rem;
 }
 
 .carousel-btn {
@@ -669,8 +679,9 @@
   }
 
   .carousel-controls {
-    bottom: 15px;
-    padding: 0.4rem 0.8rem;
+    position: static;
+    bottom: auto;
+    padding: 0.8rem 0;
   }
 
   .carousel-btn {
@@ -774,4 +785,51 @@
   .content-section {
     padding: 1rem;
   }
+}
+
+/* Project Impact Section */
+.project-impact-section {
+  margin: 5rem 0;
+  padding: 0 2rem;
+}
+
+.project-impact-title {
+  font-family: 'Genos', sans-serif !important;
+  font-size: 3rem !important;
+  background: linear-gradient(135deg, #2BB6CB, #ff6b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 2rem;
+  text-align: left !important;
+}
+
+.project-impact-text {
+  font-family: 'Poppins', sans-serif !important;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Project Results Image - Smaller Size */
+.project-impact-section + .challenges-image-section {
+  margin: 2rem 0;
+  padding: 0 2rem;
+  text-align: center;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-impact-section + .challenges-image-section .challenges-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
 }

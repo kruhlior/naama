@@ -156,29 +156,6 @@ const Unicef = () => {
           </div>
         </div>
 
-        {/* Key Features Section */}
-        <div className="key-features-section">
-          <h3 className="key-features-title">Key Features</h3>
-          <div className="key-features-grid">
-            <div className="key-feature-item">
-              <h4 className="key-feature-title">Multi-Layered AI Architecture</h4>
-              <p className="key-feature-text">Advanced AI system with multiple layers for different types of knowledge processing and decision support.</p>
-            </div>
-            <div className="key-feature-item">
-              <h4 className="key-feature-title">Trust & Safety Framework</h4>
-              <p className="key-feature-text">Built-in trust mechanisms ensuring reliable, verified information for critical humanitarian decisions.</p>
-            </div>
-            <div className="key-feature-item">
-              <h4 className="key-feature-title">Global Knowledge Base</h4>
-              <p className="key-feature-text">Comprehensive database covering UNICEF policies, procedures, and best practices across all regions.</p>
-            </div>
-            <div className="key-feature-item">
-              <h4 className="key-feature-title">Real-time Assistance</h4>
-              <p className="key-feature-text">Instant access to relevant information and guidance for field operations and emergency response.</p>
-            </div>
-          </div>
-        </div>
-
         {/* Challenges Section */}
         <div className="challenges-section">
           <h3 className="challenges-title">Challenges and solutions</h3>
@@ -213,7 +190,7 @@ const Unicef = () => {
         {/* Second Challenge Image (Promote secure, contextual AI use) */}
         <div className="challenges-image-section">
           <img
-            src="/projects/unices-challange1.png"
+            src="/projects/unicef-challange1.png"
             alt="UNICEF Challenge 2"
             className="challenges-image"
             onError={(e) => {
@@ -314,125 +291,49 @@ const Unicef = () => {
           </div>
         </div>
 
-        {/* Project Stats */}
-        <div className="project-stats">
-          <div className="stat">
-            <span className="stat-number">15K+</span>
-            <span className="stat-label">Staff Members</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">190+</span>
-            <span className="stat-label">Countries</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">95%</span>
-            <span className="stat-label">Accuracy Rate</span>
-          </div>
-        </div>
-
-        {/* Project Content */}
-        <div className="project-content">
-          <div className="content-section">
-            <h2>About UNICEF AI Bot</h2>
-            <p>
-              The UNICEF Internal AI Bot is a sophisticated knowledge management system designed
-              to support UNICEF&apos;s global operations across 190+ countries. This multi-layered AI
-              solution provides trusted, accurate information retrieval and decision support for
-              UNICEF&apos;s 15,000+ staff members, enabling more efficient humanitarian work and
-              better outcomes for children worldwide.
-            </p>
-          </div>
-
-
-          <div className="content-section">
-            <h2>Technical Implementation</h2>
-            <div className="implementation-grid">
-              <div className="impl-item">
-                <h3>AI/ML Infrastructure</h3>
-                <p>Advanced machine learning models with natural language processing and knowledge graph technologies.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Security & Privacy</h3>
-                <p>Enterprise-grade security with data encryption, access controls, and privacy protection measures.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Scalable Architecture</h3>
-                <p>Cloud-based infrastructure supporting global deployment with high availability and performance.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Integration Capabilities</h3>
-                <p>Seamless integration with existing UNICEF systems and third-party humanitarian tools.</p>
-              </div>
+        {/* Key Features Section */}
+        <div className="key-features-section">
+          <h3 className="key-features-title">Key Features</h3>
+          <div className="key-features-grid">
+            <div className="key-feature-item">
+              <h4 className="key-feature-title">Multi-Layered AI Architecture</h4>
+              <p className="key-feature-text">Advanced AI system with multiple layers for different types of knowledge processing and decision support.</p>
             </div>
-          </div>
-
-          <div className="content-section">
-            <h2>Technologies & Tools</h2>
-            <div className="tech-grid">
-              <div className="tech-category">
-                <h3>AI/ML</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">Python</span>
-                  <span className="tech-tag">TensorFlow</span>
-                  <span className="tech-tag">NLP</span>
-                  <span className="tech-tag">Knowledge Graphs</span>
-                </div>
-              </div>
-              <div className="tech-category">
-                <h3>Backend</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">Node.js</span>
-                  <span className="tech-tag">MongoDB</span>
-                  <span className="tech-tag">Redis</span>
-                  <span className="tech-tag">Docker</span>
-                </div>
-              </div>
-              <div className="tech-category">
-                <h3>Infrastructure</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">AWS</span>
-                  <span className="tech-tag">Kubernetes</span>
-                  <span className="tech-tag">Terraform</span>
-                  <span className="tech-tag">Monitoring</span>
-                </div>
-              </div>
+            <div className="key-feature-item">
+              <h4 className="key-feature-title">Trust & Safety Framework</h4>
+              <p className="key-feature-text">Built-in trust mechanisms ensuring reliable, verified information for critical humanitarian decisions.</p>
             </div>
-          </div>
-
-          <div className="content-section">
-            <h2>Project Impact</h2>
-            <p>
-              The UNICEF Internal AI Bot has significantly improved knowledge management across
-              the organization, serving 15,000+ staff members in 190+ countries with 95% accuracy.
-              The system has reduced information retrieval time by 70% and improved decision-making
-              speed for emergency responses. Key achievements include establishing a trusted AI
-              framework for humanitarian work and creating a scalable knowledge management platform
-              that supports UNICEF&apos;s mission to protect children&apos;s rights worldwide.
-            </p>
-          </div>
-
-          <div className="content-section">
-            <h2>Project Links</h2>
-            <div className="project-links">
-              <a
-                href="https://github.com/yourusername/unicef-ai-bot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link primary"
-              >
-                View Source Code
-              </a>
-              <a
-                href="https://unicef-ai-demo.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link secondary"
-              >
-                Live Demo
-              </a>
+            <div className="key-feature-item">
+              <h4 className="key-feature-title">Global Knowledge Base</h4>
+              <p className="key-feature-text">Comprehensive database covering UNICEF policies, procedures, and best practices across all regions.</p>
+            </div>
+            <div className="key-feature-item">
+              <h4 className="key-feature-title">Real-time Assistance</h4>
+              <p className="key-feature-text">Instant access to relevant information and guidance for field operations and emergency response.</p>
             </div>
           </div>
         </div>
+
+        {/* Project Impact Section */}
+        <div className="project-impact-section">
+          <h3 className="project-impact-title">Project Impact</h3>
+          <p className="project-impact-text">
+            The UNICEF Internal AI Bot has significantly improved knowledge management across the organization, serving thousands of staff members in 190+ countries with 95% accuracy. The system has reduced information retrieval time by 70% and improved decision-making speed for emergency responses. Key achievements include establishing a trusted AI framework for humanitarian work and creating a scalable knowledge management platform that supports UNICEF&apos;s mission to protect children&apos;s rights worldwide.
+          </p>
+        </div>
+
+        {/* Project Results Image */}
+        <div className="challenges-image-section">
+          <img
+            src="/projects/unicef-results.png"
+            alt="UNICEF Project Results"
+            className="challenges-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
       </div>
     </div>
   );
