@@ -83,12 +83,12 @@ p {
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #2BB6CB;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #1a9bb3;
   transform: translateY(-2px);
 }
 
