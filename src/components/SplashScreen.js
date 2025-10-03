@@ -12,7 +12,7 @@ const SplashScreen = ({ onComplete }) => {
       setTimeout(() => {
         onComplete();
       }, 500); // Match the CSS transition duration
-    }, 2500); // 2.5 seconds display time
+    }, 6500); // 6.5 seconds display time
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -21,7 +21,8 @@ const SplashScreen = ({ onComplete }) => {
     <div className={`splash-screen ${isVisible ? 'visible' : 'hidden'}`}>
       <div className="splash-content">
         <img
-          src="/splash-animation.gif"
+          key={Date.now()}
+          src={`/loading.gif?t=${Date.now()}`}
           alt="Loading animation"
           className="splash-animation"
         />

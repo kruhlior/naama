@@ -30,9 +30,8 @@
 }
 
 .splash-animation {
-  max-width: 300px;
-  max-height: 300px;
-  width: auto;
+  width: calc(100vw - 40px);
+  max-width: 1200px;
   height: auto;
   object-fit: contain;
 }
@@ -40,14 +39,14 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .splash-animation {
-    max-width: 250px;
-    max-height: 250px;
+    width: calc(100vw - 30px);
+    max-width: 800px;
   }
 }
 
 @media (max-width: 480px) {
   .splash-animation {
-    max-width: 200px;
-    max-height: 200px;
+    width: calc(100vw - 20px);
+    max-width: 500px;
   }
 }
