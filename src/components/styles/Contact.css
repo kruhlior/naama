@@ -36,6 +36,12 @@
   transform: translateY(-120px);
 }
 
+.coffee-mug-link {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .coffee-mug-image {
   width: 360px;
   height: auto;
@@ -44,6 +50,19 @@
   bottom: -450px;
   right: 100px;
   z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.coffee-mug-link:hover .coffee-mug-image {
+  transform: scale(1.05);
+}
+
+.contact-hero-image:hover .steam-line {
+  animation-duration: 1.5s;
+}
+
+.contact-hero-image:hover .coffee-mug-image {
+  transform: scale(1.05);
 }
 
 .contact-hero-image {

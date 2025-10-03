@@ -86,14 +86,16 @@ const Contact = () => {
                   }}
                 />
               </div>
-              <img
-                src="/projects/coffee-mug.png"
-                alt="Coffee Mug"
-                className="coffee-mug-image"
-                onError={(e) => {
-                  e.target.src = '/placeholder-large.jpg';
-                }}
-              />
+              <a href="mailto:k.naama@gmail.com?subject=Let's schedule a virtual coffee!" className="coffee-mug-link">
+                <img
+                  src="/projects/coffee-mug.png"
+                  alt="Coffee Mug"
+                  className="coffee-mug-image"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+              </a>
             </div>
           </div>
         </div>
