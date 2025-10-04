@@ -283,28 +283,73 @@
   
   .projects-grid {
     gap: 1rem;
+    padding: 0 1rem;
+    justify-content: center;
   }
   
   .project-card {
     width: 100%;
     max-width: 680px;
     height: auto;
-    aspect-ratio: 680/370;
+    min-height: 400px;
     margin: 0.1rem auto;
+    flex-direction: column !important;
+    display: flex;
   }
   
-  /* Removed zigzag layout for mobile */
+  /* Mobile layout: Title at top, then image, then subtitle below */
+  .project-card.template1,
+  .project-card.template2 {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
   
-  .project-header {
+  /* Content sections - show and restructure for mobile */
+  .project-card .project-content-left,
+  .project-card .project-content-top {
+    display: flex !important;
+    flex-direction: column !important;
+    order: 1;
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+  
+  /* Title section */
+  .project-card .project-header {
     padding: 1rem 1rem 0 1rem;
+    order: 1;
   }
   
-  .project-title {
+  .project-card .project-title {
     font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
   
-  .project-image {
-    padding: 0.5rem 1rem 1rem 1rem;
+  .project-card .project-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  /* Image section - full width */
+  .project-card .project-image-right,
+  .project-card .project-image-bottom {
+    width: 100% !important;
+    height: 200px !important;
+    padding: 0.5rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    order: 2;
+    background-color: transparent !important;
+  }
+  
+  .project-card .project-image-right img,
+  .project-card .project-image-bottom img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
   }
   
   .project-image img {
