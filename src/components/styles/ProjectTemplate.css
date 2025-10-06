@@ -7,6 +7,42 @@
   background-color: var(--project-bg-color);
 }
 
+/* Mobile Back Button */
+.mobile-back-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 99999;
+  background: white;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-back-button.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.mobile-back-button:hover {
+  background: #f5f5f5;
+  border-color: #999;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
 /* Custom Header Section */
 .project-custom-header {
   margin-bottom: 3rem;
@@ -115,6 +151,12 @@
     padding: 1rem 0.5rem;
   }
 
+  .mobile-back-button {
+    display: flex !important;
+    opacity: 0 !important;
+    transform: translateY(-10px) !important;
+  }
+
   .summary-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -123,8 +165,10 @@
   /* Summary box styles now handled by SummaryBox component */
 
   .section-title {
-    font-size: 1.6rem;
-    text-align: center;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+    text-align: left;
+    padding-left: 2rem !important;
   }
 
   .goal-text {
@@ -149,6 +193,7 @@
 
   .summary-box {
     padding: 1rem 0.75rem;
+    min-height: 160px !important;
   }
 
   .box-icon {
@@ -230,10 +275,7 @@
   font-family: 'Genos', sans-serif;
   font-size: 2rem;
   font-weight: 600;
-  background: linear-gradient(90deg, #34DDA5, #35AEC8, #994E96, #E8468F);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #2BB6CB;
   margin-bottom: 1.5rem;
   text-align: left;
   display: inline-block;
@@ -258,12 +300,28 @@
 
   .challenges-title {
     font-size: 1.8rem;
-    text-align: center;
+    text-align: left;
+    padding-left: 2rem !important;
+    display: none;
   }
 
   .challenges-text {
     font-size: 1rem;
     text-align: center;
+  }
+
+  /* Show title in first challenge image section on mobile */
+  .challenges-image-section:first-of-type::before {
+    content: "Challenges and solutions";
+    display: block;
+    font-family: 'Genos', sans-serif;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+    font-weight: 600;
+    color: #2BB6CB;
+    text-align: left;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
   }
 }
 

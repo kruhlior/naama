@@ -161,6 +161,11 @@ const Unicef = () => {
           <h3 className="challenges-title">Challenges and solutions</h3>
         </div>
 
+        {/* First Challenge Section Title */}
+        <div className="challenge-section-title">
+          <h3 className="challenge-title">1st challenge:<br /><strong>Build trust in AI</strong></h3>
+        </div>
+
         {/* First Challenge Image (Build trust in AI) */}
         <div className="challenges-image-section">
           <img
@@ -185,6 +190,11 @@ const Unicef = () => {
               solutionMore="When I started to work on that project, building users' trust in AI was defined as the most important project goal. I knew immediately that I'm going to love that project :) To build trust, a transparent design replaced the old unclear interface, which employees previously avoided due to inefficiency and confusion. Features like clear feedback on AI processes, user-friendly navigation, and intuitive error-handling mechanisms rebuilt trust and encouraged adoption."
             />
           </div>
+        </div>
+
+        {/* Second Challenge Section Title */}
+        <div className="challenge-section-title">
+          <h3 className="challenge-title">2nd challenge:<br /><strong>Secure, contextual AI use</strong></h3>
         </div>
 
         {/* Second Challenge Image (Promote secure, contextual AI use) */}
@@ -263,6 +273,11 @@ const Unicef = () => {
             </div>
           </div>
           <p className="carousel-description">Layered knowledge chat</p>
+        </div>
+
+        {/* Third Challenge Section Title */}
+        <div className="challenge-section-title">
+          <h3 className="challenge-title">3rd challenge:<br /><strong>Enhance knowledge management</strong></h3>
         </div>
 
         {/* Third Challenge Image */}

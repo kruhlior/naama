@@ -55,9 +55,9 @@ const Portal = () => {
 
         {/* Samples Section */}
         <div className="portal-samples-section">
-          <h3 className="section-title">Samples</h3>
+          <h4 className="portal-samples-title">Ordering screens</h4>
           <img
-            src="/projects/portal-samples.png"
+            src="/projects/portal-samples-mobile.png"
             alt="Portal Samples"
             className="portal-samples-image"
             onError={(e) => {
@@ -70,6 +70,11 @@ const Portal = () => {
         <div className="challenges-section">
           <h3 className="challenges-title">Challenges and solutions</h3>
           <p className="challenges-text" />
+        </div>
+
+        {/* First Challenge Section Title */}
+        <div className="challenge-section-title">
+          <h3 className="challenge-title">1st problem: <strong>Unsubmitted orders</strong></h3>
         </div>
 
         {/* Challenges Image */}
@@ -119,6 +124,11 @@ const Portal = () => {
               e.target.src = '/placeholder-large.jpg';
             }}
           />
+        </div>
+
+        {/* Second Challenge Section Title */}
+        <div className="challenge-section-title">
+          <h3 className="challenge-title">2nd problem:<br /><strong>Existing tools dont support actual personas & workflows</strong></h3>
         </div>
 
         <div className="challenges-image-section">

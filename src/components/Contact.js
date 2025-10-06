@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/Contact.css';
 
 const Contact = () => {
@@ -8,6 +8,10 @@ const Contact = () => {
     subject: '',
     message: '',
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
