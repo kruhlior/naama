@@ -13,6 +13,17 @@
   font-family: 'Genos', sans-serif;
 }
 
+.header-static {
+  position: static !important;
+}
+
+/* Mobile: Make header non-sticky */
+@media (max-width: 768px) {
+  .header {
+    position: static;
+  }
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;

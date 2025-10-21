@@ -5,7 +5,6 @@ import './styles/Header.css';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -54,35 +53,33 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Listen for navigation category changes
+  useEffect(() => {
+    const handleNavigationUsed = () => {
+      // On mobile, header is not sticky so no special behavior needed
+      // On desktop, header is always visible
+      setIsHeaderVisible(true);
+    };
+
+    window.addEventListener('navigationCategoryChanged', handleNavigationUsed);
+    return () => window.removeEventListener('navigationCategoryChanged', handleNavigationUsed);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      // Apply scroll behavior on mobile for all pages
+      // On mobile, header is not sticky so no need for scroll behavior
       if (isMobile) {
-        // Get hero section height to determine when to hide/show header
-        const heroSection = document.querySelector('.hero-section');
-        const heroHeight = heroSection ? heroSection.offsetHeight : 100;
-
-        if (currentScrollY <= heroHeight) {
-          // At or above hero section - always show header
-          setIsHeaderVisible(true);
-        } else if (currentScrollY > lastScrollY && currentScrollY > heroHeight) {
-          // Scrolling down and past hero section - hide header
-          setIsHeaderVisible(false);
-        }
-        // Don't show header when scrolling up unless we're back at hero section
-      } else {
-        // Always show header on desktop
         setIsHeaderVisible(true);
+        return;
       }
 
-      setLastScrollY(currentScrollY);
+      // Desktop: Always show header (sticky behavior)
+      setIsHeaderVisible(true);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, isMobile]);
+  }, [isMobile]);
 
   return (
     <header className={`header ${!isHeaderVisible ? 'header-hidden' : ''}`}>

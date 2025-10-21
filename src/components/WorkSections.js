@@ -71,12 +71,23 @@ const WorkSections = () => {
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
 
+    // Dispatch custom event to notify header that navigation was used
+    window.dispatchEvent(new CustomEvent('navigationCategoryChanged'));
+
     // Scroll to the top of the work section when category changes
     if (workSectionRef.current) {
-      workSectionRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+      // Use a small delay to ensure the category change is processed first
+      setTimeout(() => {
+        workSectionRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+
+        // Dispatch the event again after scroll starts to ensure header stays hidden
+        setTimeout(() => {
+          window.dispatchEvent(new CustomEvent('navigationCategoryChanged'));
+        }, 100);
+      }, 50);
     }
   };
 
