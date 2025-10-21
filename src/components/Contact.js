@@ -1,53 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './styles/Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Create email content
-    const emailSubject = encodeURIComponent(formData.subject);
-    const emailBody = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Subject: ${formData.subject}\n\n` +
-      `Message:\n${formData.message}`,
-    );
-
-    // Create mailto link
-    const mailtoLink = `mailto:k.naama@gmail.com?subject=${emailSubject}&body=${emailBody}`;
-
-    // Open email client
-    window.location.href = mailtoLink;
-
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
-
-    alert('Thank you for your message! Your email client will open with the message ready to send.');
-  };
 
   return (
     <div className="contact-page">
@@ -154,66 +111,12 @@ const Contact = () => {
               </div>
             </div>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <button type="submit" className="btn btn-primary">
-                Send Message
-              </button>
-            </form>
-          </div>
-
-          <div className="section-subtitle-bottom">
-            <p className="section-subtitle">
-              Great results come from creativity, hard work and coffee.<br />
-              Not necessarily in that order.
-            </p>
+            <div className="section-subtitle-right">
+              <p className="section-subtitle">
+                Great results come from creativity, hard work and coffee.<br />
+                Not necessarily in that order.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -72,6 +72,21 @@ const Hero = () => {
             />
           </div>
         </div>
+
+        {/* See My Work Section - Mobile Only */}
+        <div className="see-my-work-section">
+          <div className="see-my-work-content">
+            <img
+              src="/projects/hand-point.png"
+              alt="Hand pointing"
+              className="hand-point-image"
+              onError={(e) => {
+                e.target.src = '/placeholder.jpg';
+              }}
+            />
+            <span className="see-my-work-text">See my work</span>
+          </div>
+        </div>
       </div>
       {/* Gradient Separator */}
       {/* <div className="gradient-separator" /> */}

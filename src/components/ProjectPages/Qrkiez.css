@@ -102,13 +102,268 @@
   margin-top: 3rem; /* Add top padding for non-mobile */
 }
 
-/* TLDR Image */
+/* Special Project Section */
+.qrkiez .special-project-section {
+  margin-bottom: 3rem;
+}
+
+
+.qrkiez .special-project-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.qrkiez .special-project-image {
+  align-self: flex-start;
+}
+
+.qrkiez .special-project-text {
+  flex: 1;
+  max-width: 60%;
+}
+
+.qrkiez .special-project-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.qrkiez .special-project-text p:last-child {
+  margin-bottom: 0;
+}
+
+.qrkiez .special-project-image {
+  flex: 1;
+  max-width: 40%;
+  text-align: center;
+}
+
+.qrkiez .special-project-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.qrkiez .image-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Challenge Section */
+.qrkiez .challenge-section {
+  margin: 4rem 0;
+  padding: 0 2rem;
+}
+
+.qrkiez .challenge-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #333;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.qrkiez .challenge-subtitle {
+  font-family: 'Genos', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #333;
+  margin: 0 0 2rem 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.qrkiez .challenge-subtitle strong {
+  font-weight: 600;
+}
+
+/* Challenge Intro */
+.qrkiez .challenge-intro {
+  margin: 2rem 0;
+}
+
+.qrkiez .challenge-intro-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.qrkiez .challenge-intro-text {
+  flex: 1;
+}
+
+.qrkiez .challenge-intro-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.qrkiez .challenge-intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.qrkiez .challenge-intro-image {
+  flex: 1;
+  max-width: 400px;
+}
+
+.qrkiez .challenge-intro-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Value Section */
+.qrkiez .value-section {
+  margin: 3rem 0;
+}
+
+.qrkiez .value-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.qrkiez .value-images-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.qrkiez .value-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Project Impact Section */
+.qrkiez .project-impact-section {
+  margin-bottom: 3rem;
+}
+
+
+.qrkiez .project-impact-content {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.qrkiez .project-impact-text-section {
+  flex: 1;
+}
+
+.qrkiez .project-impact-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.qrkiez .project-impact-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.qrkiez .project-impact-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.qrkiez .project-impact-text p:last-child {
+  margin-bottom: 0;
+}
+
+.qrkiez .project-impact-outcomes {
+  margin-top: 1rem;
+}
+
+.qrkiez .outcomes-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.qrkiez .outcomes-list {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.qrkiez .outcomes-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Challenge Images */
+.qrkiez .challenge-image[src*="Qrkiez-challenge-1a.gif"] {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.qrkiez .challenge-image[src*="Qrkiez-callenge-1b.png"] {
+  width: 230px;
+  height: auto;
+}
+
+/* Challenge Images Grid - Side by side on desktop only */
+@media (min-width: 769px) {
+  .qrkiez .challenge-images-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .qrkiez .challenge-image[src*="Qrkiez-challenge-1a.gif"] {
+    height: 531px;
+    width: auto;
+  }
+
+  .qrkiez .challenge-image[src*="Qrkiez-callenge-1b.png"] {
+    height: 531px;
+    width: auto;
+  }
+
+  .qrkiez .challenge-image-caption {
+    text-align: center;
+  }
+}
+
+
+/* TLDR Image - Hidden on Desktop, Visible on Mobile */
 .qrkiez .hero-tldr-image {
-  position: absolute;
-  bottom: -140px;
-  left: 45%;
-  transform: translateX(-50%);
-  z-index: 10;
+  display: none;
 }
 
 .qrkiez .hero-tldr-image img {
@@ -140,6 +395,7 @@
   font-weight: 700;
   color: #ffffff !important;
   margin-bottom: 1rem;
+  line-height: 1;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   display: block;
   width: 100%;
@@ -202,7 +458,8 @@
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-family: 'Genos', sans-serif !important;
+  font-size: 1.2rem;
   color: #333;
   font-weight: 500;
 }
@@ -254,7 +511,7 @@
   color: #2BB6CB;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .feature-item p {
@@ -282,7 +539,7 @@
   color: #2BB6CB;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .impl-item p {
@@ -303,7 +560,7 @@
   color: #2BB6CB;
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .tech-tags {
@@ -385,18 +642,188 @@
     display: flex;
   }
   
-  .qrkiez .hero-tldr-image {
-    order: 3;
-    position: static;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin-top: 4rem;
+  .qrkiez .special-project-section {
+    margin-bottom: 2rem;
+  }
+
+
+  .qrkiez .special-project-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .qrkiez .special-project-text {
+    max-width: 100%;
+  }
+
+  .qrkiez .special-project-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .qrkiez .special-project-image {
+    max-width: 100%;
+  }
+
+  .qrkiez .challenge-section {
+    margin: 3rem 0;
+    padding: 0 1rem;
+  }
+
+  .qrkiez .challenge-title {
+    font-size: 1.8rem;
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  .qrkiez .challenge-subtitle {
+    font-size: 1.8rem;
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  /* Mobile challenge intro */
+  .qrkiez .challenge-intro-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .qrkiez .challenge-intro-image {
+    max-width: 100%;
     text-align: center;
+  }
+
+  /* Mobile challenge images width and alignment */
+  .qrkiez .challenge-image[src*="Qrkiez-challenge-1a.gif"] {
+    width: 250px;
+    height: auto;
+  }
+
+  .qrkiez .challenge-image[src*="Qrkiez-callenge-1b.png"] {
+    width: 250px;
+    height: auto;
+  }
+
+  .qrkiez .challenge-images-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Mobile value section */
+  .qrkiez .value-title {
+    font-size: 1.8rem;
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  .qrkiez .value-images-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .qrkiez .value-image {
+    width: 250px;
+    height: auto;
+  }
+
+
+
+  /* Hide the TLDR from header on mobile for Qrkiez */
+  .qrkiez .hero-tldr-image {
+    display: none !important;
+  }
+
+  /* Mobile Project Impact Section - Direct Fix */
+  .qrkiez .project-impact-section {
+    margin-bottom: 2rem;
+  }
+
+  .qrkiez .project-impact-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .qrkiez .project-impact-image-section {
+    order: 2;
+  }
+
+  .qrkiez .project-impact-text-section {
+    order: 1;
+  }
+
+  .qrkiez .project-impact-image {
+    max-width: 100%;
+  }
+
+  .qrkiez .project-impact-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .qrkiez .outcomes-title {
+    font-size: 1.3rem;
+  }
+
+  .qrkiez .outcomes-list {
+    font-size: 0.9rem;
+  }
+
+  /* Goal Section for Qrkiez */
+  .qrkiez .goal-section {
+    margin: 3rem 0 !important;
+    padding: 0 2rem !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Reorder goal section elements on mobile for Qrkiez */
+  .qrkiez .goal-section-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .qrkiez .goal-section-wrapper .tldr-image-container {
+    order: 1;
+  }
+
+  .qrkiez .goal-section-wrapper .goal-section {
+    order: 2;
+  }
+
+  /* Center align TLDR image on mobile for Qrkiez */
+  .qrkiez .goal-section-wrapper .tldr-image-container {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .qrkiez .goal-section-wrapper .hero-entrance-4 {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  
+  .project-custom-header {
+    padding-top: 4rem;
+    margin-top: 2rem;
   }
   
   .project-title {
-    font-size: 3rem;
+    font-size: 2.2rem;
+    line-height: 1.0;
+    padding-top: 2rem;
+    margin-top: 1rem;
   }
   
   .project-subtitle {
@@ -406,6 +833,9 @@
   .project-stats {
     grid-template-columns: 1fr;
     gap: 1rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .content-section {
@@ -434,8 +864,16 @@
 }
 
 @media (max-width: 480px) {
+  .project-custom-header {
+    padding-top: 4rem;
+    margin-top: 2rem;
+  }
+  
   .project-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.0;
+    padding-top: 2rem;
+    margin-top: 1rem;
   }
   
   .content-section {
@@ -446,3 +884,4 @@
     height: 250px;
   }
 }
+

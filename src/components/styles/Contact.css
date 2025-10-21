@@ -24,6 +24,7 @@
 .contact-hero-text {
   flex: 1;
   max-width: 600px;
+  animation: slideInFromLeft 1.2s ease-out;
 }
 
 .contact-hero-image {
@@ -105,6 +106,28 @@
   animation-delay: 2.8s;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes steam-rise {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -148,23 +171,29 @@
 
 .contact {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  animation: fadeInUp 1.2s ease-out 0.6s both;
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 4rem;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .contact-info {
-  align-self: start;
+  flex: 1;
+}
+
+.section-subtitle-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-subtitle-bottom {
   margin-top: 3rem;
   text-align: center;
-  grid-column: 1 / -1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -325,7 +354,7 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .contact-hero {
-    padding: 4rem 0;
+    padding: 6rem 0 4rem 0;
   }
   
   .contact-hero-content {
@@ -379,8 +408,17 @@
   }
   
   .contact-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 3rem;
+    padding: 0 1rem;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+
+  .section-subtitle-right {
+    order: 2;
   }
   
   .contact-info h3 {
@@ -411,6 +449,10 @@
 }
 
 @media (max-width: 480px) {
+  .contact-hero {
+    padding: 5rem 0 3rem 0;
+  }
+  
   .contact-method {
     flex-direction: column;
     text-align: center;

@@ -246,3 +246,71 @@
     width: 100%;
   }
 }
+
+/* See My Work Section - Mobile Only */
+.see-my-work-section {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .see-my-work-section {
+    display: block;
+    background-color: transparent;
+    padding: 2rem 1rem;
+    text-align: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  
+  .see-my-work-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hand-point-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    animation: gentleBounce 2s ease-in-out infinite;
+  }
+  
+  .see-my-work-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 480px) {
+  .see-my-work-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .see-my-work-content {
+    gap: 0.6rem;
+  }
+  
+  .hand-point-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .see-my-work-text {
+    font-size: 1rem;
+  }
+}
+
+/* Hand-point bouncing animation */
+@keyframes gentleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}

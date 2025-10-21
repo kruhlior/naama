@@ -30,6 +30,270 @@
   padding: 0;
 }
 
+/* Myriad Header Gradient */
+.myriad .project-custom-header {
+  background: linear-gradient(180deg, #00325F, #0068C5);
+  padding: 4.5rem 1rem;
+  border-radius: 0;
+  margin-bottom: 4rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Myriad Hero Content */
+.myriad .hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+/* Myriad Hero Text */
+.myriad .hero-text {
+  flex: 1;
+  color: white;
+}
+
+.myriad .project-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.myriad .project-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: white;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.myriad .website-link {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.myriad .website-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Myriad Hero Image */
+.myriad .hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myriad .project-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Myriad-2 Section */
+.myriad-2-section {
+  margin: 4rem 0;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.myriad-2-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  max-height: 800px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Challenge Section */
+.challenge-section {
+  margin: 4rem 0;
+  padding: 0 2rem;
+}
+
+.challenge-title {
+  font-family: 'Genos', sans-serif !important;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #333;
+  margin: 0 0 2rem 0;
+  line-height: 1.2;
+}
+
+.challenge-title strong {
+  font-weight: 600;
+}
+
+.challenge-image-section {
+  position: relative;
+}
+
+.challenge-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.desktop-image {
+  display: block;
+}
+
+.mobile-image {
+  display: none;
+}
+
+/* Problem and Solution Boxes */
+.problem-solution-section {
+  margin: 3rem 0;
+  padding: 0 2rem;
+}
+
+.problem-solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.problem-box,
+.solution-box {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.problem-icon,
+.solution-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.problem-icon img,
+.solution-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.problem-content,
+.solution-content {
+  flex: 1;
+}
+
+.problem-title,
+.solution-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2BB6CB;
+  margin: 0 0 0.5rem 0;
+}
+
+.problem-text,
+.solution-text {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.problem-more-text,
+.solution-more-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Challenge Users Image Section */
+.challenge-users-section {
+  margin: 4rem 0;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+  .challenge-users-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+/* Myriad Impact Section - Full Screen Width */
+.myriad-impact-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 4rem;
+  margin-bottom: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myriad-impact-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+.project-impact-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: left;
+  max-width: 800px;
+  margin: 0;
+}
+
 /* Project Hero */
 .project-hero {
   text-align: center;
@@ -100,7 +364,8 @@
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-family: 'Genos', sans-serif !important;
+  font-size: 1.2rem;
   color: #333;
   font-weight: 500;
 }
@@ -152,7 +417,7 @@
   color: #2BB6CB;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .feature-item p {
@@ -180,7 +445,7 @@
   color: #2BB6CB;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .impl-item p {
@@ -201,7 +466,7 @@
   color: #2BB6CB;
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .tech-tags {
@@ -264,6 +529,117 @@
   .myriad {
     padding: 1rem 0;
   }
+
+  /* Mobile Hero Styles */
+  .myriad .project-custom-header {
+    padding: 3rem 1rem;
+  }
+
+  .myriad .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .myriad .hero-text {
+    margin-top: 20px;
+  }
+
+  .myriad .project-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+          .myriad .project-subtitle {
+            font-size: 1.1rem;
+          }
+
+          .myriad .website-link {
+            font-size: 1rem;
+            padding: 0.6rem 1.2rem;
+          }
+
+  .myriad .project-image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Mobile Myriad-2 Section */
+  .myriad-2-section {
+    margin: 3rem 0;
+    padding: 0 1rem;
+  }
+
+  .myriad-2-image {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Mobile Challenge Section */
+  .challenge-section {
+    margin: 3rem 0;
+    padding: 0 1rem;
+  }
+
+  .challenge-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .desktop-image {
+    display: none;
+  }
+
+  .mobile-image {
+    display: block;
+  }
+
+  /* Mobile Problem and Solution Boxes */
+  .problem-solution-section {
+    margin: 2rem 0;
+    padding: 0 1rem;
+  }
+
+  .problem-solution-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .problem-box,
+  .solution-box {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .problem-icon,
+  .solution-icon {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile Challenge Users Image */
+  .challenge-users-section {
+    margin: 3rem 0;
+    padding: 0 1rem;
+  }
+
+  /* Mobile Myriad Impact Section */
+  .myriad-impact-section {
+    margin-top: 3rem;
+  }
+
+  .myriad-impact-image {
+    max-height: 60vh;
+  }
+
+
+
+  .project-impact-text {
+    font-size: 1rem;
+    text-align: left;
+  }
   
   .project-title {
     font-size: 3rem;
@@ -276,6 +652,9 @@
   .project-stats {
     grid-template-columns: 1fr;
     gap: 1rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .content-section {

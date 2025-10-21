@@ -2,7 +2,15 @@
 .cleaner {
   min-height: 100vh;
   background-color: var(--project-bg-color);
-  padding: 2rem 0;
+  padding: 0;
+}
+
+.cleaner .project-template {
+  padding: 0;
+}
+
+.cleaner .container {
+  padding: 0;
 }
 
 .back-button {
@@ -25,50 +33,264 @@
   color: white;
 }
 
-/* Container Override */
-.cleaner .container {
-  padding: 0;
+/* Cleaner Header Background */
+.cleaner .project-custom-header {
+  background: #EDFAFF;
+  padding: 3rem 2rem;
+  border-radius: 0;
+  margin-bottom: 3rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
-/* Project Hero */
-.project-hero {
-  text-align: center;
-  margin-bottom: 4rem;
+/* Floating Bubbles Container */
+.floating-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
 }
 
-.hero-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
+/* Individual Bubble Styles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #EDF9FE 0%, rgba(134, 218, 252, 0.8) 100%);
+  animation: floatUp 20s ease-in-out infinite;
 }
 
-.project-title {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #2BB6CB;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.bubble-1 {
+  width: 20px;
+  height: 20px;
+  left: 15%;
+  bottom: -20px;
+  animation-delay: 0s;
+  animation-duration: 25s;
 }
 
-.project-subtitle {
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+.bubble-2 {
+  width: 15px;
+  height: 15px;
+  left: 35%;
+  bottom: -15px;
+  animation-delay: 3s;
+  animation-duration: 22s;
 }
 
-.hero-image {
+.bubble-3 {
+  width: 25px;
+  height: 25px;
+  left: 55%;
+  bottom: -25px;
+  animation-delay: 6s;
+  animation-duration: 28s;
+}
+
+.bubble-4 {
+  width: 18px;
+  height: 18px;
+  left: 75%;
+  bottom: -18px;
+  animation-delay: 9s;
+  animation-duration: 24s;
+}
+
+.bubble-5 {
+  width: 12px;
+  height: 12px;
+  left: 85%;
+  bottom: -12px;
+  animation-delay: 12s;
+  animation-duration: 20s;
+}
+
+.bubble-6 {
+  width: 22px;
+  height: 22px;
+  left: 25%;
+  bottom: -22px;
+  animation-delay: 15s;
+  animation-duration: 26s;
+}
+
+.bubble-7 {
+  width: 16px;
+  height: 16px;
+  left: 65%;
+  bottom: -16px;
+  animation-delay: 18s;
+  animation-duration: 23s;
+}
+
+.bubble-8 {
+  width: 14px;
+  height: 14px;
+  left: 45%;
+  bottom: -14px;
+  animation-delay: 21s;
+  animation-duration: 21s;
+}
+
+.bubble-9 {
+  width: 19px;
+  height: 19px;
+  left: 5%;
+  bottom: -19px;
+  animation-delay: 2s;
+  animation-duration: 27s;
+}
+
+.bubble-10 {
+  width: 13px;
+  height: 13px;
+  left: 40%;
+  bottom: -13px;
+  animation-delay: 5s;
+  animation-duration: 19s;
+}
+
+.bubble-11 {
+  width: 24px;
+  height: 24px;
+  left: 70%;
+  bottom: -24px;
+  animation-delay: 8s;
+  animation-duration: 29s;
+}
+
+.bubble-12 {
+  width: 17px;
+  height: 17px;
+  left: 90%;
+  bottom: -17px;
+  animation-delay: 11s;
+  animation-duration: 25s;
+}
+
+.bubble-13 {
+  width: 21px;
+  height: 21px;
+  left: 10%;
+  bottom: -21px;
+  animation-delay: 14s;
+  animation-duration: 23s;
+}
+
+.bubble-14 {
+  width: 16px;
+  height: 16px;
+  left: 50%;
+  bottom: -16px;
+  animation-delay: 17s;
+  animation-duration: 26s;
+}
+
+.bubble-15 {
+  width: 23px;
+  height: 23px;
+  left: 80%;
+  bottom: -23px;
+  animation-delay: 20s;
+  animation-duration: 24s;
+}
+
+.bubble-16 {
+  width: 15px;
+  height: 15px;
+  left: 30%;
+  bottom: -15px;
+  animation-delay: 23s;
+  animation-duration: 22s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.3;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-200px);
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-400px);
+    opacity: 0;
+  }
+}
+
+/* Cleaner Image Styling */
+.cleaner .project-image {
+  background-color: #ffffff !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: none !important;
+}
+
+.cleaner .project-image-section {
+  border: none !important;
+  position: relative;
+}
+
+/* Cleaner Title Color */
+.cleaner .project-title {
+  color: #4380F2 !important;
+}
+
+/* Cleaner Subtitle Size and Font */
+.cleaner .project-subtitle {
+  font-size: 1rem !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Hero CTA Button */
+.hero-cta-button {
+  display: inline-block;
+  background: #4380F2;
+  color: white;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 50px;
   margin-top: 2rem;
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(67, 128, 242, 0.3);
 }
 
-.hero-image img {
-  width: 100%;
-  max-width: 800px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+.hero-cta-button:hover {
+  background: #2B6BCB;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(67, 128, 242, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Desktop and Mobile Hero Images */
+.desktop-hero-image {
+  display: block;
+  width: 120%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.mobile-hero-image {
+  display: none;
 }
 
 /* Project Stats */
@@ -100,7 +322,8 @@
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-family: 'Genos', sans-serif !important;
+  font-size: 1.2rem;
   color: #333;
   font-weight: 500;
 }
@@ -152,7 +375,7 @@
   color: #2BB6CB;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .feature-item p {
@@ -180,7 +403,7 @@
   color: #2BB6CB;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .impl-item p {
@@ -201,7 +424,7 @@
   color: #2BB6CB;
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .tech-tags {
@@ -259,23 +482,198 @@
   transform: translateY(-2px);
 }
 
+
+/* The Idea Section - Project Impact Style */
+.cleaner .project-impact-section .section-title {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.cleaner .project-impact-text-section {
+  padding-left: 0;
+}
+
+.cleaner .project-impact-image.desktop-before-after {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.cleaner .project-impact-image.mobile-before-after {
+  display: none;
+}
+
+/* How It Started Section Image */
+.cleaner .project-impact-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* How It Started Section - Keep side by side on desktop */
+@media (min-width: 769px) {
+  .cleaner .project-impact-section:first-of-type .project-impact-content {
+    flex-direction: row !important;
+  }
+
+  .cleaner .project-impact-section:first-of-type .project-impact-text-section {
+    order: 1;
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .cleaner .project-impact-section:first-of-type .project-impact-image-section {
+    order: 2;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cleaner .project-impact-section:first-of-type .project-impact-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Want to clean up THIS page? Section - Desktop Only */
+@media (min-width: 769px) {
+  .cleaner .bullshit-this-page-section .project-impact-content {
+    flex-direction: column !important;
+  }
+
+  .cleaner .bullshit-this-page-section .project-impact-text-section {
+    order: 1;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .cleaner .bullshit-this-page-section .project-impact-image-section {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cleaner .bullshit-this-page-section .project-impact-image {
+    width: 100%;
+    max-width: 1600px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Bullshit Movie GIF */
+.cleaner .bullshit-movie-gif {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin: 0 auto 3rem auto;
+  display: block;
+}
+
+/* Bullshit Bottom Image Section */
+.cleaner .bullshit-bottom-section {
+  width: 100%;
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.cleaner .bullshit-bottom-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .cleaner {
     padding: 1rem 0;
   }
   
-  .project-title {
-    font-size: 3rem;
+  .cleaner .project-title {
+    font-size: 2.8rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero-cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
   }
   
   .project-subtitle {
     font-size: 1.1rem;
   }
   
+  /* Mobile Hero Images */
+  .desktop-hero-image {
+    display: none;
+  }
+  
+  .mobile-hero-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  
+  /* Mobile Before/After Images */
+  .cleaner .project-impact-image.desktop-before-after {
+    display: none;
+  }
+  
+  .cleaner .project-impact-image.mobile-before-after {
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  /* Mobile alignment for The Idea section */
+  .cleaner .project-impact-section .section-title {
+    text-align: left;
+    padding-left: 2rem;
+  }
+  
+  .cleaner .project-impact-text-section {
+    padding-left: 0;
+  }
+  
+  /* Mobile Bullshit Movie GIF */
+  .cleaner .bullshit-movie-gif {
+    max-width: 100%;
+    margin: 0 auto 2rem auto;
+  }
+  
+  
   .project-stats {
     grid-template-columns: 1fr;
     gap: 1rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .content-section {

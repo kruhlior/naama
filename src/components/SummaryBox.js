@@ -1,8 +1,8 @@
 import './styles/SummaryBox.css';
 
-const SummaryBox = ({ icon, title, content }) => {
+const SummaryBox = ({ icon, title, content, className }) => {
   return (
-    <div className="summary-box">
+    <div className={`summary-box ${className || ''}`}>
       <div className="box-header">
         <div className="box-icon">
           <img src={icon} alt={title} />

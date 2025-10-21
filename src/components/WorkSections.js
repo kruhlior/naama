@@ -16,7 +16,7 @@ const WorkSections = () => {
       { id: 'unicef', title: 'UNICEF internal AI bot', subtitle: 'Building a Trusted, Multi-Layered AI for Knowledge Management', image: '/UNicef.png', category: 'recent', template: 'template1', tags: ['recent', 'web'] },
       { id: 'lloyd', title: 'Real world Video AI Assistant App', subtitle: 'From abstract AI to real adoption: guiding users into a new product experience', image: '/Lloyd.gif', category: 'recent', template: 'template1', tags: ['recent', 'mobile', 'ai'] },
       { id: 'myriad', title: 'Company website full redesign', subtitle: 'A seamless journey for patients and healthcare providers', image: '/Myriad.gif', category: 'recent', template: 'template1', tags: ['b2b', 'web', 'recent'] },
-      { id: 'amdocs', title: 'Telecom Enterprise Solution', subtitle: 'A Fierce Innovation Award–winning enterprise solution, shaping designs that streamlined complex workflows.', image: '/Amdocs.png', category: 'recent', template: 'template1', tags: ['recent', 'b2b'] },
+      { id: 'amdocs', title: 'Telecom Enterprise Solution', subtitle: 'A Fierce Innovation Award-winning enterprise solution, shaping designs that streamlined complex workflows.', image: '/Amdocs.png', category: 'recent', template: 'template1', tags: ['recent', 'b2b'] },
       { id: 'cleaner', title: 'Bullshit Cleaner - Solo AI Project', subtitle: 'A self-initiated project turning messy, exaggerated text into clear communication through UX and AI innovation.', image: '/Cleaning.gif', category: 'recent', template: 'template2', tags: ['recent', 'web', 'ai'] },
     ],
     ai: [
@@ -98,14 +98,8 @@ const WorkSections = () => {
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
 
-    // Scroll to the top of the project section
-    const projectSection = document.querySelector('.work-sections');
-    if (projectSection) {
-      projectSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+    // Don't automatically scroll to prevent header from sliding down
+    // The user can manually scroll if they want to see the projects
   };
 
   const handleProjectClick = (projectId) => {
@@ -161,6 +155,65 @@ const WorkSections = () => {
       />
 
       <div className="container">
+        {/* Mobile Navigation Tabs */}
+        <div className="mobile-nav-tabs">
+          <div className="mobile-nav-item">
+            {activeCategory === 'recent' && (
+              <img src="/nav-recent-mobile.png" alt="Recent" className="mobile-nav-icon" />
+            )}
+            <button
+              className={`mobile-nav-tab ${activeCategory === 'recent' ? 'active' : ''}`}
+              onClick={() => handleCategoryChange('recent')}
+            >
+              Recent
+            </button>
+          </div>
+          <div className="mobile-nav-item">
+            {activeCategory === 'ai' && (
+              <img src="/nav-ai-mobile.png" alt="AI" className="mobile-nav-icon" />
+            )}
+            <button
+              className={`mobile-nav-tab ${activeCategory === 'ai' ? 'active' : ''}`}
+              onClick={() => handleCategoryChange('ai')}
+            >
+              AI
+            </button>
+          </div>
+          <div className="mobile-nav-item">
+            {activeCategory === 'b2b' && (
+              <img src="/nav-b2b-mobile.png" alt="B2B" className="mobile-nav-icon" />
+            )}
+            <button
+              className={`mobile-nav-tab ${activeCategory === 'b2b' ? 'active' : ''}`}
+              onClick={() => handleCategoryChange('b2b')}
+            >
+              B2B
+            </button>
+          </div>
+          <div className="mobile-nav-item">
+            {activeCategory === 'mobile' && (
+              <img src="/nav-mobile-mobile.png" alt="Mobile" className="mobile-nav-icon" />
+            )}
+            <button
+              className={`mobile-nav-tab ${activeCategory === 'mobile' ? 'active' : ''}`}
+              onClick={() => handleCategoryChange('mobile')}
+            >
+              Mobile
+            </button>
+          </div>
+          <div className="mobile-nav-item">
+            {activeCategory === 'web' && (
+              <img src="/nav-web-mobile.png" alt="Web" className="mobile-nav-icon" />
+            )}
+            <button
+              className={`mobile-nav-tab ${activeCategory === 'web' ? 'active' : ''}`}
+              onClick={() => handleCategoryChange('web')}
+            >
+              Web
+            </button>
+          </div>
+        </div>
+
         {/* Project Cards Grid */}
         <div className="projects-grid">
           {currentProjects.map((project, index) => (

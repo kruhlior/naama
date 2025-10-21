@@ -114,7 +114,26 @@ const Unicef = () => {
               </div>
             </div>
           }
-          goal="Build a trusted, multi-layered AI system for knowledge management that helps UNICEF staff access and share critical information efficiently and securely."
+          customSectionBeforeSummary={
+            <div className="goal-section">
+              <h3 className="section-title">Goal</h3>
+              <div className="goal-content">
+                <div className="goal-text">
+                  To create a trusted, transparent AI assistant that UNICEF employees can rely on for accurate, verified information while building confidence in AI technology through clear communication, source citations, and user-friendly design.
+                </div>
+                <div className="tldr-image-container">
+                  <img
+                    src="/projects/unicef-tldr.png"
+                    alt="UNICEF TLDR"
+                    className="tldr-image"
+                    onError={(e) => {
+                      e.target.src = '/placeholder-large.jpg';
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          }
           userRole="UX consultant<br/>• UX Research<br/>• UX/UI Design<br/>"
           tools="• Figma<br/>• Jira<br/>• Chet GPT<br/>"
           collaboration="Worked closely with UNICEF stakeholders; knowledge managers, IT specialists, operational staff, and AI engineers"
@@ -123,9 +142,9 @@ const Unicef = () => {
 
         {/* Unique Needs Section */}
         <div className="unique-needs-section">
-          <div className="unique-needs-content">
+          <h3 className="section-title">The Unique Needs of UNICEF Employees</h3>
+          <div className="unique-needs-content section-content">
             <div className="unique-needs-text">
-              <h3 className="unique-needs-title">The Unique Needs of UNICEF Employees</h3>
               <p>
                 As a global organization dedicated to protecting and improving the lives of children, UNICEF tackles complex challenges across humanitarian, political, and social domains.
                 UNICEF employees operate in a dynamic and high-pressure environment, requiring tools that support a diverse range of workflows, from global humanitarian efforts to localized community programs.
@@ -166,16 +185,34 @@ const Unicef = () => {
           <h3 className="challenge-title">1st challenge:<br /><strong>Build trust in AI</strong></h3>
         </div>
 
-        {/* First Challenge Image (Build trust in AI) */}
+        {/* First Challenge Images (Build trust in AI) */}
         <div className="challenges-image-section">
-          <img
-            src="/projects/unicef-challange2.png"
-            alt="UNICEF Challenge 1"
-            className="challenges-image"
-            onError={(e) => {
-              e.target.src = '/placeholder-large.jpg';
-            }}
-          />
+          <div className="challenge-image-container">
+            <img
+              src="/projects/Unicef-challenge-1a.png"
+              alt="UNICEF Challenge 1a"
+              className="challenges-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+            <p className="challenge-image-caption">
+              An opaque interface that left users uncertain about AI reliability and data sources.
+            </p>
+          </div>
+          <div className="challenge-image-container">
+            <img
+              src="/projects/Unicef-challenge-1b.png"
+              alt="UNICEF Challenge 1b"
+              className="challenges-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+            <p className="challenge-image-caption">
+              A transparent, conversational interface that cites sources and builds user confidence in AI responses.
+            </p>
+          </div>
         </div>
 
         {/* First Problem and Solution Boxes (Build trust in AI) */}
@@ -308,8 +345,8 @@ const Unicef = () => {
 
         {/* Key Features Section */}
         <div className="key-features-section">
-          <h3 className="key-features-title">Key Features</h3>
-          <div className="key-features-grid">
+          <h3 className="section-title">Key Features</h3>
+          <div className="key-features-grid section-content">
             <div className="key-feature-item">
               <h4 className="key-feature-title">Multi-Layered AI Architecture</h4>
               <p className="key-feature-text">Advanced AI system with multiple layers for different types of knowledge processing and decision support.</p>
@@ -331,24 +368,53 @@ const Unicef = () => {
 
         {/* Project Impact Section */}
         <div className="project-impact-section">
-          <h3 className="project-impact-title">Project Impact</h3>
-          <p className="project-impact-text">
-            The UNICEF Internal AI Bot has significantly improved knowledge management across the organization, serving thousands of staff members in 190+ countries with 95% accuracy. The system has reduced information retrieval time by 70% and improved decision-making speed for emergency responses. Key achievements include establishing a trusted AI framework for humanitarian work and creating a scalable knowledge management platform that supports UNICEF&apos;s mission to protect children&apos;s rights worldwide.
-          </p>
+          <h3 className="section-title">Project Impact</h3>
+          <div className="project-impact-content">
+            <div className="project-impact-text-section">
+              <p className="project-impact-text">
+                The UNICEF Internal AI Bot has significantly improved knowledge management across the organization, serving thousands of staff members in 190+ countries with 60% increase in trust & satisfaction scores. The system has reduced information retrieval time by 70% and improved decision-making speed for emergency responses. Key achievements include establishing a trusted AI framework for humanitarian work and creating a scalable knowledge management platform that supports UNICEF&apos;s mission to protect children&apos;s rights worldwide.
+              </p>
+            </div>
+            <div className="project-impact-image-section">
+              <img
+                src="/projects/Unicef-impact.png"
+                alt="UNICEF Project Impact"
+                className="project-impact-image"
+                onError={(e) => {
+                  e.target.src = '/placeholder-large.jpg';
+                }}
+              />
+            </div>
+          </div>
+
+          {/* Project Stats - Centered to full page width */}
+          <div className="project-stats" style={{ marginTop: '3rem' }}>
+            <div className="stat">
+              <span className="stat-number">↑ 60%</span>
+              <span className="stat-label">Trust & Satisfaction Scores</span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">↓ 70%</span>
+              <span className="stat-label">Information Retrieval Time</span>
+            </div>
+            <div className="stat">
+              <span className="stat-number">190+</span>
+              <span className="stat-label">Countries Served</span>
+            </div>
+          </div>
         </div>
 
-        {/* Project Results Image */}
-        <div className="challenges-image-section">
+        {/* UNICEF For Every Child Image - Full Screen Width */}
+        <div className="unicef-for-every-child-section">
           <img
-            src="/projects/unicef-results.png"
-            alt="UNICEF Project Results"
-            className="challenges-image"
+            src="/projects/UNICEF-for-every-child.png"
+            alt="UNICEF For Every Child"
+            className="unicef-for-every-child-image"
             onError={(e) => {
               e.target.src = '/placeholder-large.jpg';
             }}
           />
         </div>
-
       </div>
     </div>
   );

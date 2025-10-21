@@ -3,11 +3,6 @@
   width: 100%;
 }
 
-/* Gap Spacing */
-.gap-spacing {
-  height: 0;
-  background-color: #CDCBCC;
-}
 
 /* See My Work Section - Hidden on Desktop */
 .see-my-work-section {
@@ -16,14 +11,11 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  .gap-spacing {
-    height: 0;
-  }
   
   /* Show See My Work section on mobile */
   .see-my-work-section {
     display: block;
-    background-color: #CDCBCC;
+    background-color: transparent;
     padding: 2rem 1rem;
     text-align: center;
   }
@@ -48,14 +40,11 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
-    color: #333;
+    color: #ffffff;
   }
 }
 
 @media (max-width: 480px) {
-  .gap-spacing {
-    height: 0;
-  }
   
   .see-my-work-section {
     padding: 1.5rem 1rem;

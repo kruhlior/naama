@@ -14,9 +14,9 @@
   top: 20px;
   left: 20px;
   z-index: 99999;
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
   color: #333;
-  border: 2px solid #ccc;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -92,15 +92,32 @@
 .section-title {
   font-family: 'Genos', sans-serif;
   font-size: 2rem;
-  font-weight: 600;
-  color: #2BB6CB;
+  font-weight: 400;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #2BB6CB, #05B98C, #8B5CF6, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
   text-align: left;
+  padding-left: 2rem;
+}
+
+/* Universal Section Content - Consistent padding for all content */
+.section-content {
+  padding-left: 2rem;
 }
 
 /* Goal Section */
 .goal-section {
-  margin-bottom: 3rem;
+  margin: 3rem 0;
+  padding: 0 2rem;
+}
+
+.goal-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
 }
 
 .goal-text {
@@ -109,7 +126,23 @@
   line-height: 1.6;
   color: #333333;
   text-align: left;
-  max-width: 800px;
+  max-width: 600px;
+  flex: 1;
+}
+
+.tldr-image-container {
+  flex: 0 0 auto;
+  max-width: 300px;
+  align-self: flex-start;
+  margin-top: -3rem;
+  padding-top: 0;
+}
+
+.tldr-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* Summary Section */
@@ -120,7 +153,7 @@
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.2rem;
+  gap: 2rem;
   margin-top: 1rem;
   align-items: start;
 }
@@ -165,15 +198,37 @@
   /* Summary box styles now handled by SummaryBox component */
 
   .section-title {
-    font-size: 1rem !important;
-    line-height: 1 !important;
+    font-size: 1.8rem !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    background: linear-gradient(135deg, #2BB6CB, #05B98C, #8B5CF6, #EC4899) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
     text-align: left;
     padding-left: 2rem !important;
   }
 
+  .section-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .goal-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .goal-text {
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .tldr-image-container {
+    max-width: 100%;
+    order: 1;
+    margin-top: 2rem;
   }
 
   .box-title {
@@ -274,21 +329,28 @@
 .challenges-title {
   font-family: 'Genos', sans-serif;
   font-size: 2rem;
-  font-weight: 600;
-  color: #2BB6CB;
+  font-weight: 400;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #2BB6CB, #05B98C, #8B5CF6, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
   text-align: left;
+  padding-left: 2rem;
   display: inline-block;
   width: fit-content;
 }
 
 .challenges-text {
-  font-family: 'Genos', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #666666;
   text-align: left;
   margin: 0;
+  padding-left: 0;
+  max-width: none;
 }
 
 /* Mobile Styles for Challenges */
@@ -300,28 +362,168 @@
 
   .challenges-title {
     font-size: 1.8rem;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    background: linear-gradient(135deg, #2BB6CB, #05B98C, #8B5CF6, #EC4899) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
     text-align: left;
     padding-left: 2rem !important;
-    display: none;
+    display: inline-block !important;
   }
 
   .challenges-text {
+    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
+    max-width: none;
+    padding-left: 0;
   }
 
-  /* Show title in first challenge image section on mobile */
-  .challenges-image-section:first-of-type::before {
-    content: "Challenges and solutions";
+}
+
+/* Hero Entrance Animations */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero Entrance Classes */
+.hero-entrance-1 {
+  animation: slideInFromLeft 0.8s ease-out 0.1s both;
+}
+
+.hero-entrance-2 {
+  animation: slideInFromRight 0.8s ease-out 0.2s both;
+}
+
+.hero-entrance-3 {
+  animation: fadeInScale 0.8s ease-out 0.3s both;
+}
+
+.hero-entrance-4 {
+  animation: slideInFromBottom 0.8s ease-out 0.4s both;
+}
+
+.hero-entrance-5 {
+  animation: bounceIn 0.6s ease-out 0.5s both;
+}
+
+.hero-entrance-6 {
+  animation: bounceIn 0.6s ease-out 0.6s both;
+}
+
+.hero-entrance-7 {
+  animation: bounceIn 0.6s ease-out 0.7s both;
+}
+
+.hero-entrance-8 {
+  animation: bounceIn 0.6s ease-out 0.8s both;
+}
+
+.hero-entrance-9 {
+  animation: bounceIn 0.6s ease-out 0.8s both;
+}
+
+.hero-entrance-10 {
+  animation: slideInFromLeft 0.8s ease-out 0.9s both;
+}
+
+/* Qrkiez Special Layout - Goal Section Side by Side */
+.goal-section-wrapper {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.goal-section-wrapper .goal-section {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.goal-section-wrapper .tldr-image-container {
+  flex: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goal-section-wrapper .tldr-image {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .goal-section-wrapper {
     display: block;
-    font-family: 'Genos', sans-serif;
-    font-size: 1rem !important;
-    line-height: 1 !important;
-    font-weight: 600;
-    color: #2BB6CB;
-    text-align: left;
-    padding-left: 2rem;
+  }
+
+  .goal-section-wrapper .goal-section {
     margin-bottom: 2rem;
+  }
+
+  .goal-section-wrapper .tldr-image-container {
+    margin: 2rem 0;
   }
 }
 

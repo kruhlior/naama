@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './styles/Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,8 +20,13 @@ const Header = () => {
 
   const handleLogoClick = () => {
     closeMenu();
-    window.scrollTo(0, 0);
+    if (isMobile && isProjectPage) {
+      navigate(-1); // Go back to previous page
+    } else {
+      window.scrollTo(0, 0);
+    }
   };
+
 
   const isActive = (path) => {
     return location.pathname === path ? 'active' : '';
@@ -36,20 +43,37 @@ const Header = () => {
                        location.pathname.includes('cleaner');
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Set initial mobile state
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Only apply scroll behavior on mobile project pages
-      if (window.innerWidth <= 768 && isProjectPage) {
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
-          // Scrolling down and past 100px - hide header (back button will show)
-          setIsHeaderVisible(false);
-        } else if (currentScrollY < lastScrollY) {
-          // Scrolling up - show header (back button will hide)
+      // Apply scroll behavior on mobile for all pages
+      if (isMobile) {
+        // Get hero section height to determine when to hide/show header
+        const heroSection = document.querySelector('.hero-section');
+        const heroHeight = heroSection ? heroSection.offsetHeight : 100;
+
+        if (currentScrollY <= heroHeight) {
+          // At or above hero section - always show header
           setIsHeaderVisible(true);
+        } else if (currentScrollY > lastScrollY && currentScrollY > heroHeight) {
+          // Scrolling down and past hero section - hide header
+          setIsHeaderVisible(false);
         }
+        // Don't show header when scrolling up unless we're back at hero section
       } else {
-        // Always show header on desktop or non-project pages
+        // Always show header on desktop
         setIsHeaderVisible(true);
       }
 
@@ -58,14 +82,20 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, isProjectPage]);
+  }, [lastScrollY, isMobile]);
 
   return (
     <header className={`header ${!isHeaderVisible ? 'header-hidden' : ''}`}>
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo" onClick={handleLogoClick}>
-            <img src="/logo.png" alt="Logo" className="logo-image" />
+            {isMobile && isProjectPage ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="back-arrow">
+                <path d="M19 12H5M12 19L5 12L12 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            ) : (
+              <img src="/logo.png" alt="Logo" className="logo-image" />
+            )}
           </Link>
 
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>

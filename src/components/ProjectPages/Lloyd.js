@@ -8,6 +8,36 @@ const Lloyd = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const scrollCarousel = (direction) => {
+    const currentActive = document.querySelector('.carousel-dot.active');
+    const currentIndex = parseInt(currentActive.dataset.index);
+
+    let newIndex;
+    if (direction === 'left') {
+      newIndex = currentIndex > 0 ? currentIndex - 1 : 2;
+    } else {
+      newIndex = currentIndex < 2 ? currentIndex + 1 : 0;
+    }
+
+    scrollToImage(newIndex);
+  };
+
+  const scrollToImage = (index) => {
+    const carousel = document.getElementById('challenge-carousel');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    // Update active dot
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+
+    // Scroll to the new image
+    const imageWidth = 300 + 16; // 300px width + 16px gap
+    carousel.scrollTo({
+      left: index * imageWidth,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <div className="project-page lloyd">
       <div className="container">
@@ -19,162 +49,304 @@ const Lloyd = () => {
         </div>
 
         {/* Project Hero */}
-        <div className="project-hero">
+        <div className="project-custom-header">
           <div className="hero-content">
-            <h1 className="project-title">Lloyd</h1>
-            <p className="project-subtitle">Real world Video AI Assistant App</p>
+            <div className="hero-text hero-entrance-1">
+              <h1 className="project-title">Real world Video AI Assistant App</h1>
+              <p className="project-subtitle">Strategy, Conversion, and Onboarding</p>
+              <a href="https://apps.apple.com/us/app/lloyd-your-ai-superpower/id588199307" target="_blank" rel="noopener noreferrer" className="website-link">
+                Lloyd App
+              </a>
+            </div>
+            <div className="hero-image hero-entrance-2">
+              <img
+                src="/projects/Lloyd-hero-movie.gif"
+                alt="Lloyd Project"
+                className="project-image"
+                onError={(e) => {
+                  e.target.src = '/placeholder-large.jpg';
+                }}
+              />
+            </div>
           </div>
+        </div>
+
+        {/* Hero GIF Section - Mobile Only */}
+        <div className="hero-gif-section mobile-only">
+          <img
+            src="/projects/Lloyd-hero-movie.gif"
+            alt="Lloyd Project"
+            className="hero-gif-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
         </div>
 
         {/* Project Template */}
         <ProjectTemplate
-          goal="Guide users from abstract AI concepts to real adoption by creating an intuitive video AI assistant app that makes complex technology accessible and useful in everyday scenarios."
-          userRole="UX Designer & AI Product Designer"
-          tools="Figma, Principle, After Effects, React Native, AI APIs, UserTesting"
+          customSectionBeforeSummary={
+            <div className="goal-section">
+              <h3 className="section-title">Goal</h3>
+              <div className="goal-content">
+                <div className="goal-text">
+                  To transform Lloyd from an abstract AI concept into a trusted, user-friendly mobile application that makes complex video AI technology accessible to everyday users, while building confidence through clear communication and smooth onboarding experiences.
+                </div>
+                <div className="tldr-image-container">
+                  <img
+                    src="/projects/TLDR-lloyd.png"
+                    alt="Lloyd TLDR"
+                    className="tldr-image"
+                    onError={(e) => {
+                      e.target.src = '/placeholder-large.jpg';
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          }
+          userRole="Product Strategy, Design Oversight, Data-Driven Decisions"
+          tools="Google Analytics, Google Firebase, Figma, Chat GPT, Midjourney"
           collaboration="Product Manager, AI Engineers, Mobile Developers, Video Specialists"
-          timeline="7 months (Research: 2 months, Design: 3 months, Development: 2 months)"
+          timeline="5 months (Research: 1 month, Design: 3 months, Development: 1 months)"
           challenges="Making complex AI technology accessible to everyday users, ensuring real-time video processing works smoothly across different devices, and building user trust in AI-powered video analysis."
         />
 
-        {/* Project Stats */}
-        <div className="project-stats">
-          <div className="stat">
-            <span className="stat-number">1M+</span>
-            <span className="stat-label">Video Interactions</span>
+        {/* First Challenge Section */}
+        <div className="challenge-section">
+          <h3 className="challenge-title">1st challenge<br /><strong>New and unfamiliar technology</strong></h3>
+
+          {/* Problem and Solution Boxes */}
+          <div className="problem-solution-section">
+            <div className="problem-solution-grid">
+              <div className="problem-box">
+                <div className="problem-icon">
+                  <img src="/icons/question.png" alt="Challenge" />
+                </div>
+                <div className="problem-content">
+                  <h4 className="problem-title">Challenge:</h4>
+                  <p className="problem-text">Introducing a new technology</p>
+                  <p className="problem-more-text">The app leverages advanced AI technologies that may seem abstract or complex to new users.</p>
+                </div>
+              </div>
+              <div className="solution-box">
+                <div className="solution-icon">
+                  <img src="/icons/solution.png" alt="Solution" />
+                </div>
+                <div className="solution-content">
+                  <h4 className="solution-title">Solution:</h4>
+                  <p className="solution-text">Building the right mental model</p>
+                  <ul className="solution-more-text">
+                    <li>Designed a <strong>user-centric introduction</strong> that simplified the AI&apos;s functionality, using relatable use cases to create familiarity and trust.</li>
+                    <li>Developed <strong>intuitive onboarding flows</strong> that educated users while showcasing the product&apos;s value.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="stat">
-            <span className="stat-number">50K+</span>
-            <span className="stat-label">Active Users</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">85%</span>
-            <span className="stat-label">User Adoption</span>
+
+          {/* Challenge Images */}
+          <div className="challenge-images-section">
+            <div className="challenge-images-grid" id="challenge-carousel">
+              <div className="challenge-image-item">
+                <img
+                  src="/projects/Lloyd-challenge-1a.jpg"
+                  alt="Lloyd Challenge 1a"
+                  className="challenge-image"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+              </div>
+              <div className="challenge-image-item">
+                <img
+                  src="/projects/Lloyd-challenge-1b.jpg"
+                  alt="Lloyd Challenge 1b"
+                  className="challenge-image"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+              </div>
+              <div className="challenge-image-item">
+                <img
+                  src="/projects/Lloyd-challenge-1c.jpg"
+                  alt="Lloyd Challenge 1c"
+                  className="challenge-image"
+                  onError={(e) => {
+                    e.target.src = '/placeholder-large.jpg';
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Mobile Carousel Navigation */}
+            <div className="carousel-navigation mobile-only">
+              <button className="carousel-arrow carousel-arrow-left" onClick={() => scrollCarousel('left')}>
+                ‹
+              </button>
+              <div className="carousel-dots">
+                <button className="carousel-dot active" data-index="0" onClick={() => scrollToImage(0)} />
+                <button className="carousel-dot" data-index="1" onClick={() => scrollToImage(1)} />
+                <button className="carousel-dot" data-index="2" onClick={() => scrollToImage(2)} />
+              </div>
+              <button className="carousel-arrow carousel-arrow-right" onClick={() => scrollCarousel('right')}>
+                ›
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Project Content */}
-        <div className="project-content">
-          <div className="content-section">
-            <h2>About Lloyd</h2>
-            <p>
-              Lloyd is a groundbreaking real-world Video AI Assistant App that bridges the gap
-              between abstract AI technology and practical user adoption. The app transforms
-              complex AI capabilities into intuitive, user-friendly experiences, guiding users
-              through a seamless journey from initial curiosity to full product engagement.
+        {/* Second Challenge Section */}
+        <div className="challenge-section">
+          <h3 className="challenge-title">2nd challenge<br /><strong>Complete product transition</strong></h3>
+
+          {/* Challenge Image */}
+          <div className="challenge-image-section">
+            <img
+              src="/projects/Lloyd-challenge-2a.png"
+              alt="Lloyd Challenge 2a"
+              className="challenge-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+          </div>
+
+          {/* Problem and Solution Boxes */}
+          <div className="problem-solution-section">
+            <div className="problem-solution-grid">
+              <div className="problem-box">
+                <div className="problem-icon">
+                  <img src="/icons/question.png" alt="Challenge" />
+                </div>
+                <div className="problem-content">
+                  <h4 className="problem-title">Challenge:</h4>
+                  <p className="problem-text">From Glide to Lloyd</p>
+                  <p className="problem-more-text">Replacing Glide, a well-loved video messaging app, with the new AI-powered Lloyd meant navigating a delicate transition. The two products served entirely different purposes, so maintaining user trust and engagement during migration was critical.</p>
+                </div>
+              </div>
+              <div className="solution-box">
+                <div className="solution-icon">
+                  <img src="/icons/solution.png" alt="Solution" />
+                </div>
+                <div className="solution-content">
+                  <h4 className="solution-title">Solution:</h4>
+                  <p className="solution-text">Strategic transition approach</p>
+                  <ul className="solution-more-text">
+                    <li><strong>Clear communication:</strong> Introduced Lloyd&apos;s AI value while honoring Glide&apos;s legacy.</li>
+                    <li><strong>User trust:</strong> Addressed privacy and functionality gaps through transparency and user education.</li>
+                    <li><strong>Smooth onboarding:</strong> Designed intuitive flows to guide Glide users seamlessly into Lloyd.</li>
+                    <li><strong>Re-engagement:</strong> Created campaigns to highlight Lloyd&apos;s benefits and encourage adoption.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Second Challenge Additional Image */}
+          <div className="challenge-image-section">
+            <img
+              src="/projects/Lloyd-challenge-2b.png"
+              alt="Lloyd Challenge 2b"
+              className="challenge-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+            <p className="challenge-image-caption">
+              Defining user journeys by groups, based on their previous experience with the old app
             </p>
           </div>
+        </div>
 
-          <div className="content-section">
-            <h2>Key Features</h2>
-            <div className="features-grid">
-              <div className="feature-item">
-                <h3>Video AI Processing</h3>
-                <p>Advanced computer vision and natural language processing for real-time video analysis and interaction.</p>
-              </div>
-              <div className="feature-item">
-                <h3>User Onboarding</h3>
-                <p>Intuitive guided experience that helps users understand and adopt AI technology naturally.</p>
-              </div>
-              <div className="feature-item">
-                <h3>Real-time Assistance</h3>
-                <p>Instant AI-powered responses and suggestions based on video content and user context.</p>
-              </div>
-              <div className="feature-item">
-                <h3>Adaptive Learning</h3>
-                <p>AI system that learns from user interactions to provide increasingly personalized experiences.</p>
-              </div>
-            </div>
-          </div>
+        {/* Third Challenge Section */}
+        <div className="challenge-section third-challenge">
+          <h3 className="challenge-title">3rd challenge<br /><strong>Conversion</strong></h3>
 
-          <div className="content-section">
-            <h2>Technical Implementation</h2>
-            <div className="implementation-grid">
-              <div className="impl-item">
-                <h3>Computer Vision</h3>
-                <p>Advanced image and video processing using state-of-the-art deep learning models for object detection and scene understanding.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Natural Language Processing</h3>
-                <p>Sophisticated NLP models for understanding user queries and generating contextual responses.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Real-time Processing</h3>
-                <p>Optimized architecture for low-latency video processing and instant AI responses.</p>
-              </div>
-              <div className="impl-item">
-                <h3>User Experience Design</h3>
-                <p>Carefully crafted UX that makes complex AI technology accessible to everyday users.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="content-section">
-            <h2>Technologies & Tools</h2>
-            <div className="tech-grid">
-              <div className="tech-category">
-                <h3>AI/ML</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">TensorFlow</span>
-                  <span className="tech-tag">OpenCV</span>
-                  <span className="tech-tag">PyTorch</span>
-                  <span className="tech-tag">Transformers</span>
+          {/* Problem and Solution Boxes */}
+          <div className="problem-solution-section">
+            <div className="problem-solution-grid">
+              <div className="problem-box">
+                <div className="problem-icon">
+                  <img src="/icons/question.png" alt="Challenge" />
+                </div>
+                <div className="problem-content">
+                  <h4 className="problem-title">Challenge:</h4>
+                  <p className="problem-text">Conversion to paying Customers</p>
+                  <p className="problem-more-text">Free-to-paid conversion was a critical focus to ensure the product&apos;s sustainability.</p>
                 </div>
               </div>
-              <div className="tech-category">
-                <h3>Mobile</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">React Native</span>
-                  <span className="tech-tag">iOS</span>
-                  <span className="tech-tag">Android</span>
-                  <span className="tech-tag">Camera API</span>
+              <div className="solution-box">
+                <div className="solution-icon">
+                  <img src="/icons/solution.png" alt="Solution" />
                 </div>
-              </div>
-              <div className="tech-category">
-                <h3>Backend</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">Python</span>
-                  <span className="tech-tag">FastAPI</span>
-                  <span className="tech-tag">WebRTC</span>
-                  <span className="tech-tag">Redis</span>
+                <div className="solution-content">
+                  <h4 className="solution-title">Solution:</h4>
+                  <p className="solution-text">Strategic conversion approach</p>
+                  <ul className="solution-more-text">
+                    <li>Defined <strong>clear value propositions</strong> for both free and paid tiers.</li>
+                    <li>Designed the onboarding flow to let users experience key features of the paid version early on, so they could <strong>see its value</strong> before making a decision.</li>
+                    <li>Used <strong>behavior analytics</strong> to identify pain points and refine messaging to encourage conversion.</li>
+                  </ul>
                 </div>
               </div>
             </div>
+
+            {/* Third Challenge Image */}
+            <div className="challenge-image-section">
+              <img
+                src="/projects/Lloyd-challenge-3a.png"
+                alt="Lloyd Challenge 3a"
+                className="challenge-image"
+                onError={(e) => {
+                  e.target.src = '/placeholder-large.jpg';
+                }}
+              />
+            </div>
           </div>
 
-          <div className="content-section">
-            <h2>Project Impact</h2>
-            <p>
-              Lloyd has successfully achieved 85% user adoption rate, processing over 1 million
-              video interactions with 50,000+ active users. The app has revolutionized how
-              users interact with AI technology, reducing the learning curve by 60% and
-              increasing user engagement by 150%. Key achievements include creating an
-              intuitive bridge between complex AI capabilities and real-world applications,
-              making advanced technology accessible to mainstream users.
+          {/* Third Challenge Second Image */}
+          <div className="challenge-image-section">
+            <img
+              src="/projects/Lloyd-challenge-3b.png"
+              alt="Lloyd Challenge 3b"
+              className="challenge-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+            <p className="challenge-image-caption">
+              Defining upgrade flow, making sure the user has opportunity to experience the full value of premium account. and identifying touchpoint to offer an upgrade
             </p>
           </div>
+        </div>
 
-          <div className="content-section">
-            <h2>Project Links</h2>
-            <div className="project-links">
-              <a
-                href="https://github.com/yourusername/lloyd"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link primary"
-              >
-                View Source Code
-              </a>
-              <a
-                href="https://lloyd-demo.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link secondary"
-              >
-                Live Demo
-              </a>
+        {/* Project Outcomes Section */}
+        <div className="project-outcomes-section">
+          <h3 className="section-title">Project outcomes - Lloyd transition</h3>
+          <div className="project-outcomes-content">
+            <div className="project-outcomes-text-section section-content">
+              <p>
+                The transition from Glide to Lloyd successfully retained much of the existing user base while introducing a new experience built around AI. Through a combination of clear communication, thoughtful onboarding, and targeted re-engagement, we saw steady migration from Glide users into the new product and encouraging early conversion to paid plans.
+              </p>
+              <p>
+                The new onboarding experience reduced drop-off rates, increased user confidence in the product, and laid the foundation for sustainable, long-term engagement.
+              </p>
+            </div>
+            <div className="project-outcomes-image-section">
+              <img
+                src="/projects/Lloyd-impact.png"
+                alt="Lloyd Project Impact"
+                className="project-outcomes-image"
+                onError={(e) => {
+                  e.target.src = '/placeholder-large.jpg';
+                }}
+              />
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

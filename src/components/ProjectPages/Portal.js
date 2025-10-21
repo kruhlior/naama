@@ -24,9 +24,11 @@ const Portal = () => {
         <ProjectTemplate
           customHeader={
             <div className="project-title-section">
-              <h1 className="project-title">Healthcare provider portal</h1>
-              <h2 className="project-subtitle">Leading UX strategy to transform the provider experience at scale.</h2>
-              <div className="project-image-section">
+              <div className="hero-entrance-1">
+                <h1 className="project-title">Healthcare provider portal</h1>
+                <h2 className="project-subtitle">Leading UX strategy to transform the provider experience at scale.</h2>
+              </div>
+              <div className="project-image-section hero-entrance-2">
                 <img
                   src="/Portal.png"
                   alt="Portal Healthcare Portal"
@@ -35,22 +37,33 @@ const Portal = () => {
                     e.target.src = '/placeholder-large.jpg';
                   }}
                 />
-                <img
-                  src="/projects/TLDRportal.png"
-                  alt="Portal TLDR"
-                  className="project-tldr-image"
-                  onError={(e) => {
-                    e.target.src = '/placeholder-large.jpg';
-                  }}
-                />
               </div>
             </div>
           }
-          goal="Transform complex medical workflows into a simple, scalable solution that improves healthcare provider efficiency and patient care quality."
+          customSectionBeforeSummary={
+            <div className="goal-section">
+              <h3 className="section-title">Goal</h3>
+              <div className="goal-content">
+                <div className="goal-text">
+                  To transform the complex healthcare provider experience into an intuitive, efficient platform that streamlines workflows, reduces administrative burden, and improves patient care outcomes through thoughtful UX design and strategic implementation.
+                </div>
+                <div className="tldr-image-container">
+                  <img
+                    src="/projects/TLDRportal.png"
+                    alt="Portal TLDR"
+                    className="tldr-image"
+                    onError={(e) => {
+                      e.target.src = '/placeholder-large.jpg';
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          }
           userRole="UX Team Manager<br/>• UX Strategy<br/>• Hands-on Design<br/>• UX Research<br/>• Team Leadership"
           tools="• Figma<br/>• Usertesting.com<br/>• Jira<br/>• Miro"
           collaboration="Worked with cross-functional teams, including product managers, engineers, and content writers."
-          timeline="14 months (2022–2023)"
+          timeline="14 months (2022-2023)"
         />
 
         {/* Samples Section */}
@@ -194,23 +207,56 @@ const Portal = () => {
           />
         </div>
 
-        {/* Project Outcome Section */}
-        <div className="challenges-section">
-          <h3 className="challenges-title">Project outcome</h3>
-          <p className="challenges-text" />
+        {/* Project Impact Section */}
+        <div className="project-impact-section">
+          <h3 className="section-title">Project impact</h3>
+          <div className="project-impact-content">
+            <div className="project-impact-text-section section-content">
+              <p className="project-impact-text">
+                The Portal project achieved remarkable success with significant improvements across all key metrics. The redesigned platform delivered a 30% increase in ordering volumes, demonstrating enhanced user engagement and streamlined workflows. Order completion rates improved by 20%, indicating better user experience and reduced friction in the ordering process. Most notably, satisfaction scores increased by 40%, reflecting the project&apos;s success in creating a more intuitive and user-friendly platform that meets the needs of both service providers and customers.
+              </p>
+            </div>
+            <div className="project-impact-image-section">
+              <img
+                src="/projects/Portal-impact.png"
+                alt="Portal Project Impact"
+                className="project-impact-image"
+                onError={(e) => {
+                  e.target.src = '/placeholder-large.jpg';
+                }}
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Results Table Image */}
-        <div className="challenges-image-section">
+        {/* Project Stats */}
+        <div className="project-stats">
+          <div className="stat">
+            <span className="stat-number">↑ 30%</span>
+            <span className="stat-label">Ordering volumes</span>
+          </div>
+          <div className="stat">
+            <span className="stat-number">↑ 20%</span>
+            <span className="stat-label">Orders completion</span>
+          </div>
+          <div className="stat">
+            <span className="stat-number">↑ 40%</span>
+            <span className="stat-label">Satisfaction scores</span>
+          </div>
+        </div>
+
+        {/* Full Screen Width Genetics Image */}
+        <div className="portal-genetics-section">
           <img
-            src="/projects/portal-resultstable.png"
-            alt="Portal Results Table"
-            className="challenges-image"
+            src="/projects/portal-genetics.jpg"
+            alt="Portal Genetics"
+            className="portal-genetics-image"
             onError={(e) => {
               e.target.src = '/placeholder-large.jpg';
             }}
           />
         </div>
+
       </div>
     </div>
   );

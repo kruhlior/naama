@@ -267,7 +267,7 @@
   }
 
   .work-sections {
-    padding: 3rem 0;
+    padding: 0 0 3rem 0;
   }
   
   .work-menu {
@@ -320,7 +320,8 @@
   }
   
   .project-card .project-title {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    line-height: 1.3;
     margin-bottom: 0.5rem;
   }
   
@@ -401,7 +402,8 @@
   }
   
   .project-title {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    line-height: 1.3;
   }
   
   .project-image {
@@ -410,6 +412,84 @@
   
   .project-image img {
     height: 200px;
+  }
+}
+
+/* Mobile Navigation Tabs */
+.mobile-nav-tabs {
+  display: none;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.mobile-nav-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.mobile-nav-icon {
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  z-index: 10;
+}
+
+.mobile-nav-tab {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-family: 'Genos', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.mobile-nav-tab:hover {
+  background-color: #2BB6CB;
+  color: white;
+  border-color: #2BB6CB;
+}
+
+.mobile-nav-tab.active {
+  background-color: #2BB6CB;
+  color: white;
+  border-color: #2BB6CB;
+}
+
+/* Show mobile nav tabs only on mobile */
+@media (max-width: 768px) {
+  .mobile-nav-tabs {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: #676666;
+    z-index: 1000;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 

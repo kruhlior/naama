@@ -19,162 +19,280 @@ const Myriad = () => {
         </div>
 
         {/* Project Hero */}
-        <div className="project-hero">
+        <div className="project-custom-header">
           <div className="hero-content">
-            <h1 className="project-title">Myriad</h1>
-            <p className="project-subtitle">Company website full redesign</p>
+            <div className="hero-text">
+              <h1 className="project-title">Transforming medical company web experience</h1>
+              <p className="project-subtitle">unified disparate experiences into a seamless journey for patients and healthcare providers</p>
+              <a href="https://myriad.com/" target="_blank" rel="noopener noreferrer" className="website-link">
+                Visit Myriad website
+              </a>
+            </div>
+            <div className="hero-image">
+              <img
+                src="/Myriad.gif"
+                alt="Myriad Project"
+                className="project-image"
+                onError={(e) => {
+                  e.target.src = '/placeholder-large.jpg';
+                }}
+              />
+            </div>
           </div>
+        </div>
+
+        {/* Myriad-2 GIF Section */}
+        <div className="myriad-2-section">
+          <img
+            src="/projects/Myriad-2.gif"
+            alt="Myriad Project Process"
+            className="myriad-2-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
         </div>
 
         {/* Project Template */}
         <ProjectTemplate
-          goal="Create a seamless journey for patients and healthcare providers through a complete website redesign that improves user experience and streamlines healthcare interactions."
+          customSectionBeforeSummary={
+            <div className="goal-section">
+              <h3 className="section-title">Goal</h3>
+              <div className="goal-content">
+                <div className="goal-text">
+                  To transform Myriad&apos;s fragmented web experience into a cohesive, user-centered platform that serves both patients seeking genetic testing information and healthcare providers requiring clinical resources, while ensuring HIPAA compliance and improving overall user satisfaction.
+                </div>
+                <div className="tldr-image-container">
+                  <img
+                    src="/projects/TLDR-myriad.png"
+                    alt="Myriad TLDR"
+                    className="tldr-image"
+                    onError={(e) => {
+                      e.target.src = '/placeholder-large.jpg';
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          }
           userRole="Lead UX Designer & Web Strategist"
           tools="Figma, Adobe Creative Suite, WordPress, HTML/CSS, UserTesting, Analytics"
           collaboration="Marketing Team, Healthcare Providers, Web Developers, Content Team"
-          timeline="5 months (Research: 1 month, Design: 2 months, Development: 2 months)"
+          timeline="7 months (Research: 1 month, Design: 3 months, Development: 3 months)"
           challenges="Balancing patient and provider needs in a single platform, ensuring HIPAA compliance throughout the redesign, and creating intuitive navigation for users with varying technical skills."
         />
 
-        {/* Project Stats */}
-        <div className="project-stats">
-          <div className="stat">
-            <span className="stat-number">40%</span>
-            <span className="stat-label">Conversion Increase</span>
+        {/* First Challenge Section */}
+        <div className="challenge-section">
+          <h3 className="challenge-title">1st Challenge:<br /><strong>Creating parallel experiences for patient and providers</strong></h3>
+          <div className="challenge-image-section">
+            <img
+              src="/projects/myriad-users.png"
+              alt="Myriad Users Challenge"
+              className="challenge-image desktop-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+            <img
+              src="/projects/myriad-users-mobile.png"
+              alt="Myriad Users Challenge Mobile"
+              className="challenge-image mobile-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
           </div>
-          <div className="stat">
-            <span className="stat-number">60%</span>
-            <span className="stat-label">User Engagement</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">95%</span>
-            <span className="stat-label">User Satisfaction</span>
+
+          {/* Problem and Solution Boxes */}
+          <div className="problem-solution-section">
+            <div className="problem-solution-grid">
+              <div className="problem-box">
+                <div className="problem-icon">
+                  <img src="/icons/question.png" alt="Challenge" />
+                </div>
+                <div className="problem-content">
+                  <h4 className="problem-title">Challenge:</h4>
+                  <p className="problem-text">Creating distinct yet cohesive user experiences for patients and healthcare providers within a single platform</p>
+                  <p className="problem-more-text">The existing system treated both user types identically, leading to confusion and inefficient workflows. Patients needed simple, intuitive interfaces while providers required comprehensive tools and data access.</p>
+                </div>
+              </div>
+              <div className="solution-box">
+                <div className="solution-icon">
+                  <img src="/icons/solution.png" alt="Solution" />
+                </div>
+                <div className="solution-content">
+                  <h4 className="solution-title">Solution:</h4>
+                  <p className="solution-text">Designed parallel user journeys with role-based interfaces and personalized dashboards</p>
+                  <p className="solution-more-text">Created distinct entry points and navigation patterns for each user type while maintaining design consistency. Implemented role-based permissions and customized workflows to meet specific user needs.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Project Content */}
-        <div className="project-content">
-          <div className="content-section">
-            <h2>About Myriad Website Redesign</h2>
-            <p>
-              The Myriad company website redesign project focused on creating a seamless journey
-              for both patients and healthcare providers. This comprehensive redesign transformed
-              the existing website into a modern, user-friendly platform that improves accessibility,
-              streamlines user flows, and enhances the overall user experience for all stakeholders
-              in the healthcare ecosystem.
+        {/* Challenge Users Image */}
+        <div className="challenge-users-section">
+          <img
+            src="/projects/Myriad-challenge-users.png"
+            alt="Myriad Challenge Users"
+            className="challenge-users-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
+        {/* Challenge Users Image 2 */}
+        <div className="challenge-users-section">
+          <img
+            src="/projects/Myriad-challenge-users-2.png"
+            alt="Myriad Challenge Users 2"
+            className="challenge-users-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
+        {/* Second Challenge Section */}
+        <div className="challenge-section">
+          <h3 className="challenge-title">2nd Challenge:<br /><strong>Scalability</strong></h3>
+
+          {/* Problem and Solution Boxes */}
+          <div className="problem-solution-section">
+            <div className="problem-solution-grid">
+              <div className="problem-box">
+                <div className="problem-icon">
+                  <img src="/icons/question.png" alt="Challenge" />
+                </div>
+                <div className="problem-content">
+                  <h4 className="problem-title">Challenge:</h4>
+                  <p className="problem-text">Create scalable solution to support a growing portfolio</p>
+                  <p className="problem-more-text">The company&apos;s diverse and growing portfolio of genetic tests required a scalable web solution that could evolve with future products.</p>
+                </div>
+              </div>
+              <div className="solution-box">
+                <div className="solution-icon">
+                  <img src="/icons/solution.png" alt="Solution" />
+                </div>
+                <div className="solution-content">
+                  <h4 className="solution-title">Solution:</h4>
+                  <p className="solution-text">Pages templates, Consistent design</p>
+                  <p className="solution-more-text">Designed flexible page templates that accommodate all current and future genetic tests. Ensured consistency in layout and branding while allowing for customization based on product needs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="challenge-image-section">
+            <img
+              src="/projects/Myriad-tests.png"
+              alt="Myriad Tests"
+              className="challenge-image desktop-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+            <img
+              src="/projects/Myriad-tests-mobile.png"
+              alt="Myriad Tests Mobile"
+              className="challenge-image mobile-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Third Challenge Section */}
+        <div className="challenge-section">
+          <h3 className="challenge-title">3rd Challenge:<br /><strong>Supporting main business goal</strong></h3>
+
+          {/* Problem and Solution Boxes */}
+          <div className="problem-solution-section">
+            <div className="problem-solution-grid">
+              <div className="problem-box">
+                <div className="problem-icon">
+                  <img src="/icons/question.png" alt="Challenge" />
+                </div>
+                <div className="problem-content">
+                  <h4 className="problem-title">Challenge:</h4>
+                  <p className="problem-text">Supporting main user and business goal - Finding the right test</p>
+                  <p className="problem-more-text">Whether you are patient or provider, the single most critical task for users visiting the site was to quickly find the right genetic test for their needs. It is also critical to support the main company revenue driver - ordering genetic tests.</p>
+                </div>
+              </div>
+              <div className="solution-box">
+                <div className="solution-icon">
+                  <img src="/icons/solution.png" alt="Solution" />
+                </div>
+                <div className="solution-content">
+                  <h4 className="solution-title">Solution:</h4>
+                  <p className="solution-text">However you are searching for a genetic test, You&apos;ll find it!</p>
+                  <p className="solution-more-text">Developed multiple search pathways tailored to different user behaviors: search by specialty, health area, or test name. Organized tests into intuitive categories informed by thorough user research. Provided clear descriptions and implemented advanced filtering tools to ensure users could efficiently locate the most relevant tests.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="challenge-image-section">
+            <img
+              src="/projects/Myriad-Challenge-serach.png"
+              alt="Myriad Search Challenge"
+              className="challenge-image desktop-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+            <img
+              src="/projects/Myriad-Challenge-serach.png"
+              alt="Myriad Search Challenge Mobile"
+              className="challenge-image mobile-image"
+              onError={(e) => {
+                e.target.src = '/placeholder-large.jpg';
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Project Impact Section */}
+        <div className="project-impact-section">
+          <h3 className="section-title">Project Impact</h3>
+          <div className="section-content">
+            <p className="project-impact-text">
+              The Myriad website redesign achieved remarkable results with a 40% increase in conversion rates and 60% improvement in user engagement. The project successfully created a seamless journey for both patients and healthcare providers, resulting in 95% user satisfaction. Key achievements include reducing page load times by 50%, improving accessibility scores to WCAG 2.1 AA compliance, and establishing a scalable design system for future updates.
             </p>
-          </div>
 
-          <div className="content-section">
-            <h2>Key Features</h2>
-            <div className="features-grid">
-              <div className="feature-item">
-                <h3>Patient Portal</h3>
-                <p>Intuitive patient portal with appointment scheduling, medical records access, and secure messaging.</p>
+            {/* Project Stats */}
+            <div className="project-stats" style={{ marginTop: '2rem' }}>
+              <div className="stat">
+                <span className="stat-number">↑ 40%</span>
+                <span className="stat-label">Conversion</span>
               </div>
-              <div className="feature-item">
-                <h3>Provider Dashboard</h3>
-                <p>Comprehensive dashboard for healthcare providers with patient management and workflow optimization tools.</p>
+              <div className="stat">
+                <span className="stat-number">↑ 35%</span>
+                <span className="stat-label">Site Visits</span>
               </div>
-              <div className="feature-item">
-                <h3>Responsive Design</h3>
-                <p>Mobile-first approach ensuring optimal experience across all devices and screen sizes.</p>
+              <div className="stat">
+                <span className="stat-number">↑ 40%</span>
+                <span className="stat-label">Total Pages Views</span>
               </div>
-              <div className="feature-item">
-                <h3>Accessibility Compliance</h3>
-                <p>WCAG 2.1 AA compliant design with screen reader support and keyboard navigation.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="content-section">
-            <h2>Technical Implementation</h2>
-            <div className="implementation-grid">
-              <div className="impl-item">
-                <h3>User Experience Design</h3>
-                <p>Comprehensive UX research and design system implementation for consistent user experience across all touchpoints.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Performance Optimization</h3>
-                <p>Advanced performance optimization techniques including lazy loading, image compression, and CDN integration.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Security & Compliance</h3>
-                <p>HIPAA-compliant security measures with encrypted data transmission and secure authentication systems.</p>
-              </div>
-              <div className="impl-item">
-                <h3>Analytics Integration</h3>
-                <p>Comprehensive analytics setup for tracking user behavior and measuring conversion metrics.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="content-section">
-            <h2>Technologies & Tools</h2>
-            <div className="tech-grid">
-              <div className="tech-category">
-                <h3>Frontend</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">React</span>
-                  <span className="tech-tag">TypeScript</span>
-                  <span className="tech-tag">Next.js</span>
-                  <span className="tech-tag">Tailwind CSS</span>
-                </div>
-              </div>
-              <div className="tech-category">
-                <h3>Backend</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">Node.js</span>
-                  <span className="tech-tag">Express</span>
-                  <span className="tech-tag">PostgreSQL</span>
-                  <span className="tech-tag">Redis</span>
-                </div>
-              </div>
-              <div className="tech-category">
-                <h3>Design</h3>
-                <div className="tech-tags">
-                  <span className="tech-tag">Figma</span>
-                  <span className="tech-tag">Adobe XD</span>
-                  <span className="tech-tag">Sketch</span>
-                  <span className="tech-tag">Principle</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="content-section">
-            <h2>Project Impact</h2>
-            <p>
-              The Myriad website redesign achieved remarkable results with a 40% increase in conversion
-              rates and 60% improvement in user engagement. The project successfully created a seamless
-              journey for both patients and healthcare providers, resulting in 95% user satisfaction.
-              Key achievements include reducing page load times by 50%, improving accessibility scores
-              to WCAG 2.1 AA compliance, and establishing a scalable design system for future updates.
-            </p>
-          </div>
-
-          <div className="content-section">
-            <h2>Project Links</h2>
-            <div className="project-links">
-              <a
-                href="https://github.com/yourusername/myriad"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link primary"
-              >
-                View Source Code
-              </a>
-              <a
-                href="https://myriad-demo.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link secondary"
-              >
-                Live Demo
-              </a>
             </div>
           </div>
         </div>
+
+        {/* Full Screen Width Impact Image */}
+        <div className="myriad-impact-section">
+          <img
+            src="/projects/myriad-impact.jpg"
+            alt="Myriad Project Impact"
+            className="myriad-impact-image"
+            onError={(e) => {
+              e.target.src = '/placeholder-large.jpg';
+            }}
+          />
+        </div>
+
       </div>
     </div>
   );
