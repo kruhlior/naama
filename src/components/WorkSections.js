@@ -159,7 +159,7 @@ const WorkSections = () => {
           </div>
           <div className="mobile-nav-item">
             {activeCategory === 'ai' && (
-              <img src="/nav-ai-mobile.png" alt="AI" className="mobile-nav-icon" />
+              <img src="/nav-AI-mobile.png" alt="AI" className="mobile-nav-icon" />
             )}
             <button
               className={`mobile-nav-tab ${activeCategory === 'ai' ? 'active' : ''}`}
