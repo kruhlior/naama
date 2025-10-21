@@ -158,6 +158,46 @@ section {
 @media (max-width: 768px) {
   body {
     overflow-x: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  html {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Fix white margins around header on project pages */
+  .header {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .header .container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .header .header-content {
+    padding: 1rem 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Remove margins from content after header */
+  .header + * {
+    margin-top: 0 !important;
+  }
+  
+  /* Project page specific fixes */
+  .project-page,
+  .project-template {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .project-page > *:first-child,
+  .project-template > *:first-child {
+    margin-top: 0 !important;
   }
   
   .container {
