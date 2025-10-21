@@ -43,7 +43,7 @@ const Qrkiez = () => {
             </div>
             <div className="hero-tldr-image">
               <img
-                src="/projects/qrkiez-tldr.png"
+                src="/projects/qrkiez-TLDR.png"
                 alt="Qrkiez TLDR"
                 onError={(e) => {
                   e.target.src = '/placeholder-large.jpg';
@@ -64,7 +64,7 @@ const Qrkiez = () => {
                 </div>
                 <div className="tldr-image-container">
                   <img
-                    src="/projects/qrkiez-tldr.png"
+                    src="/projects/qrkiez-TLDR.png"
                     alt="Qrkiez TLDR"
                     className="tldr-image"
                     onError={(e) => {
