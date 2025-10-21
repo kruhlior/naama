@@ -16,12 +16,14 @@ const NavigationButtons = ({ activeCategory, onCategoryChange }) => {
     const handleScroll = () => {
       // Get the hero section height to determine when to fix the nav
       const heroSection = document.querySelector('.hero-section');
-      if (heroSection) {
+      const workSection = document.querySelector('.work-sections');
+      if (heroSection && workSection) {
         const heroHeight = heroSection.offsetHeight;
+        const workSectionTop = workSection.offsetTop;
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Fix nav when scrolled past the hero section
-        setIsFixed(scrollTop > heroHeight);
+        // Fix nav when scrolled past the hero section OR when in the work section area
+        setIsFixed(scrollTop > heroHeight || scrollTop >= workSectionTop - 100);
       }
     };
 

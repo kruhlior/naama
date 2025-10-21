@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavigationButtons from './NavigationButtons';
 import './styles/WorkSections.css';
@@ -7,6 +7,7 @@ const WorkSections = () => {
   const [activeCategory, setActiveCategory] = useState('recent');
   const [visibleCards, setVisibleCards] = useState(new Set());
   const [scrollY, setScrollY] = useState(0);
+  const workSectionRef = useRef(null);
   const navigate = useNavigate();
 
   const projects = {
@@ -70,8 +71,13 @@ const WorkSections = () => {
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
 
-    // Don't automatically scroll to prevent header from sliding down
-    // The user can manually scroll if they want to see the projects
+    // Scroll to the top of the work section when category changes
+    if (workSectionRef.current) {
+      workSectionRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   };
 
   const handleProjectClick = (projectId) => {
@@ -79,7 +85,7 @@ const WorkSections = () => {
   };
 
   return (
-    <section className="work-sections">
+    <section className="work-sections" ref={workSectionRef}>
       {/* Coffee Decoration */}
       <div
         className="coffee-decoration"
