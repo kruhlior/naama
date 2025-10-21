@@ -1,12 +1,19 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import ProjectTemplate from '../ProjectTemplate';
 import './Lloyd.css';
 
 const Lloyd = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleBackToHome = () => {
+    navigate('/');
+    window.scrollTo(0, 0);
+  };
 
   const scrollCarousel = (direction) => {
     const currentActive = document.querySelector('.carousel-dot.active');
@@ -43,9 +50,9 @@ const Lloyd = () => {
       <div className="container">
         {/* Back Button */}
         <div className="back-button">
-          <Link to="/" className="back-link">
+          <button onClick={handleBackToHome} className="back-link">
             ← Back to Home
-          </Link>
+          </button>
         </div>
 
         {/* Project Hero */}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import ProjectTemplate from '../ProjectTemplate';
 import ProblemBox from '../ProblemBox';
@@ -6,6 +6,8 @@ import SolutionBox from '../SolutionBox';
 import './Unicef.css';
 
 const Unicef = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -78,14 +80,19 @@ const Unicef = () => {
     return cleanup;
   }, []);
 
+  const handleBackToHome = () => {
+    navigate('/');
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="project-page unicef">
       <div className="container">
         {/* Back Button */}
         <div className="back-button">
-          <Link to="/" className="back-link">
+          <button onClick={handleBackToHome} className="back-link">
             ← Back to Home
-          </Link>
+          </button>
         </div>
 
         {/* Project Template */}
