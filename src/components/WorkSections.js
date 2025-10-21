@@ -96,7 +96,7 @@ const WorkSections = () => {
   };
 
   return (
-    <section className="work-sections" ref={workSectionRef}>
+    <section className={`work-sections category-${activeCategory}`} ref={workSectionRef}>
       {/* Coffee Decoration */}
       <div
         className="coffee-decoration"

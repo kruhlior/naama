@@ -116,7 +116,7 @@ const About = () => {
       id: 'cognitive-science',
       title: 'Cognitive Science',
       image: '/projects/About-edu.png',
-      description: 'My background in cognitive psychology (MA) and brain science (PHD) shapes everything I do. It helps me understand how people think, decide, and behave - and design experiences that align naturally with the way their minds work.',
+      description: 'My background in cognitive psychology (MA) and brain science (PHD, Theoretic Background Studies) shapes everything I do. It helps me understand how people think, decide, and behave - and design experiences that align naturally with the way their minds work.',
     },
     {
       id: 'design-heart',

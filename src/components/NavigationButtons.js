@@ -5,11 +5,11 @@ const NavigationButtons = ({ activeCategory, onCategoryChange }) => {
   const [isFixed, setIsFixed] = useState(false);
 
   const categories = [
-    { id: 'recent', label: 'Recent Work' },
-    { id: 'ai', label: 'AI' },
-    { id: 'b2b', label: 'B2B' },
-    { id: 'web', label: 'Web' },
-    { id: 'mobile', label: 'Mobile' },
+    { id: 'recent', label: 'Recent Work', icon: '/icons/nav-recent.png' },
+    { id: 'ai', label: 'AI', icon: '/icons/nav-ai.png' },
+    { id: 'b2b', label: 'B2B', icon: '/icons/nav-b2b.png' },
+    { id: 'web', label: 'Web', icon: '/icons/nav-web.png' },
+    { id: 'mobile', label: 'Mobile', icon: '/icons/nav-mobile.png' },
   ];
 
   useEffect(() => {
@@ -36,6 +36,21 @@ const NavigationButtons = ({ activeCategory, onCategoryChange }) => {
       <div className="nav-background">
         <img src="/nav.png" alt="Navigation background" />
       </div>
+
+      {/* Category Icon - Only show active category */}
+      <div className="nav-category-icons">
+        {categories.map((category) => (
+          activeCategory === category.id && (
+            <img
+              key={`${category.id}-icon`}
+              src={category.icon}
+              alt={`${category.label} icon`}
+              className="nav-category-icon active"
+            />
+          )
+        ))}
+      </div>
+
       <div className="nav-links">
         {categories.map((category) => (
           <button
