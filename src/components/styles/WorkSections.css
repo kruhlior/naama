@@ -490,6 +490,15 @@
     margin-left: calc(-50vw + 50%);
     padding-left: 1rem;
     padding-right: 1rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1rem;
+  }
+  
+  .mobile-nav-tabs::-webkit-scrollbar {
+    display: none;
   }
 }
 

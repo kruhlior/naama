@@ -171,6 +171,19 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  .hero-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero-section .container {
+    max-width: none;
+    width: 100%;
+    padding: 0;
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
