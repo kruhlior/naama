@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { trackPageView } from './utils/analytics';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
@@ -32,6 +33,23 @@ function AppContent() {
       document.body.classList.remove('project-page-body');
     }
   }, [isProjectPage]);
+
+  // Track page views
+  useEffect(() => {
+    const getPageTitle = (pathname) => {
+      if (pathname === '/') return 'Home';
+      if (pathname === '/about') return 'About';
+      if (pathname === '/contact') return 'Contact';
+      if (pathname.startsWith('/project/')) {
+        const projectName = pathname.split('/').pop();
+        return `Project - ${projectName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}`;
+      }
+      return 'Portfolio';
+    };
+
+    const pageTitle = getPageTitle(location.pathname);
+    trackPageView(location.pathname, pageTitle);
+  }, [location]);
 
   return (
     <div className={`App ${isProjectPage ? 'project-page' : ''}`}>

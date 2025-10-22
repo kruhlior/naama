@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { trackContactInteraction } from '../utils/analytics';
 import './styles/Contact.css';
 
 const Contact = () => {
@@ -47,7 +48,11 @@ const Contact = () => {
                   }}
                 />
               </div>
-              <a href="mailto:k.naama@gmail.com?subject=Let's schedule a virtual coffee!" className="coffee-mug-link">
+              <a
+                href="mailto:k.naama@gmail.com?subject=Let's schedule a virtual coffee!"
+                className="coffee-mug-link"
+                onClick={() => trackContactInteraction('email_coffee')}
+              >
                 <img
                   src="/projects/coffee-mug.png"
                   alt="Coffee Mug"
@@ -69,7 +74,11 @@ const Contact = () => {
               <h3>Get In Touch</h3>
 
               <div className="contact-methods">
-                <a href="mailto:k.naama@gmail.com" className="contact-method contact-method-link">
+                <a
+                  href="mailto:k.naama@gmail.com"
+                  className="contact-method contact-method-link"
+                  onClick={() => trackContactInteraction('email_direct')}
+                >
                   <div className="contact-icon">
                     <img src="/projects/email icon.png" alt="Email" />
                   </div>
@@ -79,7 +88,11 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a href="tel:669-2499635" className="contact-method contact-method-link">
+                <a
+                  href="tel:669-2499635"
+                  className="contact-method contact-method-link"
+                  onClick={() => trackContactInteraction('phone')}
+                >
                   <div className="contact-icon">
                     <img src="/projects/Phone-icon.png" alt="Phone" />
                   </div>
@@ -89,7 +102,13 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a href="https://www.linkedin.com/in/naama-kruh-7405862a/" target="_blank" rel="noopener noreferrer" className="contact-method contact-method-link">
+                <a
+                  href="https://www.linkedin.com/in/naama-kruh-7405862a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-method contact-method-link"
+                  onClick={() => trackContactInteraction('linkedin')}
+                >
                   <div className="contact-icon">
                     <img src="/projects/linkedin-icon.png" alt="LinkedIn" />
                   </div>

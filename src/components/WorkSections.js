@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavigationButtons from './NavigationButtons';
+import { trackCategoryNavigation, trackProjectView } from '../utils/analytics';
 import './styles/WorkSections.css';
 
 const WorkSections = () => {
@@ -80,6 +81,8 @@ const WorkSections = () => {
     setActiveCategory(categoryId);
     // Save the active category to localStorage
     localStorage.setItem('activeCategory', categoryId);
+    // Track category navigation
+    trackCategoryNavigation(categoryId);
 
     // Dispatch custom event to notify header that navigation was used
     window.dispatchEvent(new CustomEvent('navigationCategoryChanged'));
@@ -103,6 +106,8 @@ const WorkSections = () => {
 
   const handleProjectClick = (project) => {
     const route = project.route || `/project/${project.id}`;
+    // Track project view
+    trackProjectView(project.title, project.category);
     navigate(route);
   };
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { trackImageLightbox } from '../utils/analytics';
 import './styles/ImageLightbox.css';
 
 const ImageLightbox = ({ src, alt, className, onError, images = [], currentIndex = 0, ...props }) => {
@@ -10,6 +11,9 @@ const ImageLightbox = ({ src, alt, className, onError, images = [], currentIndex
     e.preventDefault();
     e.stopPropagation();
     console.log('Image clicked, opening lightbox');
+    // Track image lightbox usage
+    const projectName = window.location.pathname.split('/').pop() || 'unknown';
+    trackImageLightbox(alt, projectName);
     setIsOpen(true);
   };
 
