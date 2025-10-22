@@ -15,6 +15,9 @@ import Lloyd from './components/ProjectPages/Lloyd';
 import Myriad from './components/ProjectPages/Myriad';
 import Amdocs from './components/ProjectPages/Amdocs';
 import Cleaner from './components/ProjectPages/Cleaner';
+import PhotoDoodles from './components/ProjectPages/PhotoDoodles';
+import GraphicThoughts from './components/ProjectPages/GraphicThoughts';
+import Drawings from './components/ProjectPages/Drawings';
 import './styles/App.css';
 import './styles/common-project.css';
 
@@ -47,6 +50,9 @@ function AppContent() {
           <Route path="/project/myriad" element={<Myriad />} />
           <Route path="/project/amdocs" element={<Amdocs />} />
           <Route path="/project/cleaner" element={<Cleaner />} />
+          <Route path="/project/photo-doodles" element={<PhotoDoodles />} />
+          <Route path="/project/graphic-thoughts" element={<GraphicThoughts />} />
+          <Route path="/project/drawings" element={<Drawings />} />
           {/* Add more project routes as needed */}
           <Route path="/project/:id" element={<Project1 />} />
         </Routes>

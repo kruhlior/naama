@@ -211,6 +211,19 @@ section {
     padding: 0 15px;
   }
   
+  /* Remove padding for project pages */
+  .project-page .container {
+    padding: 0 !important;
+  }
+  
+  /* Make project page hero sections full width */
+  .project-page .photo-doodles-header,
+  .project-page .graphic-thoughts-header,
+  .project-page .drawings-header {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+  }
+  
   h1 {
     font-size: 2.5rem;
   }

@@ -39,7 +39,10 @@ const Header = () => {
                        location.pathname.includes('lloyd') ||
                        location.pathname.includes('myriad') ||
                        location.pathname.includes('amdocs') ||
-                       location.pathname.includes('cleaner');
+                       location.pathname.includes('cleaner') ||
+                       location.pathname.includes('photo-doodles') ||
+                       location.pathname.includes('graphic-thoughts') ||
+                       location.pathname.includes('drawings');
 
   useEffect(() => {
     const handleResize = () => {

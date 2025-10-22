@@ -389,6 +389,21 @@
     height: 50%;
     padding: 0 0 5px 0;
   }
+  
+  /* Art category specific mobile styles - larger images and bottom padding */
+  .work-sections.category-art .project-card .project-image-right,
+  .work-sections.category-art .project-card .project-image-bottom {
+    height: 280px !important; /* Increased from 200px */
+    padding: 0.5rem 1rem 2rem 1rem !important; /* Added bottom padding */
+  }
+  
+  .work-sections.category-art .project-card .project-image-right img,
+  .work-sections.category-art .project-card .project-image-bottom img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -476,9 +491,10 @@
 }
 
 .mobile-nav-tab.active {
-  background-color: #2BB6CB;
-  color: white;
-  border-color: #2BB6CB;
+  background-color: #2BB6CB !important;
+  color: white !important;
+  border-color: #2BB6CB !important;
+  box-shadow: 0 2px 8px rgba(43, 182, 203, 0.3);
 }
 
 /* Show mobile nav tabs only on mobile */

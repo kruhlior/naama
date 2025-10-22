@@ -22,6 +22,18 @@
   .header {
     position: static;
   }
+  
+  /* Make header full width on project pages */
+  .project-page .header {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  
+  .project-page .header-content {
+    max-width: none;
+    margin: 0;
+    padding: 1rem 1rem;
+  }
 }
 
 .header-content {

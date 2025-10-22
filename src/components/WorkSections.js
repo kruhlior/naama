@@ -4,7 +4,10 @@ import NavigationButtons from './NavigationButtons';
 import './styles/WorkSections.css';
 
 const WorkSections = () => {
-  const [activeCategory, setActiveCategory] = useState('recent');
+  const [activeCategory, setActiveCategory] = useState(() => {
+    // Get the saved category from localStorage, or default to 'recent'
+    return localStorage.getItem('activeCategory') || 'recent';
+  });
   const [visibleCards, setVisibleCards] = useState(new Set());
   const [scrollY, setScrollY] = useState(0);
   const workSectionRef = useRef(null);
@@ -27,6 +30,11 @@ const WorkSections = () => {
     web: [
     ],
     mobile: [
+    ],
+    art: [
+      { id: 'photo-doodles', title: 'Photo-doodles', subtitle: 'What do I do in my free time?\ntake photos and doodle on them :)', image: '/projects/doodle-bulb.png', category: 'art', template: 'template1', tags: ['art'], route: '/project/photo-doodles' },
+      { id: 'graphic-thoughts', title: 'Graphic thoughts', subtitle: 'A visual exploration of ideas.', image: '/projects/graphic-robot.png', category: 'art', template: 'template1', tags: ['art'], route: '/project/graphic-thoughts' },
+      { id: 'drawings', title: 'Drawings', subtitle: 'Some people meditate. I draw.', image: '/projects/drawing-view.png', category: 'art', template: 'template1', tags: ['art'], route: '/project/drawings' },
     ],
   };
 
@@ -70,6 +78,8 @@ const WorkSections = () => {
 
   const handleCategoryChange = (categoryId) => {
     setActiveCategory(categoryId);
+    // Save the active category to localStorage
+    localStorage.setItem('activeCategory', categoryId);
 
     // Dispatch custom event to notify header that navigation was used
     window.dispatchEvent(new CustomEvent('navigationCategoryChanged'));
@@ -91,8 +101,9 @@ const WorkSections = () => {
     }
   };
 
-  const handleProjectClick = (projectId) => {
-    navigate(`/project/${projectId}`);
+  const handleProjectClick = (project) => {
+    const route = project.route || `/project/${project.id}`;
+    navigate(route);
   };
 
   return (
@@ -201,6 +212,17 @@ const WorkSections = () => {
               Web
             </button>
           </div>
+          <div className="mobile-nav-item">
+            {activeCategory === 'art' && (
+              <img src="/van-art-mobile.png" alt="Art" className="mobile-nav-icon" />
+            )}
+            <button
+              className={`mobile-nav-tab ${activeCategory === 'art' ? 'active' : ''}`}
+              onClick={() => handleCategoryChange('art')}
+            >
+              Art
+            </button>
+          </div>
         </div>
 
         {/* Project Cards Grid */}
@@ -209,8 +231,8 @@ const WorkSections = () => {
             <div
               key={project.id}
               className={`project-card ${project.template || 'default'} ${index % 2 === 0 ? 'left' : 'right'} ${visibleCards.has(project.id) ? 'fade-in' : ''}`}
-              onClick={() => handleProjectClick(project.id)}
-              onKeyDown={(e) => e.key === 'Enter' && handleProjectClick(project.id)}
+              onClick={() => handleProjectClick(project)}
+              onKeyDown={(e) => e.key === 'Enter' && handleProjectClick(project)}
               role="button"
               tabIndex={0}
               data-card-id={project.id}

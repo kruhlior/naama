@@ -10,6 +10,7 @@ const NavigationButtons = ({ activeCategory, onCategoryChange }) => {
     { id: 'b2b', label: 'B2B', icon: '/icons/nav-b2b.png' },
     { id: 'web', label: 'Web', icon: '/icons/nav-web.png' },
     { id: 'mobile', label: 'Mobile', icon: '/icons/nav-mobile.png' },
+    { id: 'art', label: 'Art', icon: '/nav-art.png' },
   ];
 
   useEffect(() => {

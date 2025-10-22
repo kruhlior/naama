@@ -1,0 +1,227 @@
+/* GraphicThoughts Project Styles */
+
+/* Mobile Back Button */
+.mobile-back-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 99999;
+  background: rgba(255, 255, 255, 0.5);
+  color: #333;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-back-button.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.mobile-back-button:hover {
+  background: #f5f5f5;
+  border-color: #999;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.graphic-thoughts .back-button {
+  margin-bottom: 2rem;
+}
+
+.graphic-thoughts .back-link {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.graphic-thoughts .back-link:hover {
+  color: #4facfe;
+}
+
+.graphic-thoughts .back-chevron {
+  display: none;
+}
+
+/* Hero Section */
+.graphic-thoughts-header {
+  background: linear-gradient(to bottom, #6CACF0 0%, #C83778 100%);
+  color: white;
+  padding: 0 0 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  gap: 0.5rem;
+}
+
+.graphic-thoughts-header .project-hero-content {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 2rem;
+}
+
+.graphic-thoughts-header .hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0 0.5rem 0 6rem;
+}
+
+.graphic-thoughts-header .project-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.graphic-thoughts-header .project-subtitle {
+  font-family: 'Genos', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  color: white;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.graphic-thoughts-header .project-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.graphic-thoughts-header img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Gallery Section */
+.graphic-thoughts-gallery {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.graphic-thoughts-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.gallery-item {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .graphic-thoughts-header {
+    padding: 0 0 2rem 0;
+    margin: 0 !important;
+  }
+
+  .graphic-thoughts-header .project-hero-content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 0 1rem;
+    margin-top: -6rem;
+  }
+
+  .graphic-thoughts-header .hero-text {
+    order: 1;
+    text-align: center;
+    align-items: center;
+    padding: 0 !important;
+  }
+
+  .graphic-thoughts-header .project-title {
+    font-size: 2.5rem;
+  }
+
+  .graphic-thoughts-header .project-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .graphic-thoughts-header .project-hero-image {
+    order: 2;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .graphic-thoughts-gallery {
+    padding: 2rem 0;
+  }
+
+  /* Mobile back button - show chevron, hide text */
+  .graphic-thoughts .back-text {
+    display: none;
+  }
+
+  .graphic-thoughts .back-chevron {
+    display: inline;
+    font-size: 1.5rem;
+  }
+
+  /* Show mobile back button on mobile */
+  .mobile-back-button {
+    display: flex;
+  }
+}

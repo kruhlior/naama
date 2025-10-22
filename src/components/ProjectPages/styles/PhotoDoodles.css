@@ -1,0 +1,231 @@
+/* PhotoDoodles Project Styles */
+
+/* Mobile Back Button */
+.mobile-back-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 99999;
+  background: rgba(255, 255, 255, 0.5);
+  color: #333;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-back-button.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.mobile-back-button:hover {
+  background: #f5f5f5;
+  border-color: #999;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.photo-doodles .back-button {
+  margin-bottom: 2rem;
+}
+
+.photo-doodles .back-link {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.photo-doodles .back-link:hover {
+  color: #4facfe;
+}
+
+.photo-doodles .back-chevron {
+  display: none;
+}
+
+.photo-doodles-header {
+  background: linear-gradient(to bottom, #18344D 0%, #3879B3 100%);
+  color: white;
+  padding: 0 0 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.photo-doodles-header .project-hero-content {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 2rem;
+}
+
+.photo-doodles-header .hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.photo-doodles-header .project-title {
+  font-family: 'Genos', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.photo-doodles-header .project-subtitle {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  color: white;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.photo-doodles-header .project-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem; /* Added top padding for desktop */
+}
+
+.photo-doodles-header img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.photo-doodles-gallery {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Remove all padding and margins for PhotoDoodles page */
+  .photo-doodles .container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .photo-doodles-header {
+    padding: 0 0 2rem 0;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  
+  .photo-doodles-header .project-hero-content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 0 !important;
+    margin-top: -6rem;
+  }
+  
+  .photo-doodles-header .hero-text {
+    order: 1;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .photo-doodles-header .project-title {
+    font-size: 2.5rem;
+  }
+  
+  .photo-doodles-header .project-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .photo-doodles-header .project-hero-image {
+    order: 2;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 !important;
+  }
+  
+  .photo-doodles-gallery {
+    padding: 2rem 0;
+  }
+
+  /* Mobile back button - show chevron, hide text */
+  .photo-doodles .back-text {
+    display: none;
+  }
+
+  .photo-doodles .back-chevron {
+    display: inline;
+    font-size: 1.5rem;
+  }
+
+  /* Show mobile back button on mobile */
+  .mobile-back-button {
+    display: flex;
+  }
+}

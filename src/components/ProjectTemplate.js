@@ -15,6 +15,7 @@ const ProjectTemplate = ({
   firstChallengeSection,
   secondChallengeSection,
   projectImpactSection,
+  hideSummarySection = false,
 }) => {
   const navigate = useNavigate();
   const [showBackButton, setShowBackButton] = useState(false);
@@ -78,35 +79,37 @@ const ProjectTemplate = ({
       )}
 
       {/* Summary Section */}
-      <div className="summary-section hero-entrance-5">
-        <h3 className="section-title">At a Glance</h3>
-        <div className="summary-grid section-content">
-          <SummaryBox
-            icon="/icons/role.png"
-            title="My Role"
-            content={userRole}
-            className="hero-entrance-6"
-          />
-          <SummaryBox
-            icon="/icons/tools.png"
-            title="Tools"
-            content={tools}
-            className="hero-entrance-7"
-          />
-          <SummaryBox
-            icon="/icons/collaboration.png"
-            title="Collaboration"
-            content={collaboration}
-            className="hero-entrance-8"
-          />
-          <SummaryBox
-            icon="/icons/timeline.png"
-            title="Timeline"
-            content={timeline}
-            className="hero-entrance-9"
-          />
+      {!hideSummarySection && (
+        <div className="summary-section hero-entrance-5">
+          <h3 className="section-title">At a Glance</h3>
+          <div className="summary-grid section-content">
+            <SummaryBox
+              icon="/icons/role.png"
+              title="My Role"
+              content={userRole}
+              className="hero-entrance-6"
+            />
+            <SummaryBox
+              icon="/icons/tools.png"
+              title="Tools"
+              content={tools}
+              className="hero-entrance-7"
+            />
+            <SummaryBox
+              icon="/icons/collaboration.png"
+              title="Collaboration"
+              content={collaboration}
+              className="hero-entrance-8"
+            />
+            <SummaryBox
+              icon="/icons/timeline.png"
+              title="Timeline"
+              content={timeline}
+              className="hero-entrance-9"
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Special Project Section */}
       {specialProjectSection && (
