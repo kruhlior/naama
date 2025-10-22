@@ -101,7 +101,7 @@ const Lloyd = () => {
                 </div>
                 <div className="tldr-image-container">
                   <img
-                    src="/projects/TLDR-lloyd.png"
+                    src="/projects/TLDR-Lloyd.png"
                     alt="Lloyd TLDR"
                     className="tldr-image"
                     onError={(e) => {
