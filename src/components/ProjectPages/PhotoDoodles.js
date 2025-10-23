@@ -89,6 +89,7 @@ const PhotoDoodles = () => {
                 { src: '/projects/doodle-shoes.png', alt: 'Shoes doodle' },
                 { src: '/projects/doodle-naked.png', alt: 'Canyon figure doodle' },
                 { src: '/projects/doodle-sushi.png', alt: 'Sushi shoes doodle' },
+                { src: '/projects/doodle-psst.png', alt: 'Psst doodle' },
               ];
 
               return images.map((image, index) => (
