@@ -142,7 +142,7 @@ const Unicef = () => {
             </div>
           }
           userRole="UX consultant<br/>• UX Research<br/>• UX/UI Design<br/>"
-          tools="• Figma<br/>• Jira<br/>• Chet GPT<br/>"
+          tools="• Figma<br/>• Jira<br/>• Chat GPT<br/>"
           collaboration="Worked closely with UNICEF stakeholders; knowledge managers, IT specialists, operational staff, and AI engineers"
           timeline="2024 (6 months)"
         />

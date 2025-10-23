@@ -49,10 +49,11 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, #34DDA5, #3EC0DC, #92559A, #E8468F);
+  background: linear-gradient(135deg, #00FFB4, #00D4FF, #B84DFF, #FF4D8A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 500;
 }
 
 .hero-subtitle {
