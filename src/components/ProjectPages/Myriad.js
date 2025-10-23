@@ -71,7 +71,7 @@ const Myriad = () => {
                 </div>
                 <div className="tldr-image-container">
                   <img
-                    src="/projects/TLDR-myriad.png"
+                    src="/projects/TLDR-Myriad.png"
                     alt="Myriad TLDR"
                     className="tldr-image"
                     onError={(e) => {
